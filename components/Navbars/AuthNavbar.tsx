@@ -41,7 +41,7 @@ export default function Navbar() {
                 <span
                   className="lg:text-white hover:text-blue-500 text-blueGray-700 px-3 py-4 lg:py-2  cursor-pointer transition-colors text-xs uppercase font-bold"
                   onClick={() => {
-                    router.push("/");
+                    router.push("/resume");
                   }}
                 >
                   My Resume
