@@ -69,7 +69,7 @@ const Project: NextPage = ({
       <div className="bg-gradient-to-r from-[#24C6DC] to-[#514A9D] py-8">
         <p className="text-white text-center sm:w-96 sm:mx-auto my-4 leading-7 px-4">
           As i working myself to be a Frontend Developer, i struggle with a lot
-          of projects. eventhough those projects all hard, they always giving me
+          of projects. eventhough those projects are hard, they always give me
           something new and precious to learn. Here are some of my top projects
           that i build according to me. More to come of course.
         </p>
