@@ -57,12 +57,12 @@ const Home: NextPage = () => {
                     <FaMapMarkerAlt className="mr-2" />
                     Indonesia
                   </div>
-                  <div className="mb-4 text-blueGray-600 mt-10  flex items-center justify-center">
-                    <FiBriefcase className="mr-2" />
+                  <div className="mb-4 text-blueGray-600 mt-10 flex items-center justify-center">
+                    <FiBriefcase className=" mr-3 min-w-[20px] min-h-[20px]" />
                     Frontend Engineer and College Student
                   </div>
                   <div className="text-blueGray-600 flex items-center justify-center">
-                    <FaUniversity className="mr-2" />
+                    <FaUniversity className="  mr-3 min-w-[20px] min-h-[20px]" />
                     Sepuluh Nopember Institute of Technology
                   </div>
                 </div>
