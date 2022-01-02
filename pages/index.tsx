@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import Head from "next/head";
 import Image from "next/image";
 import { FaMapMarkerAlt, FaUniversity } from "react-icons/fa";
 import { FiBriefcase } from "react-icons/fi";
@@ -6,6 +7,17 @@ import { FiBriefcase } from "react-icons/fi";
 const Home: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>Tony David Personal Website</title>
+        <meta name="description" content="Tony David personal website" />
+        <meta
+          name="keywords"
+          content="NextJS, Tailwind, React, Redux, Tony David, handleryouth"
+        />
+        <meta name="language" content="English" />
+        <meta name="author" content="Tony David" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <main className="profile-page">
         <section className="relative block h-500-px">
           <div

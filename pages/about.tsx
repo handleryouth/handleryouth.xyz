@@ -1,11 +1,23 @@
 import { useState } from "react";
 import Image from "next/image";
+import Head from "next/head";
 import { Panel } from "primereact/panel";
 
 const About = () => {
   const [collapsed, setCollapsed] = useState(true);
   return (
     <>
+      <Head>
+        <title>About Tony David</title>
+        <meta name="description" content="About Tony David" />
+        <meta
+          name="keywords"
+          content="NextJS, Tailwind, React, Redux, Tony David, handleryouth, About"
+        />
+        <meta name="language" content="English" />
+        <meta name="author" content="Tony David" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className="relative w-full h-96">
         <Image
           src="https://images.unsplash.com/photo-1532009877282-3340270e0529?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80"

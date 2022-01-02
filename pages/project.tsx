@@ -6,10 +6,10 @@ import {
 import axios from "axios";
 import Head from "next/head";
 import Image from "next/image";
-import { ProjectData } from "types";
+import { useRouter } from "next/router";
 import { Card } from "primereact/card";
 import { Button } from "primereact/button";
-import { useRouter } from "next/router";
+import { ProjectData } from "types";
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const responseData = await axios({
@@ -44,7 +44,15 @@ const Project: NextPage = ({
   return (
     <>
       <Head>
-        <title>Personal Projects</title>
+        <title>Tony David Personal Project</title>
+        <meta name="description" content="Tony David Personal Project" />
+        <meta
+          name="keywords"
+          content="NextJS, Tailwind, React, Redux, Tony David, handleryouth, Project"
+        />
+        <meta name="language" content="English" />
+        <meta name="author" content="Tony David" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className="relative w-full h-96">
         <Image
