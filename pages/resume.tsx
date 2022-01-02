@@ -83,7 +83,7 @@ const Resume = () => {
           />
         </div>
 
-        <div className="md:flex pt-8 pb-2 flex-row justify-around items-center  hidden ">
+        <div className="md:flex pt-8 pb-2 flex-row justify-around items-center hidden min-h-[890px] h-[50vh] ">
           <Button
             icon="pi pi-chevron-left"
             className="p-button-rounded p-button-text"
