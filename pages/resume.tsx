@@ -50,7 +50,7 @@ const Resume = () => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className="bg-gradient-to-r from-[#757F9A] to-[#D7DDE8]">
-        <div className="relative w-full h-96 ">
+        <div className="relative w-full min-h-[384px] sm:h-[50vh] ">
           <Image
             src="https://images.unsplash.com/photo-1602407294553-6ac9170b3ed0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80"
             alt="..."
@@ -62,7 +62,7 @@ const Resume = () => {
           </h1>
         </div>
 
-        <div className="bg-gradient-to-r flex items-center justify-center from-[#757F9A] to-[#D7DDE8] md:hidden h-[50vh] min-h-[568px]">
+        <div className="bg-gradient-to-r flex items-center justify-center from-[#757F9A] to-[#D7DDE8] md:hidden min-h-[384px] h-[50vh] ">
           <ConfirmDialog
             visible={showDialog}
             onHide={() => setShowDialog(false)}

@@ -13,7 +13,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="top-0  z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg absolute ">
+      <nav className="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-black/60 ">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between ">
           <div className="w-full relative flex justify-between items-center lg:w-auto lg:static lg:block lg:justify-start ">
             <p

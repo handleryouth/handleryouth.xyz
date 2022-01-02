@@ -54,7 +54,7 @@ const Project: NextPage = ({
         <meta name="author" content="Tony David" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div className="relative w-full h-96">
+      <div className="relative w-full min-h-[384px] sm:h-[50vh]">
         <Image
           src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80"
           alt="..."

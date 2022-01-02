@@ -19,7 +19,7 @@ const Home: NextPage = () => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <main className="profile-page">
-        <section className="relative block h-500-px">
+        <section className="relative block h-500-px  sm:!h-[50vh] ">
           <div
             className="absolute top-0 w-full h-full bg-center bg-cover"
             style={{
@@ -33,9 +33,9 @@ const Home: NextPage = () => {
             ></span>
           </div>
         </section>
-        <section className="relative py-16 bg-gradient-to-r from-[#1488CC] to-[#2B32B2]">
+        <section className="relative py-16 bg-gradient-to-r from-[#1488CC] to-[#2B32B2] sm:h-[50vh] ">
           <div className="container mx-auto px-4">
-            <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
+            <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-48">
               <div className="px-6">
                 <div className="flex flex-wrap justify-center relative">
                   <div className="absolute bottom-0">
