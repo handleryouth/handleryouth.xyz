@@ -4,9 +4,9 @@ export default function FooterSmall() {
   const router = useRouter();
   return (
     <>
-      <footer className=" bg-gradient-to-r from-[#FC5C7D] to-[#6A82FB]  border-t-2 border-slate-800 border-">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex flex-wrap items-center text-white md:justify-between justify-center">
+      <footer className=" bg-gradient-to-r from-[#FC5C7D] to-[#6A82FB]  border-t-2 border-slate-800 ">
+        <div className="container mx-auto px-4 py-4 flex flex-row justify-between min-h-[100px]">
+          <div className="flex flex-wrap items-center text-white md:justify-between justify-center w-full">
             <div className="w-full md:w-4/12 px-4">
               <div className="text-sm font-semibold py-1 text-center md:text-left cursor-default">
                 Copyright © {new Date().getFullYear()} Tony David
