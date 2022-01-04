@@ -8,6 +8,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { Card } from "primereact/card";
+import { ScrollPanel } from "primereact/scrollpanel";
 import { Button } from "primereact/button";
 import { ProjectData } from "types";
 
@@ -80,7 +81,7 @@ const Project: NextPage = ({
                 className=" overflow-hidden w-96 m-4"
                 key={item._id}
                 title={
-                  <p className=" text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500">
+                  <p className=" text-transparent bg-clip-text bg-gradient-to-r  from-cyan-500 to-blue-500">
                     {item.title}
                   </p>
                 }
@@ -114,12 +115,12 @@ const Project: NextPage = ({
                   </div>
                 }
               >
-                <p
-                  className="p-m-0 text-justify h-48 overflow-y-auto"
+                <ScrollPanel
+                  className="text-justify h-48 custom-scrollpanel pr-4 "
                   style={{ lineHeight: "1.5" }}
                 >
                   {item.description}
-                </p>
+                </ScrollPanel>
               </Card>
             );
           })}
