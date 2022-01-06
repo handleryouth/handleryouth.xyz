@@ -39,14 +39,11 @@ const Home: NextPage = () => {
           <div className="container mx-auto px-4">
             <motion.div
               className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-48"
-              variants={slideLeftEntrance}
               initial="hidden"
               animate="visible"
               transition={{
-                delay: 0.3,
-                duration: 0.5,
                 when: "beforeChildren",
-                staggerChildren: 0.2,
+                staggerChildren: 0.3,
               }}
             >
               <div className="px-6">

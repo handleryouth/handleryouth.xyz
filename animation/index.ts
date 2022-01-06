@@ -1,7 +1,7 @@
 export const slideLeftEntrance = {
   visible: {
     opacity: 1,
-    x: 10,
+    x: 0,
   },
   hidden: {
     opacity: 0,
