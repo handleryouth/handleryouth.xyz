@@ -1,8 +1,10 @@
 import { NextPage } from "next";
+import { motion } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
 import { FaMapMarkerAlt, FaUniversity } from "react-icons/fa";
 import { FiBriefcase } from "react-icons/fi";
+import { slideLeftEntrance } from "animation";
 
 const Home: NextPage = () => {
   return (
@@ -35,7 +37,18 @@ const Home: NextPage = () => {
         </section>
         <section className="relative py-16 bg-gradient-to-r from-[#1488CC] to-[#2B32B2] sm:h-[50vh] sm:min-h-[500px] ">
           <div className="container mx-auto px-4">
-            <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-48">
+            <motion.div
+              className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-48"
+              variants={slideLeftEntrance}
+              initial="hidden"
+              animate="visible"
+              transition={{
+                delay: 0.3,
+                duration: 0.5,
+                when: "beforeChildren",
+                staggerChildren: 0.2,
+              }}
+            >
               <div className="px-6">
                 <div className="flex flex-wrap justify-center relative">
                   <div className="absolute bottom-0">
@@ -50,23 +63,38 @@ const Home: NextPage = () => {
                   </div>
                 </div>
                 <div className="text-center mt-12">
-                  <h3 className="text-4xl font-semibold leading-normal  text-blueGray-700 mb-2">
+                  <motion.h3
+                    className="text-4xl font-semibold leading-normal  text-blueGray-700 mb-2"
+                    variants={slideLeftEntrance}
+                  >
                     Tony David
-                  </h3>
-                  <div className="text-sm text-blueGray-400 font-bold uppercase flex items-center justify-center ">
+                  </motion.h3>
+                  <motion.div
+                    className="text-sm text-blueGray-400 font-bold uppercase flex items-center justify-center "
+                    variants={slideLeftEntrance}
+                  >
                     <FaMapMarkerAlt className="mr-2" />
                     Indonesia
-                  </div>
-                  <div className="mb-4 text-blueGray-600 mt-10 flex items-center justify-center">
+                  </motion.div>
+                  <motion.div
+                    className="mb-4 text-blueGray-600 mt-10 flex items-center justify-center"
+                    variants={slideLeftEntrance}
+                  >
                     <FiBriefcase className=" mr-3 min-w-[20px] min-h-[20px]" />
                     Frontend Engineer and College Student
-                  </div>
-                  <div className="text-blueGray-600 flex items-center justify-center">
+                  </motion.div>
+                  <motion.div
+                    className="text-blueGray-600 flex items-center justify-center"
+                    variants={slideLeftEntrance}
+                  >
                     <FaUniversity className="  mr-3 min-w-[20px] min-h-[20px]" />
                     Sepuluh Nopember Institute of Technology
-                  </div>
+                  </motion.div>
                 </div>
-                <div className="mt-10 py-10 border-t border-blueGray-200 text-center">
+                <motion.div
+                  className="mt-10 py-10 border-t border-blueGray-200 text-center"
+                  variants={slideLeftEntrance}
+                >
                   <div className="flex flex-wrap justify-center">
                     <div className="w-full lg:w-9/12 px-4">
                       <p className="mb-4 text-lg leading-relaxed text-blueGray-700">
@@ -81,9 +109,9 @@ const Home: NextPage = () => {
                       </p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
       </main>

@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Head from "next/head";
 import { Panel } from "primereact/panel";
+import { slideLeftEntrance } from "animation";
 
 const About = () => {
   const [collapsed, setCollapsed] = useState(true);
@@ -25,12 +27,21 @@ const About = () => {
           layout="fill"
           objectFit="cover"
         />
-        <h1 className="absolute tracking-widest font-bold text-3xl flex items-center justify-center h-full w-full text-white">
+        <motion.h1
+          className="absolute tracking-widest font-bold text-3xl flex items-center justify-center h-full w-full text-white"
+          variants={slideLeftEntrance}
+          initial="hidden"
+          animate="visible"
+          transition={{
+            delay: 0.3,
+            duration: 0.5,
+          }}
+        >
           About
-        </h1>
+        </motion.h1>
       </div>
 
-      <div className="pt-4 flex flex-col justify-center items-center bg-gradient-to-r from-[#000046] to-[#1CB5E0] sm:min-h-[800px] sm:h-[50vh]  ">
+      <div className="pt-4 flex flex-col justify-center items-center bg-gradient-to-r from-[#000046] to-[#1CB5E0] sm:min-h-[900px] sm:h-[50vh]  ">
         <div className="my-8 min-w-[320px]">
           <Image
             src="/236782.jpg"

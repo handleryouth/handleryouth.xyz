@@ -56,7 +56,13 @@ const SidebarComponent = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.li className="my-4" variants={listVariant}>
+          <motion.li
+            className="my-4"
+            variants={listVariant}
+            whileHover={{
+              x: [0, 20, 0],
+            }}
+          >
             <span
               className="text-2xl hover:text-blue-500 cursor-pointer transition-colors"
               onClick={() => {
@@ -67,7 +73,13 @@ const SidebarComponent = () => {
             </span>
           </motion.li>
 
-          <motion.li className="my-4 " variants={listVariant}>
+          <motion.li
+            className="my-4 "
+            variants={listVariant}
+            whileHover={{
+              x: [0, 20, 0],
+            }}
+          >
             <span
               className="text-2xl my-4 hover:text-blue-500 cursor-pointer transition-colors"
               onClick={() => {
@@ -78,7 +90,13 @@ const SidebarComponent = () => {
             </span>
           </motion.li>
 
-          <motion.li className="my-4" variants={listVariant}>
+          <motion.li
+            className="my-4"
+            variants={listVariant}
+            whileHover={{
+              x: [0, 20, 0],
+            }}
+          >
             <span
               className="text-2xl  hover:text-blue-500 cursor-pointer transition-colors"
               onClick={() => {
@@ -89,7 +107,13 @@ const SidebarComponent = () => {
             </span>
           </motion.li>
 
-          <motion.li className="my-4 " variants={listVariant}>
+          <motion.li
+            className="my-4 "
+            variants={listVariant}
+            whileHover={{
+              x: [0, 20, 0],
+            }}
+          >
             <span
               className="text-2xl  hover:text-blue-500 cursor-pointer transition-colors"
               onClick={() => {

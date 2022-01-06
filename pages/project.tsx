@@ -4,6 +4,7 @@ import {
   NextPage,
 } from "next";
 import axios from "axios";
+import { motion } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -11,6 +12,7 @@ import { Card } from "primereact/card";
 import { ScrollPanel } from "primereact/scrollpanel";
 import { Button } from "primereact/button";
 import { ProjectData } from "types";
+import { slideLeftEntrance } from "animation";
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const responseData = await axios({
@@ -62,9 +64,18 @@ const Project: NextPage = ({
           layout="fill"
           objectFit="cover"
         />
-        <h1 className="absolute tracking-widest font-bold text-3xl flex items-center justify-center h-full w-full text-white">
+        <motion.h1
+          className="absolute tracking-widest font-bold text-3xl flex items-center justify-center h-full w-full text-white"
+          variants={slideLeftEntrance}
+          initial="hidden"
+          animate="visible"
+          transition={{
+            delay: 0.3,
+            duration: 0.5,
+          }}
+        >
           Project
-        </h1>
+        </motion.h1>
       </div>
 
       <div className="bg-gradient-to-r from-[#24C6DC] to-[#514A9D] py-8">
@@ -77,51 +88,63 @@ const Project: NextPage = ({
         <div className="flex flex-wrap justify-around ">
           {(data as ProjectData[]).map((item) => {
             return (
-              <Card
-                className=" overflow-hidden w-96 m-4"
+              <motion.div
                 key={item._id}
-                title={
-                  <p className=" text-transparent bg-clip-text bg-gradient-to-r  from-cyan-500 to-blue-500">
-                    {item.title}
-                  </p>
-                }
-                footer={
-                  <div className="flex flex-col sm:flex-row ">
-                    <Button
-                      icon="pi pi-arrow-right"
-                      label="Demo"
-                      iconPos="right"
-                      className="p-button-info"
-                      onClick={() => router.push(item.link_demo)}
-                    />
-
-                    <Button
-                      icon="pi pi-github"
-                      label="Repo/Code"
-                      iconPos="right"
-                      className="p-button-primary sm:ml-2 mt-4 sm:mt-0"
-                      onClick={() => router.push(item.link_repo)}
-                    />
-                  </div>
-                }
-                header={
-                  <div className="relative w-full h-64">
-                    <Image
-                      src={item.image}
-                      alt="Card"
-                      layout="fill"
-                      objectFit="cover"
-                    />
-                  </div>
-                }
+                drag
+                dragConstraints={{
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ zIndex: 2 }}
               >
-                <ScrollPanel
-                  className="text-justify h-48 custom-scrollpanel pr-4 "
-                  style={{ lineHeight: "1.5" }}
+                <Card
+                  className=" overflow-hidden w-96 m-4"
+                  title={
+                    <p className=" text-transparent bg-clip-text bg-gradient-to-r  from-cyan-500 to-blue-500">
+                      {item.title}
+                    </p>
+                  }
+                  footer={
+                    <div className="flex flex-col sm:flex-row ">
+                      <Button
+                        icon="pi pi-arrow-right"
+                        label="Demo"
+                        iconPos="right"
+                        className="p-button-info"
+                        onClick={() => router.push(item.link_demo)}
+                      />
+
+                      <Button
+                        icon="pi pi-github"
+                        label="Repo/Code"
+                        iconPos="right"
+                        className="p-button-primary sm:ml-2 mt-4 sm:mt-0"
+                        onClick={() => router.push(item.link_repo)}
+                      />
+                    </div>
+                  }
+                  header={
+                    <div className="relative w-full h-64">
+                      <Image
+                        src={item.image}
+                        alt="Card"
+                        layout="fill"
+                        objectFit="cover"
+                      />
+                    </div>
+                  }
                 >
-                  {item.description}
-                </ScrollPanel>
-              </Card>
+                  <ScrollPanel
+                    className="text-justify h-48 custom-scrollpanel pr-4 "
+                    style={{ lineHeight: "1.5" }}
+                  >
+                    {item.description}
+                  </ScrollPanel>
+                </Card>
+              </motion.div>
             );
           })}
         </div>

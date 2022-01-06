@@ -1,11 +1,13 @@
-import Image from "next/image";
 import { useCallback, useState } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
 import { Document, Page } from "react-pdf";
 import { pdfjs } from "react-pdf";
 import { ConfirmDialog } from "primereact/confirmdialog";
 import { Button } from "primereact/button";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import { slideLeftEntrance } from "animation";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const Resume = () => {
@@ -57,9 +59,18 @@ const Resume = () => {
             layout="fill"
             objectFit="cover"
           />
-          <h1 className="absolute tracking-widest font-bold text-3xl flex items-center justify-center h-full w-full text-white">
+          <motion.h1
+            className="absolute tracking-widest font-bold text-3xl flex items-center justify-center h-full w-full text-white"
+            variants={slideLeftEntrance}
+            initial="hidden"
+            animate="visible"
+            transition={{
+              delay: 0.3,
+              duration: 0.5,
+            }}
+          >
             Resume
-          </h1>
+          </motion.h1>
         </div>
 
         <div className="bg-gradient-to-r flex items-center justify-center from-[#757F9A] to-[#D7DDE8] md:hidden min-h-[384px] h-[50vh] ">
