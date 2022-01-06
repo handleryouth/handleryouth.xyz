@@ -1,23 +1,42 @@
 import { useDispatch, useSelector } from "react-redux";
+import { motion } from "framer-motion";
 import { Twirl as Hamburger } from "hamburger-react";
 import { activateSidebar } from "features/sidebar";
 import { RootState } from "features";
 import { useRouter } from "next/router";
-
-// components
 
 export default function Navbar() {
   const router = useRouter();
   const dispatch = useDispatch();
   const { isOpen } = useSelector((state: RootState) => state.sidebar);
 
+  const listContainer = {
+    hidden: {
+      opacity: 0,
+      x: -10,
+    },
+    visible: {
+      x: 10,
+      opacity: 1,
+      transition: {
+        type: "tween",
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
     <>
       <nav className="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-black/60 ">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between ">
-          <div className="w-full relative flex justify-between items-center lg:w-auto lg:static lg:block lg:justify-start ">
+          <motion.div
+            className="w-full relative flex justify-between items-center lg:w-auto lg:static lg:block lg:justify-start "
+            variants={listContainer}
+            animate={"visible"}
+            initial={"hidden"}
+          >
             <p
-              className=" font-bold text-xl text-white cursor-pointer"
+              className=" font-bold text-xl text-white cursor-pointer mr-3"
               onClick={() => router.push("/")}
             >
               Tony David
@@ -30,14 +49,22 @@ export default function Navbar() {
             >
               <Hamburger toggled={isOpen} size={20} />
             </button>
-          </div>
-          <div
+          </motion.div>
+          <motion.div
             className={
               "hidden lg:flex flex-grow items-center  lg:bg-opacity-0 lg:shadow-none"
             }
+            variants={listContainer}
+            animate={"visible"}
+            initial={"hidden"}
           >
             <ul className="flex flex-row list-none mr-auto">
-              <li className="flex items-center">
+              <motion.li
+                className="flex items-center"
+                whileHover={{
+                  y: "-5px",
+                }}
+              >
                 <span
                   className="lg:text-white hover:text-blue-500 text-blueGray-700 px-3 py-4 lg:py-2  cursor-pointer transition-colors text-xs uppercase font-bold"
                   onClick={() => {
@@ -46,9 +73,14 @@ export default function Navbar() {
                 >
                   My Resume
                 </span>
-              </li>
+              </motion.li>
 
-              <li className="flex items-center">
+              <motion.li
+                className="flex items-center"
+                whileHover={{
+                  y: "-5px",
+                }}
+              >
                 <span
                   className="lg:text-white hover:text-blue-500 text-blueGray-700 px-3 py-4 lg:py-2  cursor-pointer transition-colors text-xs uppercase font-bold"
                   onClick={() => {
@@ -57,8 +89,13 @@ export default function Navbar() {
                 >
                   Web Project
                 </span>
-              </li>
-              <li className="flex items-center">
+              </motion.li>
+              <motion.li
+                className="flex items-center"
+                whileHover={{
+                  y: "-5px",
+                }}
+              >
                 <span
                   className="lg:text-white hover:text-blue-500 text-blueGray-700 px-3 py-4 lg:py-2  cursor-pointer transition-colors text-xs uppercase font-bold"
                   onClick={() => {
@@ -67,9 +104,9 @@ export default function Navbar() {
                 >
                   About
                 </span>
-              </li>
+              </motion.li>
             </ul>
-          </div>
+          </motion.div>
         </div>
       </nav>
     </>

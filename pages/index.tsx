@@ -33,7 +33,7 @@ const Home: NextPage = () => {
             ></span>
           </div>
         </section>
-        <section className="relative py-16 bg-gradient-to-r from-[#1488CC] to-[#2B32B2] sm:h-[50vh] ">
+        <section className="relative py-16 bg-gradient-to-r from-[#1488CC] to-[#2B32B2] sm:h-[50vh] sm:min-h-[500px] ">
           <div className="container mx-auto px-4">
             <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-48">
               <div className="px-6">

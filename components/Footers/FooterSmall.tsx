@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 
 export default function FooterSmall() {
@@ -14,17 +15,26 @@ export default function FooterSmall() {
             </div>
             <div className="w-full md:w-8/12 px-4">
               <ul className="flex flex-wrap list-none md:justify-end  justify-center ">
-                <li className=" hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors">
+                <motion.li
+                  className=" hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors"
+                  whileHover={{ y: -10 }}
+                >
                   <span onClick={() => router.push("/resume")}>My Resume</span>
-                </li>
-                <li className="hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors">
+                </motion.li>
+                <motion.li
+                  className="hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors"
+                  whileHover={{ y: -10 }}
+                >
                   <span onClick={() => router.push("/project")}>
                     Web Project
                   </span>
-                </li>
-                <li className="hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors">
+                </motion.li>
+                <motion.li
+                  className="hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors"
+                  whileHover={{ y: -10 }}
+                >
                   <span onClick={() => router.push("/about")}>About</span>
-                </li>
+                </motion.li>
               </ul>
             </div>
           </div>

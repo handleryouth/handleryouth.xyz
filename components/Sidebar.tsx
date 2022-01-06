@@ -1,9 +1,10 @@
+import { useCallback, useMemo } from "react";
+import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { Sidebar } from "primereact/sidebar";
 import { RootState } from "features";
 import { deactivateSidebar } from "features/sidebar";
-import { useCallback } from "react";
 
 const SidebarComponent = () => {
   const { isOpen } = useSelector((state: RootState) => state.sidebar);
@@ -18,14 +19,44 @@ const SidebarComponent = () => {
     [dispatch, router]
   );
 
+  const listVariant = {
+    hidden: {
+      x: -10,
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+    },
+  };
+
+  const listContainerVariant = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
   return (
     <>
       <Sidebar visible={isOpen} onHide={() => dispatch(deactivateSidebar())}>
         <h3 className="text-4xl font-bold text-transparent cursor-default bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 ">
           Where to go ?
         </h3>
-        <ul className="text-2xl my-4 ">
-          <li className="my-4 ">
+        <motion.ul
+          className="text-2xl my-4"
+          variants={listContainerVariant}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.li className="my-4" variants={listVariant}>
             <span
               className="text-2xl hover:text-blue-500 cursor-pointer transition-colors"
               onClick={() => {
@@ -34,9 +65,9 @@ const SidebarComponent = () => {
             >
               Home
             </span>
-          </li>
+          </motion.li>
 
-          <li className="my-4 ">
+          <motion.li className="my-4 " variants={listVariant}>
             <span
               className="text-2xl my-4 hover:text-blue-500 cursor-pointer transition-colors"
               onClick={() => {
@@ -45,9 +76,9 @@ const SidebarComponent = () => {
             >
               Resume
             </span>
-          </li>
+          </motion.li>
 
-          <li className="my-4">
+          <motion.li className="my-4" variants={listVariant}>
             <span
               className="text-2xl  hover:text-blue-500 cursor-pointer transition-colors"
               onClick={() => {
@@ -56,9 +87,9 @@ const SidebarComponent = () => {
             >
               Web Project
             </span>
-          </li>
+          </motion.li>
 
-          <li className="my-4 ">
+          <motion.li className="my-4 " variants={listVariant}>
             <span
               className="text-2xl  hover:text-blue-500 cursor-pointer transition-colors"
               onClick={() => {
@@ -67,8 +98,8 @@ const SidebarComponent = () => {
             >
               About
             </span>
-          </li>
-        </ul>
+          </motion.li>
+        </motion.ul>
       </Sidebar>
     </>
   );
