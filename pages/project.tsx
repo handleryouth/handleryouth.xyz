@@ -88,18 +88,7 @@ const Project: NextPage = ({
         <div className="flex flex-wrap justify-around ">
           {(data as ProjectData[]).map((item) => {
             return (
-              <motion.div
-                key={item._id}
-                drag
-                dragConstraints={{
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                }}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ zIndex: 2 }}
-              >
+              <motion.div key={item._id} whileHover={{ scale: 1.1, zIndex: 2 }}>
                 <Card
                   className=" overflow-hidden w-96 m-4"
                   title={
