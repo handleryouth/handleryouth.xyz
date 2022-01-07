@@ -99,7 +99,7 @@ const Project: NextPage = ({
                 }}
               >
                 <Card
-                  className=" overflow-hidden w-96 m-4"
+                  className=" overflow-hidden sm:w-96 m-4 min-w-[288px]"
                   title={
                     <p className=" text-transparent bg-clip-text bg-gradient-to-r  from-cyan-500 to-blue-500">
                       {item.title}

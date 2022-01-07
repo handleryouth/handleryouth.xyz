@@ -4,11 +4,11 @@ import AuthNavbar from "./Navbars/AuthNavbar";
 
 function Layout({ children }: { children: ReactNode }) {
   return (
-    <>
+    <div className="min-w-[320px]">
       <AuthNavbar />
       {children}
       <FooterSmall />
-    </>
+    </div>
   );
 }
 
