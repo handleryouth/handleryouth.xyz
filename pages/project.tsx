@@ -88,7 +88,16 @@ const Project: NextPage = ({
         <div className="flex flex-wrap justify-around ">
           {(data as ProjectData[]).map((item) => {
             return (
-              <motion.div key={item._id} whileHover={{ scale: 1.1, zIndex: 2 }}>
+              <motion.div
+                key={item._id}
+                variants={slideLeftEntrance}
+                initial="hidden"
+                animate="visible"
+                transition={{
+                  delay: 1,
+                  duration: 0.5,
+                }}
+              >
                 <Card
                   className=" overflow-hidden w-96 m-4"
                   title={

@@ -5,6 +5,6 @@ export const slideLeftEntrance = {
   },
   hidden: {
     opacity: 0,
-    x: -10,
+    x: -15,
   },
 };
