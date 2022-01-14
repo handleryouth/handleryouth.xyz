@@ -47,7 +47,7 @@ const About = () => {
         </motion.h1>
       </div>
 
-      <div className="pt-4 flex flex-col justify-center items-center bg-gradient-to-r from-[#000046] to-[#1CB5E0] sm:min-h-[1151px] sm:h-screen  ">
+      <div className="pt-4 flex flex-col justify-center items-center bg-gradient-to-r from-[#000046] to-[#1CB5E0] sm:min-h-[1151px] sm:h-[50vh]  ">
         <div className="my-8 min-w-[320px]">
           <Image
             src="/236782.jpg"
