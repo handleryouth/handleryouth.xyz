@@ -5,7 +5,7 @@ export default function FooterSmall() {
   const router = useRouter();
   return (
     <>
-      <footer className=" bg-gradient-to-r from-[#FC5C7D] to-[#6A82FB]  border-t-2 border-slate-800 ">
+      <footer className=" bg-gradient-to-r from-[#4568DC] to-[#B06AB3]  border-t-2 border-slate-800 ">
         <div className="container mx-auto px-4 py-4 flex flex-row justify-between min-h-[100px]">
           <div className="flex flex-wrap items-center text-white md:justify-between justify-center w-full">
             <div className="w-full md:w-4/12 px-4">

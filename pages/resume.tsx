@@ -1,8 +1,7 @@
 import { useCallback, useState } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { Document, Page } from "react-pdf";
-import { pdfjs } from "react-pdf";
+import { Document, Page, pdfjs } from "react-pdf";
+import Image from "next/image";
 import { ConfirmDialog } from "primereact/confirmdialog";
 import { Button } from "primereact/button";
 import { useRouter } from "next/router";

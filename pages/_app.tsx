@@ -4,14 +4,20 @@ import { Layout, Sidebar } from "components";
 import { store } from "features";
 import "@fontsource/inter";
 import "../styles/globals.css";
+import axios from "axios";
+import { SWRConfig } from "swr";
+
+const fetcher = (url: string) => axios(url).then((res) => res.data);
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
-      <Layout>
-        <Sidebar />
-        <Component {...pageProps} />
-      </Layout>
+      <SWRConfig value={{ fetcher }}>
+        <Layout>
+          <Sidebar />
+          <Component {...pageProps} />
+        </Layout>
+      </SWRConfig>
     </Provider>
   );
 }
