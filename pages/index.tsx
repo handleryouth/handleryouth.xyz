@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { NextPage } from "next";
 import { motion } from "framer-motion";
 import Head from "next/head";
@@ -6,7 +7,6 @@ import { FaMapMarkerAlt, FaUniversity } from "react-icons/fa";
 import { FiBriefcase } from "react-icons/fi";
 import { slideLeftEntrance } from "animation";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 
 const Home: NextPage = () => {
   const router = useRouter();

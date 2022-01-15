@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Head from "next/head";
 import { Panel } from "primereact/panel";
-import { slideLeftEntrance } from "animation";
 import {
   SiReact,
   SiRedux,
@@ -11,6 +10,7 @@ import {
   SiTailwindcss,
   SiFramer,
 } from "react-icons/si";
+import { slideLeftEntrance } from "animation";
 
 const About = () => {
   return (

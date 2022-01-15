@@ -1,6 +1,5 @@
-import { InferGetStaticPropsType, NextPage } from "next";
 import { motion } from "framer-motion";
-import useSWR, { unstable_serialize } from "swr";
+import useSWR from "swr";
 import ReactLoading from "react-loading";
 import Head from "next/head";
 import Image from "next/image";
