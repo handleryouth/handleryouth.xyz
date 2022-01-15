@@ -1,6 +1,6 @@
-import { NextPage } from "next";
+import { InferGetStaticPropsType, NextPage } from "next";
 import { motion } from "framer-motion";
-import useSWR from "swr";
+import useSWR, { unstable_serialize } from "swr";
 import ReactLoading from "react-loading";
 import Head from "next/head";
 import Image from "next/image";
@@ -11,7 +11,7 @@ import { Button } from "primereact/button";
 import { ProjectData } from "types";
 import { slideLeftEntrance } from "animation";
 
-const Project: NextPage = () => {
+const Project = () => {
   const { data } = useSWR("/api/project");
   const router = useRouter();
 

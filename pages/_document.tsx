@@ -32,6 +32,12 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://unpkg.com/primeflex@2.0.0/primeflex.min.css"
           />
+          <link
+            rel="preload"
+            href="/api/project"
+            as="fetch"
+            crossOrigin="anonymous"
+          />
         </Head>
         <body>
           <Main />
