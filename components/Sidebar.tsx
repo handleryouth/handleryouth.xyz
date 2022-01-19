@@ -6,6 +6,7 @@ import { Sidebar } from "primereact/sidebar";
 import { RootState } from "features";
 import { deactivateSidebar } from "features/sidebar";
 import { SiGithub, SiLinkedin } from "react-icons/si";
+import { listContainerVariant, listVariant } from "animation";
 
 const SidebarComponent = () => {
   const { isOpen } = useSelector((state: RootState) => state.sidebar);
@@ -20,40 +21,57 @@ const SidebarComponent = () => {
     [dispatch, router]
   );
 
-  const listVariant = {
-    hidden: {
-      x: -10,
-      opacity: 0,
-    },
-    visible: {
-      x: 0,
-      opacity: 1,
-    },
-  };
+  const customIcons = useMemo(() => {
+    return (
+      <ul className="text-4xl flex items-center justify-center mr-4">
+        <motion.li
+          whileHover={{
+            y: [0, -10, 0],
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            duration: 0.5,
+          }}
+        >
+          <SiGithub
+            className="mr-4 cursor-pointer"
+            onClick={() => router.push("https://github.com/handleryouth")}
+          />
+        </motion.li>
 
-  const listContainerVariant = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 0.2,
-      },
-    },
-  };
+        <motion.li
+          whileHover={{
+            y: [0, -10, 0],
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            duration: 0.5,
+          }}
+        >
+          <SiLinkedin
+            className="cursor-pointer"
+            onClick={() => router.push("https://www.linkedin.com/in/tonydg/")}
+          />
+        </motion.li>
+      </ul>
+    );
+  }, [router]);
 
   return (
     <>
-      <Sidebar visible={isOpen} onHide={() => dispatch(deactivateSidebar())}>
+      <Sidebar
+        visible={isOpen}
+        onHide={() => dispatch(deactivateSidebar())}
+        icons={customIcons}
+      >
         <h3 className="text-4xl font-bold text-transparent cursor-default bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 ">
           Where to go ?
         </h3>
 
         <motion.ul
-          className="text-2xl my-4 h-5/6"
+          className="text-2xl my-4 "
           variants={listContainerVariant}
           initial="hidden"
           animate="visible"
@@ -126,40 +144,6 @@ const SidebarComponent = () => {
             </span>
           </motion.li>
         </motion.ul>
-
-        <ul className="text-4xl flex items-center justify-center">
-          <motion.li
-            whileHover={{
-              y: [0, -20, 0],
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-              duration: 0.5,
-            }}
-          >
-            <SiGithub
-              className="mr-4 cursor-pointer"
-              onClick={() => router.push("https://github.com/handleryouth")}
-            />
-          </motion.li>
-
-          <motion.li
-            whileHover={{
-              y: [0, -20, 0],
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-              duration: 0.5,
-            }}
-          >
-            <SiLinkedin
-              className="cursor-pointer"
-              onClick={() => router.push("https://www.linkedin.com/in/tonydg/")}
-            />
-          </motion.li>
-        </ul>
       </Sidebar>
     </>
   );

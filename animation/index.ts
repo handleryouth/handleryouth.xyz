@@ -8,3 +8,28 @@ export const slideLeftEntrance = {
     x: -15,
   },
 };
+
+export const listVariant = {
+  hidden: {
+    x: -10,
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+  },
+};
+
+export const listContainerVariant = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.2,
+    },
+  },
+};
