@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { Sidebar } from "primereact/sidebar";
 import { RootState } from "features";
 import { deactivateSidebar } from "features/sidebar";
+import { SiGithub, SiLinkedin } from "react-icons/si";
 
 const SidebarComponent = () => {
   const { isOpen } = useSelector((state: RootState) => state.sidebar);
@@ -50,8 +51,9 @@ const SidebarComponent = () => {
         <h3 className="text-4xl font-bold text-transparent cursor-default bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 ">
           Where to go ?
         </h3>
+
         <motion.ul
-          className="text-2xl my-4"
+          className="text-2xl my-4 h-5/6"
           variants={listContainerVariant}
           initial="hidden"
           animate="visible"
@@ -124,6 +126,40 @@ const SidebarComponent = () => {
             </span>
           </motion.li>
         </motion.ul>
+
+        <ul className="text-4xl flex items-center justify-center">
+          <motion.li
+            whileHover={{
+              y: [0, -20, 0],
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              duration: 0.5,
+            }}
+          >
+            <SiGithub
+              className="mr-4 cursor-pointer"
+              onClick={() => router.push("https://github.com/handleryouth")}
+            />
+          </motion.li>
+
+          <motion.li
+            whileHover={{
+              y: [0, -20, 0],
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              duration: 0.5,
+            }}
+          >
+            <SiLinkedin
+              className="cursor-pointer"
+              onClick={() => router.push("https://www.linkedin.com/in/tonydg/")}
+            />
+          </motion.li>
+        </ul>
       </Sidebar>
     </>
   );
