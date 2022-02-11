@@ -4,9 +4,13 @@ import { Twirl as Hamburger } from "hamburger-react";
 import { activateSidebar } from "features/sidebar";
 import { RootState } from "features";
 import { useRouter } from "next/router";
+import { useQuery } from "@apollo/client";
+import { QUERY_GET_ALL_PROJECTS } from "utils";
 
 export default function Navbar() {
   const router = useRouter();
+  const { client } = useQuery(QUERY_GET_ALL_PROJECTS);
+
   const dispatch = useDispatch();
   const { isOpen } = useSelector((state: RootState) => state.sidebar);
 
@@ -86,6 +90,11 @@ export default function Navbar() {
                   onClick={() => {
                     router.push("/project");
                   }}
+                  onMouseOver={() =>
+                    client.query({
+                      query: QUERY_GET_ALL_PROJECTS,
+                    })
+                  }
                 >
                   Web Project
                 </span>

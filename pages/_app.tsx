@@ -1,23 +1,25 @@
-import type { AppProps } from "next/app";
 import { Provider } from "react-redux";
-import { Layout, Sidebar } from "components";
 import { store } from "features";
-import axios from "axios";
-import { SWRConfig } from "swr";
+import type { AppProps } from "next/app";
+import { Layout, Sidebar } from "components";
 import "@fontsource/inter";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import "../styles/globals.css";
 
-const fetcher = (url: string) => axios(url).then((res) => res.data);
-
 function MyApp({ Component, pageProps }: AppProps) {
+  const client = new ApolloClient({
+    cache: new InMemoryCache(),
+    uri: "/api/graphql",
+  });
+
   return (
     <Provider store={store}>
-      <SWRConfig value={{ fetcher }}>
+      <ApolloProvider client={client}>
         <Layout>
           <Sidebar />
           <Component {...pageProps} />
         </Layout>
-      </SWRConfig>
+      </ApolloProvider>
     </Provider>
   );
 }

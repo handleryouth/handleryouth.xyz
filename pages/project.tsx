@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import useSWR from "swr";
 import ReactLoading from "react-loading";
 import Head from "next/head";
 import Image from "next/image";
@@ -9,9 +8,14 @@ import { ScrollPanel } from "primereact/scrollpanel";
 import { Button } from "primereact/button";
 import { ProjectData } from "types";
 import { slideLeftEntrance } from "animation";
+import { useQuery } from "@apollo/client";
+import { QUERY_GET_ALL_PROJECTS } from "utils";
 
 const Project = () => {
-  const { data } = useSWR("/api/project");
+  const { data, loading } = useQuery(QUERY_GET_ALL_PROJECTS, {
+    notifyOnNetworkStatusChange: true,
+  });
+
   const router = useRouter();
 
   return (
@@ -56,66 +60,72 @@ const Project = () => {
           that i build according to me. More to come of course.
         </p>
         <div className="flex flex-wrap justify-around ">
-          {data ? (
-            (data as ProjectData[]).map((item) => {
-              return (
-                <motion.div
-                  key={item._id.toString()}
-                  variants={slideLeftEntrance}
-                  initial="hidden"
-                  animate="visible"
-                  transition={{
-                    delay: 1,
-                    duration: 0.5,
-                  }}
-                >
-                  <Card
-                    className=" overflow-hidden sm:w-96 m-4 min-w-[288px]"
-                    title={
-                      <p className=" text-transparent bg-clip-text bg-gradient-to-r  from-cyan-500 to-blue-500">
-                        {item.title}
-                      </p>
-                    }
-                    footer={
-                      <div className="flex flex-col sm:flex-row ">
-                        <Button
-                          icon="pi pi-arrow-right"
-                          label="Demo"
-                          iconPos="right"
-                          className="p-button-info"
-                          onClick={() => router.push(item.link_demo)}
-                        />
-
-                        <Button
-                          icon="pi pi-github"
-                          label="Repo/Code"
-                          iconPos="right"
-                          className="p-button-primary sm:ml-2 mt-4 sm:mt-0"
-                          onClick={() => router.push(item.link_repo)}
-                        />
-                      </div>
-                    }
-                    header={
-                      <div className="relative w-full h-64">
-                        <Image
-                          src={item.image}
-                          alt="Card"
-                          layout="fill"
-                          objectFit="cover"
-                        />
-                      </div>
-                    }
+          {!loading ? (
+            data ? (
+              (data.getAllProject as ProjectData[]).map((item) => {
+                return (
+                  <motion.div
+                    key={item._id.toString()}
+                    variants={slideLeftEntrance}
+                    initial="hidden"
+                    animate="visible"
+                    transition={{
+                      delay: 1,
+                      duration: 0.5,
+                    }}
                   >
-                    <ScrollPanel
-                      className="text-justify h-48 custom-scrollpanel pr-4 "
-                      style={{ lineHeight: "1.5" }}
+                    <Card
+                      className=" overflow-hidden sm:w-96 m-4 min-w-[288px]"
+                      title={
+                        <p className=" text-transparent bg-clip-text bg-gradient-to-r  from-cyan-500 to-blue-500">
+                          {item.title}
+                        </p>
+                      }
+                      footer={
+                        <div className="flex flex-col sm:flex-row ">
+                          <Button
+                            icon="pi pi-arrow-right"
+                            label="Demo"
+                            iconPos="right"
+                            className="p-button-info"
+                            onClick={() => router.push(item.link_demo)}
+                          />
+
+                          <Button
+                            icon="pi pi-github"
+                            label="Repo/Code"
+                            iconPos="right"
+                            className="p-button-primary sm:ml-2 mt-4 sm:mt-0"
+                            onClick={() => router.push(item.link_repo)}
+                          />
+                        </div>
+                      }
+                      header={
+                        <div className="relative w-full h-64">
+                          <Image
+                            src={item.image}
+                            alt="Card"
+                            layout="fill"
+                            objectFit="cover"
+                          />
+                        </div>
+                      }
                     >
-                      {item.description}
-                    </ScrollPanel>
-                  </Card>
-                </motion.div>
-              );
-            })
+                      <ScrollPanel
+                        className="text-justify h-48 custom-scrollpanel pr-4 "
+                        style={{ lineHeight: "1.5" }}
+                      >
+                        {item.description}
+                      </ScrollPanel>
+                    </Card>
+                  </motion.div>
+                );
+              })
+            ) : (
+              <div className="h-screen min-h-[568px] flex items-center justify-center">
+                <h1>No Project for now</h1>
+              </div>
+            )
           ) : (
             <div className="h-screen min-h-[568px] flex items-center justify-center">
               <ReactLoading type="cylon" height={100} width={100} />
