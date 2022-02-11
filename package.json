@@ -22,7 +22,7 @@
     "micro": "^9.3.4",
     "micro-cors": "^0.1.1",
     "mongoose": "^6.1.6",
-    "next": "12.0.7",
+    "next": "12.0.9",
     "postcss": "^8.4.5",
     "primeicons": "^5.0.0",
     "primereact": "^7.1.0",
