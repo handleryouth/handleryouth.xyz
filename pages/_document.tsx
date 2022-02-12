@@ -38,6 +38,7 @@ class MyDocument extends Document {
             as="fetch"
             crossOrigin="anonymous"
           />
+          <link rel="shortcut icon" href="/favicon.png" />
         </Head>
         <body>
           <Main />
