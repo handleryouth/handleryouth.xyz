@@ -121,7 +121,7 @@ const About = () => {
             <p className="text-xl">
               Programming is not the only thing i enjoy doing. i do like
               listening to classical music or orchestra. I even play some of
-              musical instrument like piano and guitar.
+              musical instruments like piano and guitar.
             </p>
           </motion.div>
         </motion.div>
