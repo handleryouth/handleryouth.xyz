@@ -16,9 +16,6 @@ const Home: NextPage = () => {
           name="keywords"
           content="NextJS, Tailwind, React, Redux, Tony David, handleryouth"
         />
-        <meta name="language" content="English" />
-        <meta name="author" content="Tony David" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <main className="profile-page">
         <section className="relative block h-500-px  sm:!h-[50vh] ">

@@ -27,9 +27,6 @@ const Project = () => {
           name="keywords"
           content="NextJS, Tailwind, React, Redux, Tony David, handleryouth, Project"
         />
-        <meta name="language" content="English" />
-        <meta name="author" content="Tony David" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className="relative w-full min-h-[384px] sm:h-[50vh]">
         <Image

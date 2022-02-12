@@ -22,9 +22,6 @@ const About = () => {
           name="keywords"
           content="NextJS, Tailwind, React, Redux, Tony David, handleryouth, About"
         />
-        <meta name="language" content="English" />
-        <meta name="author" content="Tony David" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className="relative w-full sm:h-[50vh] min-h-[384px] text-white ">
         <Image
