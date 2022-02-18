@@ -8,6 +8,7 @@ export const QUERY_GET_ALL_PROJECTS = gql`
       image
       link_demo
       link_repo
+      title
     }
   }
 `;

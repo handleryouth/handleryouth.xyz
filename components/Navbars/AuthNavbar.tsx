@@ -1,16 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { Twirl as Hamburger } from "hamburger-react";
-import { activateSidebar } from "features/sidebar";
 import { RootState } from "features";
+import { activateSidebar } from "features/sidebar";
 import { useRouter } from "next/router";
-import { useQuery } from "@apollo/client";
-import { QUERY_GET_ALL_PROJECTS } from "utils";
 
 export default function Navbar() {
   const router = useRouter();
-  const { client } = useQuery(QUERY_GET_ALL_PROJECTS);
-
   const dispatch = useDispatch();
   const { isOpen } = useSelector((state: RootState) => state.sidebar);
 
@@ -64,13 +60,12 @@ export default function Navbar() {
           >
             <ul className="flex flex-row list-none mr-auto">
               <motion.li
-                className="flex items-center"
                 whileHover={{
                   y: "-5px",
                 }}
               >
                 <span
-                  className="lg:text-white hover:text-blue-500 text-blueGray-700 px-3 py-4 lg:py-2  cursor-pointer transition-colors text-xs uppercase font-bold"
+                  className="custom-navbarlink text-blueGray-700"
                   onClick={() => {
                     router.push("/resume");
                   }}
@@ -80,33 +75,26 @@ export default function Navbar() {
               </motion.li>
 
               <motion.li
-                className="flex items-center"
                 whileHover={{
                   y: "-5px",
                 }}
               >
                 <span
-                  className="lg:text-white hover:text-blue-500 text-blueGray-700 px-3 py-4 lg:py-2  cursor-pointer transition-colors text-xs uppercase font-bold"
+                  className="custom-navbarlink text-blueGray-700"
                   onClick={() => {
                     router.push("/project");
                   }}
-                  onMouseOver={() =>
-                    client.query({
-                      query: QUERY_GET_ALL_PROJECTS,
-                    })
-                  }
                 >
                   Web Project
                 </span>
               </motion.li>
               <motion.li
-                className="flex items-center"
                 whileHover={{
                   y: "-5px",
                 }}
               >
                 <span
-                  className="lg:text-white hover:text-blue-500 text-blueGray-700 px-3 py-4 lg:py-2  cursor-pointer transition-colors text-xs uppercase font-bold"
+                  className="custom-navbarlink text-blueGray-700"
                   onClick={() => {
                     router.push("/about");
                   }}

@@ -3,20 +3,17 @@ import ReactLoading from "react-loading";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { Card } from "primereact/card";
-import { ScrollPanel } from "primereact/scrollpanel";
-import { Button } from "primereact/button";
+
 import { ProjectData } from "types";
 import { slideLeftEntrance } from "animation";
 import { useQuery } from "@apollo/client";
 import { QUERY_GET_ALL_PROJECTS } from "utils";
+import { Card } from "components";
 
 const Project = () => {
   const { data, loading } = useQuery(QUERY_GET_ALL_PROJECTS, {
     notifyOnNetworkStatusChange: true,
   });
-
-  const router = useRouter();
 
   return (
     <>
@@ -67,54 +64,17 @@ const Project = () => {
                     initial="hidden"
                     animate="visible"
                     transition={{
-                      delay: 1,
+                      delay: 0.8,
                       duration: 0.5,
                     }}
                   >
                     <Card
-                      className=" overflow-hidden sm:w-96 m-4 min-w-[288px]"
-                      title={
-                        <p className=" text-transparent bg-clip-text bg-gradient-to-r  from-cyan-500 to-blue-500">
-                          {item.title}
-                        </p>
-                      }
-                      footer={
-                        <div className="flex flex-col sm:flex-row ">
-                          <Button
-                            icon="pi pi-arrow-right"
-                            label="Demo"
-                            iconPos="right"
-                            className="p-button-info"
-                            onClick={() => router.push(item.link_demo)}
-                          />
-
-                          <Button
-                            icon="pi pi-github"
-                            label="Repo/Code"
-                            iconPos="right"
-                            className="p-button-primary sm:ml-2 mt-4 sm:mt-0"
-                            onClick={() => router.push(item.link_repo)}
-                          />
-                        </div>
-                      }
-                      header={
-                        <div className="relative w-full h-64">
-                          <Image
-                            src={item.image}
-                            alt="Card"
-                            layout="fill"
-                            objectFit="cover"
-                          />
-                        </div>
-                      }
-                    >
-                      <ScrollPanel
-                        className="text-justify h-48 custom-scrollpanel pr-4 "
-                        style={{ lineHeight: "1.5" }}
-                      >
-                        {item.description}
-                      </ScrollPanel>
-                    </Card>
+                      description={item.description}
+                      image={item.image}
+                      link_demo={item.link_demo}
+                      link_repo={item.link_repo}
+                      title={item.title}
+                    />
                   </motion.div>
                 );
               })

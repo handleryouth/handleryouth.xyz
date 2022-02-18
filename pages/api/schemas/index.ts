@@ -7,6 +7,7 @@ export const typeDefs = gql`
     description: String
     link_demo: String
     link_repo: String
+    title: String
   }
 
   type Query {
