@@ -39,6 +39,7 @@ class MyDocument extends Document {
             crossOrigin="anonymous"
           />
           <meta name="language" content="English" />
+          <meta name="theme-color" content="#4285f4" />
           <meta name="author" content="Tony David" />
           <link rel="shortcut icon" href="/favicon.png" />
         </Head>
