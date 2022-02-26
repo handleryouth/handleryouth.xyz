@@ -1,0 +1,17 @@
+{
+  "theme_color": "#4a90e2",
+  "background_color": "#4a90e2",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "name": "Tony Personal Website",
+  "short_name": "Tony",
+  "description": "Tony personal website and project",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ]
+}
