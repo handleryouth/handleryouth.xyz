@@ -16,6 +16,7 @@
     "apollo-server-micro": "^3.6.3",
     "autoprefixer": "^10.4.2",
     "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-import-helpers": "^1.2.1",
     "eslint-plugin-react": "^7.29.2",
     "follow-redirects": "^1.14.8",
     "framer-motion": "^6.2.6",
