@@ -111,9 +111,12 @@ class MyDocument extends Document {
             sizes="16x16"
             href="/icons/favicon-16x16.png"
           />
-          <link rel="manifest" href="/manifest.json" />
-          <meta name="msapplication-TileColor" content="#ffffff" />
-          <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+          <link rel="manifest" href="/icons/manifest.json" />
+          <meta name="msapplication-TileColor" content="#4285f4" />
+          <meta
+            name="msapplication-TileImage"
+            content="/icons/ms-icon-144x144.png"
+          />
           <meta name="theme-color" content="#4285f4" />
         </Head>
         <body>
