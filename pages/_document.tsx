@@ -44,7 +44,7 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#4285f4" />
           <meta name="author" content="Tony David" />
           <link rel="shortcut icon" href="/favicon.png" />
-          <link rel="apple-touch-icon" href="/apple-icon.png" />
+          <link rel="apple-touch-icon" href="/favicon.png" />
           <link rel="manifest" href="/manifest.json" />
         </Head>
         <body>
