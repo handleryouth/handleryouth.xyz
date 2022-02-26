@@ -38,6 +38,8 @@ class MyDocument extends Document {
             as="fetch"
             crossOrigin="anonymous"
           />
+          <meta charSet="utf-8" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta name="language" content="English" />
           <meta name="theme-color" content="#4285f4" />
           <meta name="author" content="Tony David" />
