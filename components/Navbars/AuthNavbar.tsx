@@ -1,9 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
-import { motion } from "framer-motion";
-import { Twirl as Hamburger } from "hamburger-react";
-import { RootState } from "features";
-import { activateSidebar } from "features/sidebar";
-import { useRouter } from "next/router";
+import { useDispatch, useSelector } from 'react-redux';
+import { motion } from 'framer-motion';
+import { Twirl as Hamburger } from 'hamburger-react';
+import { RootState } from 'features';
+import { activateSidebar } from 'features/sidebar';
+import { useRouter } from 'next/router';
 
 export default function Navbar() {
   const router = useRouter();
@@ -19,7 +19,7 @@ export default function Navbar() {
       x: 10,
       opacity: 1,
       transition: {
-        type: "tween",
+        type: 'tween',
         duration: 0.5,
       },
     },
@@ -32,12 +32,12 @@ export default function Navbar() {
           <motion.div
             className="w-full relative flex justify-between items-center lg:w-auto lg:static lg:block lg:justify-start "
             variants={listContainer}
-            animate={"visible"}
-            initial={"hidden"}
+            animate={'visible'}
+            initial={'hidden'}
           >
             <p
               className=" font-bold text-xl text-white cursor-pointer mr-3"
-              onClick={() => router.push("/")}
+              onClick={() => router.push('/')}
             >
               Tony David
             </p>
@@ -52,22 +52,22 @@ export default function Navbar() {
           </motion.div>
           <motion.div
             className={
-              "hidden lg:flex flex-grow items-center  lg:bg-opacity-0 lg:shadow-none"
+              'hidden lg:flex flex-grow items-center  lg:bg-opacity-0 lg:shadow-none'
             }
             variants={listContainer}
-            animate={"visible"}
-            initial={"hidden"}
+            animate={'visible'}
+            initial={'hidden'}
           >
             <ul className="flex flex-row list-none mr-auto">
               <motion.li
                 whileHover={{
-                  y: "-5px",
+                  y: '-5px',
                 }}
               >
                 <span
                   className="custom-navbarlink text-blueGray-700"
                   onClick={() => {
-                    router.push("/resume");
+                    router.push('/resume');
                   }}
                 >
                   My Resume
@@ -76,13 +76,13 @@ export default function Navbar() {
 
               <motion.li
                 whileHover={{
-                  y: "-5px",
+                  y: '-5px',
                 }}
               >
                 <span
                   className="custom-navbarlink text-blueGray-700"
                   onClick={() => {
-                    router.push("/project");
+                    router.push('/project');
                   }}
                 >
                   Web Project
@@ -90,13 +90,13 @@ export default function Navbar() {
               </motion.li>
               <motion.li
                 whileHover={{
-                  y: "-5px",
+                  y: '-5px',
                 }}
               >
                 <span
                   className="custom-navbarlink text-blueGray-700"
                   onClick={() => {
-                    router.push("/about");
+                    router.push('/about');
                   }}
                 >
                   About

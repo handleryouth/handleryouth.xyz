@@ -47,15 +47,12 @@ Remove the margin in all browsers.
 
 body {
   margin: 0;
+  font-family: "Inter" !important;
 }
 
 /**
 Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
 */
-
-body {
-  font-family: "Inter";
-}
 
 /*
 Grouping content

@@ -1,5 +1,5 @@
-import { Schema, models, model, Types } from "mongoose";
-import { ProjectData } from "types";
+import { Schema, models, model, Types } from 'mongoose';
+import { ProjectData } from 'types';
 
 const projectSchema = new Schema<ProjectData>({
   _id: {
@@ -14,11 +14,11 @@ const projectSchema = new Schema<ProjectData>({
     type: String,
     required: true,
   },
-  link_demo: {
+  linkDemo: {
     type: String,
     required: true,
   },
-  link_repo: {
+  linkRepo: {
     type: String,
     required: true,
   },
@@ -28,4 +28,4 @@ const projectSchema = new Schema<ProjectData>({
   },
 });
 
-export default models.Project || model("Project", projectSchema);
+export default models.Project || model('Project', projectSchema);

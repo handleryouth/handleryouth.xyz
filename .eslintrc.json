@@ -1,3 +1,17 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "next",
+    "prettier",
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": ["react"],
+  "rules": {
+    "no-console": "warn",
+    "react/react-in-jsx-scope": "off",
+    "camelcase": "warn",
+    "eqeqeq": "warn"
+  },
+  "ignorePatterns": ["next.config.js", "node_modules/", "public/", "build/", "static/"]
 }

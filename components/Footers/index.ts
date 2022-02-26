@@ -1,3 +1,3 @@
-export * from "./FooterSmall";
+export * from './FooterSmall';
 
-export { default as FooterSmall } from "./FooterSmall";
+export { default as FooterSmall } from './FooterSmall';

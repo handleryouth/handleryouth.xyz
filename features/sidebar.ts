@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 export const sidebarSlice = createSlice({
-  name: "sidebar",
+  name: 'sidebar',
   initialState: {
     isOpen: false,
   },

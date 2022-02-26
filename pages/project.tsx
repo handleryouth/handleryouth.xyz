@@ -1,14 +1,12 @@
-import { motion } from "framer-motion";
-import ReactLoading from "react-loading";
-import Head from "next/head";
-import Image from "next/image";
-import { useRouter } from "next/router";
-
-import { ProjectData } from "types";
-import { slideLeftEntrance } from "animation";
-import { useQuery } from "@apollo/client";
-import { QUERY_GET_ALL_PROJECTS } from "utils";
-import { Card } from "components";
+import { motion } from 'framer-motion';
+import ReactLoading from 'react-loading';
+import Head from 'next/head';
+import Image from 'next/image';
+import { ProjectData } from 'types';
+import { slideLeftEntrance } from 'animation';
+import { useQuery } from '@apollo/client';
+import { QUERY_GET_ALL_PROJECTS } from 'utils';
+import { Card } from 'components';
 
 const Project = () => {
   const { data, loading } = useQuery(QUERY_GET_ALL_PROJECTS, {
@@ -48,15 +46,16 @@ const Project = () => {
 
       <div className="bg-gradient-to-r from-[#6190E8] to-[#A7BFE8] py-8">
         <p className="text-white text-center sm:w-96 sm:mx-auto my-4 leading-7 px-4">
-          As i working myself to be a Frontend Developer, i struggle with a lot
-          of projects. eventhough those projects are hard, they always give me
-          something new and precious to learn. Here are some of my top projects
-          that i build according to me. More to come of course.
+          As i working myself to be a Frontend Developer, i struggle with a lot of projects.
+          eventhough those projects are hard, they always give me something new and precious to
+          learn. Here are some of my top projects that i build according to me. More to come of
+          course.
         </p>
+
         <div className="flex flex-wrap justify-around ">
           {!loading ? (
             data ? (
-              (data.getAllProject as ProjectData[]).map((item) => {
+              (data.getAllProject as ProjectData[]).map(item => {
                 return (
                   <motion.div
                     key={item._id.toString()}
@@ -71,8 +70,8 @@ const Project = () => {
                     <Card
                       description={item.description}
                       image={item.image}
-                      link_demo={item.link_demo}
-                      link_repo={item.link_repo}
+                      linkDemo={item.linkDemo}
+                      linkRepo={item.linkRepo}
                       title={item.title}
                     />
                   </motion.div>

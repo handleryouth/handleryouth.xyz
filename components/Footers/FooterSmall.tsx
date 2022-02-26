@@ -1,11 +1,12 @@
-import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { GrMail } from "react-icons/gr";
-import { useRouter } from "next/router";
-import { CustomTooltip } from "components";
+import { motion } from 'framer-motion';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { GrMail } from 'react-icons/gr';
+import { useRouter } from 'next/router';
+import { CustomTooltip } from 'components';
 
 export default function FooterSmall() {
   const router = useRouter();
+
   return (
     <>
       <footer className=" bg-gradient-to-r from-[#4568DC] to-[#B06AB3]  border-t-2 border-slate-800 px-8 ">
@@ -14,7 +15,7 @@ export default function FooterSmall() {
           <ul className="flex justify-center text-3xl  mt-4">
             <li
               className="mx-2 cursor-pointer"
-              onClick={() => router.push("https://github.com/handleryouth")}
+              onClick={() => router.push('https://github.com/handleryouth')}
             >
               <CustomTooltip
                 target="github"
@@ -32,7 +33,7 @@ export default function FooterSmall() {
             </li>
             <li
               className="mx-2 cursor-pointer"
-              onClick={() => router.push("https://www.linkedin.com/in/tonydg/")}
+              onClick={() => router.push('https://www.linkedin.com/in/tonydg/')}
             >
               <CustomTooltip
                 target="linkedin"
@@ -56,13 +57,13 @@ export default function FooterSmall() {
                   className=" hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors"
                   whileHover={{ y: -10 }}
                 >
-                  <span onClick={() => router.push("/resume")}>My Resume</span>
+                  <span onClick={() => router.push('/resume')}>My Resume</span>
                 </motion.li>
                 <motion.li
                   className="hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors"
                   whileHover={{ y: -10 }}
                 >
-                  <span onClick={() => router.push("/project")}>
+                  <span onClick={() => router.push('/project')}>
                     Web Project
                   </span>
                 </motion.li>
@@ -70,7 +71,7 @@ export default function FooterSmall() {
                   className="hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors"
                   whileHover={{ y: -10 }}
                 >
-                  <span onClick={() => router.push("/about")}>About</span>
+                  <span onClick={() => router.push('/about')}>About</span>
                 </motion.li>
               </ul>
             </div>

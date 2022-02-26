@@ -5,7 +5,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint  ./ --ext js,jsx,ts,tsx"
   },
   "dependencies": {
     "@apollo/client": "^3.5.8",
@@ -15,6 +15,8 @@
     "@types/react-redux": "^7.1.22",
     "apollo-server-micro": "^3.6.3",
     "autoprefixer": "^10.4.2",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-react": "^7.29.2",
     "follow-redirects": "^1.14.8",
     "framer-motion": "^6.2.6",
     "graphql": "^16.3.0",
@@ -25,6 +27,7 @@
     "next": "12.1.0",
     "next-pwa": "^5.4.4",
     "postcss": "^8.4.6",
+    "prettier": "^2.5.1",
     "primeicons": "^5.0.0",
     "primereact": "^7.2.0",
     "react": "17.0.2",

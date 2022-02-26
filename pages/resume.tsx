@@ -1,12 +1,12 @@
-import { useCallback, useState } from "react";
-import { motion } from "framer-motion";
-import { Document, Page, pdfjs } from "react-pdf";
-import Image from "next/image";
-import { ConfirmDialog } from "primereact/confirmdialog";
-import { Button } from "primereact/button";
-import { useRouter } from "next/router";
-import Head from "next/head";
-import { slideLeftEntrance } from "animation";
+import { useCallback, useState } from 'react';
+import { motion } from 'framer-motion';
+import { Document, Page, pdfjs } from 'react-pdf';
+import Image from 'next/image';
+import { ConfirmDialog } from 'primereact/confirmdialog';
+import { Button } from 'primereact/button';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
+import { slideLeftEntrance } from 'animation';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const Resume = () => {
@@ -19,7 +19,7 @@ const Resume = () => {
 
   const handleExternalView = useCallback(() => {
     router.push(
-      "https://drive.google.com/file/d/1cK6ETW4kmdUYgf1eW8cfMEfSFljuJa82/view?usp=sharing"
+      'https://drive.google.com/file/d/1cK6ETW4kmdUYgf1eW8cfMEfSFljuJa82/view?usp=sharing'
     );
     setShowDialog(false);
   }, [router]);
@@ -94,18 +94,10 @@ const Resume = () => {
           <Button
             icon="pi pi-chevron-left"
             className="p-button-rounded p-button-text"
-            onClick={() =>
-              setPageNumber((prevState) =>
-                prevState - 1 === 0 ? 2 : prevState - 1
-              )
-            }
+            onClick={() => setPageNumber(prevState => (prevState - 1 === 0 ? 2 : prevState - 1))}
           />
           <div className="text-center ">
-            <Document
-              file="/cv.pdf"
-              onLoadSuccess={onDocumentLoadSuccess}
-              className=""
-            >
+            <Document file="/cv.pdf" onLoadSuccess={onDocumentLoadSuccess} className="">
               <Page pageNumber={pageNumber} />
             </Document>
             <p className="my-4">
@@ -116,11 +108,7 @@ const Resume = () => {
           <Button
             icon="pi pi-chevron-right"
             className="p-button-rounded p-button-text p-button-info"
-            onClick={() =>
-              setPageNumber((prevState) =>
-                prevState + 1 === 3 ? 1 : prevState + 1
-              )
-            }
+            onClick={() => setPageNumber(prevState => (prevState + 1 === 3 ? 1 : prevState + 1))}
           />
         </div>
       </div>

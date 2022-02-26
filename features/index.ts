@@ -1,5 +1,5 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { sidebarSlice } from "./sidebar";
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { sidebarSlice } from './sidebar';
 
 export const rootReducer = combineReducers({
   sidebar: sidebarSlice.reducer,

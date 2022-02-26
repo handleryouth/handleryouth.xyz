@@ -1,10 +1,10 @@
-import { NextPage } from "next";
-import { motion } from "framer-motion";
-import Head from "next/head";
-import Image from "next/image";
-import { FaMapMarkerAlt, FaUniversity } from "react-icons/fa";
-import { FiBriefcase } from "react-icons/fi";
-import { slideLeftEntrance } from "animation";
+import { NextPage } from 'next';
+import { motion } from 'framer-motion';
+import Head from 'next/head';
+import Image from 'next/image';
+import { FaMapMarkerAlt, FaUniversity } from 'react-icons/fa';
+import { FiBriefcase } from 'react-icons/fi';
+import { slideLeftEntrance } from 'animation';
 
 const Home: NextPage = () => {
   return (
@@ -12,10 +12,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Tony David Personal Website</title>
         <meta name="description" content="Tony David personal website" />
-        <meta
-          name="keywords"
-          content="NextJS, Tailwind, React, Redux, Tony David, handleryouth"
-        />
+        <meta name="keywords" content="NextJS, Tailwind, React, Redux, Tony David, handleryouth" />
       </Head>
       <main className="profile-page">
         <section className="relative block h-500-px  sm:!h-[50vh] ">
@@ -26,10 +23,7 @@ const Home: NextPage = () => {
                 "url('https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2710&q=80')",
             }}
           >
-            <span
-              id="blackOverlay"
-              className="w-full h-full absolute opacity-50 bg-black"
-            ></span>
+            <span id="blackOverlay" className="w-full h-full absolute opacity-50 bg-black"></span>
           </div>
         </section>
         <section className="relative py-16 bg-gradient-to-r from-[#1488CC] to-[#2B32B2] sm:h-[50vh] sm:min-h-[500px] ">
@@ -39,7 +33,7 @@ const Home: NextPage = () => {
               initial="hidden"
               animate="visible"
               transition={{
-                when: "beforeChildren",
+                when: 'beforeChildren',
                 delay: 0.8,
                 staggerChildren: 0.25,
               }}
@@ -93,14 +87,12 @@ const Home: NextPage = () => {
                   <div className="flex flex-wrap justify-center">
                     <div className="w-full lg:w-9/12 px-4">
                       <p className="mb-4 text-lg leading-relaxed text-blueGray-700">
-                        Tony is an Electrical Engineering student who still
-                        studying at the Sepuluh Nopember Institute of
-                        Technology. He is interested in studying in the computer
-                        field, especially hardware. Being consistent in work and
-                        politeness are his main characteristics. he loves
-                        learning programming languages (Python, Javascript,
-                        etc). Right now, he is pursuing his career as a FrontEnd
-                        Engineer
+                        Tony is an Electrical Engineering student who still studying at the Sepuluh
+                        Nopember Institute of Technology. He is interested in studying in the
+                        computer field, especially hardware. Being consistent in work and politeness
+                        are his main characteristics. he loves learning programming languages
+                        (Python, Javascript, etc). Right now, he is pursuing his career as a
+                        FrontEnd Engineer
                       </p>
                     </div>
                   </div>

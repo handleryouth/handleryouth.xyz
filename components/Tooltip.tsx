@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import { Tooltip } from "primereact/tooltip";
+import { ReactNode } from 'react';
+import { Tooltip } from 'primereact/tooltip';
 
 interface TooltipProps {
   target: string;

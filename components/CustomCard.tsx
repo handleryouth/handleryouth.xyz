@@ -1,17 +1,17 @@
-import { ProjectData } from "types";
-import { Card } from "primereact/card";
-import { ScrollPanel } from "primereact/scrollpanel";
-import { Button } from "primereact/button";
-import Image from "next/image";
-import { useRouter } from "next/router";
+import { ProjectData } from 'types';
+import { Card } from 'primereact/card';
+import { ScrollPanel } from 'primereact/scrollpanel';
+import { Button } from 'primereact/button';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 const CustomCard = ({
   description,
   image,
-  link_demo,
-  link_repo,
+  linkDemo,
+  linkRepo,
   title,
-}: Omit<ProjectData, "_id">) => {
+}: Omit<ProjectData, '_id'>) => {
   const router = useRouter();
 
   return (
@@ -29,7 +29,7 @@ const CustomCard = ({
             label="Demo"
             iconPos="right"
             className="p-button-info"
-            onClick={() => router.push(link_demo)}
+            onClick={() => router.push(linkDemo)}
           />
 
           <Button
@@ -37,7 +37,7 @@ const CustomCard = ({
             label="Repo/Code"
             iconPos="right"
             className="p-button-primary sm:ml-2 mt-4 sm:mt-0"
-            onClick={() => router.push(link_repo)}
+            onClick={() => router.push(linkRepo)}
           />
         </div>
       }
@@ -49,7 +49,7 @@ const CustomCard = ({
     >
       <ScrollPanel
         className="text-justify h-48 custom-scrollpanel pr-4 "
-        style={{ lineHeight: "1.5" }}
+        style={{ lineHeight: '1.5' }}
       >
         {description}
       </ScrollPanel>

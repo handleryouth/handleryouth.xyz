@@ -23,7 +23,7 @@ const SidebarComponent = () => {
 
   const customIcons = useMemo(() => {
     return (
-      <ul className="text-4xl flex items-center justify-center mr-4">
+      <ul className="text-4xl flex items-center justify-center mr-4 h-12">
         <motion.li
           whileHover={{
             y: [0, -10, 0],

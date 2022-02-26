@@ -5,6 +5,6 @@ export interface ProjectData {
   image: string;
   title: string;
   description: string;
-  link_demo: string;
-  link_repo: string;
+  linkDemo: string;
+  linkRepo: string;
 }
