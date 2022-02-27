@@ -4,31 +4,17 @@ import { Twirl as Hamburger } from 'hamburger-react';
 import { RootState } from 'features';
 import { activateSidebar } from 'features/sidebar';
 import { useRouter } from 'next/router';
+import { listContainer } from 'animation';
 
 export default function Navbar() {
   const router = useRouter();
   const dispatch = useDispatch();
   const { isOpen } = useSelector((state: RootState) => state.sidebar);
 
-  const listContainer = {
-    hidden: {
-      opacity: 0,
-      x: -10,
-    },
-    visible: {
-      x: 10,
-      opacity: 1,
-      transition: {
-        type: 'tween',
-        duration: 0.5,
-      },
-    },
-  };
-
   return (
     <>
-      <nav className="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-black/60 ">
-        <div className="container px-4 mx-auto flex flex-wrap items-center justify-between ">
+      <nav className="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 bg-black/60 ">
+        <div className="px-4 w-full flex flex-wrap items-center justify-between">
           <motion.div
             className="w-full relative flex justify-between items-center lg:w-auto lg:static lg:block lg:justify-start "
             variants={listContainer}
@@ -36,7 +22,7 @@ export default function Navbar() {
             initial={'hidden'}
           >
             <p
-              className=" font-bold text-xl text-white cursor-pointer mr-3"
+              className=" font-bold text-xl text-white transition-colors ease-out cursor-pointer mr-3 hover:custom-gradient-text hover:from-pink-500 hover:to-violet-500"
               onClick={() => router.push('/')}
             >
               Tony David
@@ -51,9 +37,7 @@ export default function Navbar() {
             </button>
           </motion.div>
           <motion.div
-            className={
-              'hidden lg:flex flex-grow items-center  lg:bg-opacity-0 lg:shadow-none'
-            }
+            className={'hidden lg:flex flex-grow items-center lg:bg-opacity-0 lg:shadow-none'}
             variants={listContainer}
             animate={'visible'}
             initial={'hidden'}

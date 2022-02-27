@@ -1,14 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("./notus.css");
+@import url('./notus.css');
 
 @layer components {
   .custom-scrollpanel .p-scrollpanel-bar {
     @apply bg-slate-500 transition-colors  opacity-100 hover:bg-[#243c5a];
   }
 
+  .custom-gradient-text {
+    @apply bg-clip-text bg-gradient-to-r text-transparent;
+  }
   .custom-navbarlink {
-    @apply lg:text-white hover:text-blue-500  px-3 py-4 lg:py-2  cursor-pointer transition-colors text-xs uppercase font-bold;
+    @apply text-white px-3 py-4 lg:py-2 cursor-pointer transition-colors text-xs uppercase font-bold hover:custom-gradient-text hover:from-pink-500 hover:to-violet-500;
   }
 }

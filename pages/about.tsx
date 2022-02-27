@@ -84,7 +84,7 @@ const About = () => {
 
           <motion.div variants={slideLeftEntrance}>
             <h3 className="font-semibold mt-12 text-3xl mb-2 ">Tech Stacks</h3>
-            <p className="text-xl">
+            <div className="text-xl">
               I use the following technologies to build this website.
               <ul className="flex text-5xl mt-4 flex-wrap">
                 <li className="mt-2 mr-2">
@@ -109,7 +109,7 @@ const About = () => {
                   <SiGraphql />
                 </li>
               </ul>
-            </p>
+            </div>
           </motion.div>
 
           <motion.div variants={slideLeftEntrance}>

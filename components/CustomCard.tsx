@@ -17,11 +17,7 @@ const CustomCard = ({
   return (
     <Card
       className=" overflow-hidden sm:w-96 m-4 min-w-[288px]"
-      title={
-        <p className=" text-transparent bg-clip-text bg-gradient-to-r  from-cyan-500 to-blue-500">
-          {title}
-        </p>
-      }
+      title={<p className=" custom-gradient-text from-cyan-500 to-blue-500">{title}</p>}
       footer={
         <div className="flex flex-col sm:flex-row ">
           <Button
