@@ -44,8 +44,8 @@ export default function FooterSmall() {
                 Copyright © {new Date().getFullYear()} Tony David
               </div>
             </div>
-            <div className="w-full md:w-8/12 ">
-              <ul className="flex flex-wrap list-none md:justify-end  justify-center ">
+            <div className="w-full md:w-8/12 prose-ul:pl-0 mt-2">
+              <ul className="flex flex-wrap list-none justify-center prose-li:pl-0 prose-li:my-0  ">
                 <motion.li
                   className=" hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors"
                   whileHover={{ y: -10 }}

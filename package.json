@@ -29,8 +29,6 @@
     "next": "12.1.0",
     "next-pwa": "^5.4.4",
     "postcss": "^8.4.6",
-    "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-preset-env": "^7.4.1",
     "preact": "^10.6.6",
     "prettier": "^2.5.1",
     "primeicons": "^5.0.0",
