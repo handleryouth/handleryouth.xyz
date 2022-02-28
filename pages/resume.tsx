@@ -54,6 +54,7 @@ const Resume = () => {
             alt="..."
             layout="fill"
             objectFit="cover"
+            priority
           />
           <motion.h1
             className="absolute tracking-widest font-bold text-3xl flex items-center justify-center h-full w-full text-white"
@@ -61,8 +62,8 @@ const Resume = () => {
             initial="hidden"
             animate="visible"
             transition={{
-              delay: 0.3,
-              duration: 0.5,
+              delay: 0.8,
+              duration: 0.3,
             }}
           >
             Resume

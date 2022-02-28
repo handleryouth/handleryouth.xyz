@@ -34,8 +34,8 @@ const Home: NextPage = () => {
               animate="visible"
               transition={{
                 when: 'beforeChildren',
-                delay: 0.8,
-                staggerChildren: 0.25,
+                delay: 1,
+                staggerChildren: 0.3,
               }}
             >
               <div className="px-6">

@@ -2,8 +2,8 @@ import { Provider } from 'react-redux';
 import { store } from 'features';
 import type { AppProps } from 'next/app';
 import { Layout } from 'components';
-import '@fontsource/inter';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import '@fontsource/inter';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
