@@ -37,17 +37,16 @@ export default function FooterSmall() {
           </ul>
         </div>
 
-        <div className="container mx-auto  py-4 flex flex-row justify-between ">
-          <div className="flex flex-wrap items-center text-white md:justify-between justify-center w-full">
-            <div className="w-full md:w-4/12 ">
-              <div className="text-sm font-semibold py-1 text-center md:text-left cursor-default">
-                Copyright © {new Date().getFullYear()} Tony David
-              </div>
+        <div className="mx-auto py-4 flex lg:w-4/5 max-w-[1100px] justify-between ">
+          <div className="flex flex-col sm:flex-row items-center text-white sm:justify-between justify-center w-full">
+            <div className="text-sm font-semibold py-1 md:text-left cursor-default">
+              Copyright © {new Date().getFullYear()} Tony David
             </div>
-            <div className="w-full md:w-8/12 prose-ul:pl-0 mt-2">
-              <ul className="flex flex-wrap list-none justify-center prose-li:pl-0 prose-li:my-0  ">
+
+            <div className="prose-ul:pl-0 mt-2 sm:mt-0">
+              <ul className="flex flex-wrap prose-li:pl-0 prose-li:my-0  ">
                 <motion.li
-                  className=" hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors"
+                  className="hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors"
                   whileHover={{ y: -10 }}
                 >
                   <span onClick={() => router.push('/resume')}>My Resume</span>
