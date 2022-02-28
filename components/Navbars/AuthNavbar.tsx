@@ -13,7 +13,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 bg-black/60 ">
+      <nav className="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 bg-black/60 ">
         <div className="px-4 w-full flex flex-wrap items-center justify-between">
           <motion.div
             className="w-full relative flex justify-between items-center lg:w-auto lg:static lg:block lg:justify-start "
@@ -22,7 +22,7 @@ export default function Navbar() {
             initial={'hidden'}
           >
             <p
-              className=" font-bold text-xl text-white transition-colors ease-out cursor-pointer mr-3 hover:custom-gradient-text hover:from-pink-500 hover:to-violet-500"
+              className=" font-bold text-xl text-white transition-colors ease-out cursor-pointer  hover:custom-gradient-text hover:from-pink-500 hover:to-violet-500"
               onClick={() => router.push('/')}
             >
               Tony David

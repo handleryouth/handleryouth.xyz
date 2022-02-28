@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('./notus.css');
 
 @layer components {
   .custom-scrollpanel .p-scrollpanel-bar {

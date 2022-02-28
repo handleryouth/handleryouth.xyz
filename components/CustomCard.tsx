@@ -16,8 +16,12 @@ const CustomCard = ({
 
   return (
     <Card
-      className=" overflow-hidden sm:w-96 m-4 min-w-[288px]"
-      title={<p className=" custom-gradient-text from-cyan-500 to-blue-500">{title}</p>}
+      className="overflow-hidden prose sm:w-96 m-4 min-w-[300px]"
+      title={
+        <h3 className=" text-2xl font-bold custom-gradient-text from-cyan-500 to-blue-500 m-0">
+          {title}
+        </h3>
+      }
       footer={
         <div className="flex flex-col sm:flex-row ">
           <Button
@@ -43,10 +47,7 @@ const CustomCard = ({
         </div>
       }
     >
-      <ScrollPanel
-        className="text-justify h-48 custom-scrollpanel pr-4 "
-        style={{ lineHeight: '1.5' }}
-      >
+      <ScrollPanel className="prose text-justify h-48 custom-scrollpanel pr-4 ">
         {description}
       </ScrollPanel>
     </Card>

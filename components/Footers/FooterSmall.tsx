@@ -10,11 +10,11 @@ export default function FooterSmall() {
   return (
     <>
       <footer className=" bg-gradient-to-r from-[#4568DC] to-[#B06AB3]  border-t-2 border-slate-800 px-8 ">
-        <div className="mt-4  border-b-2 pb-4 text-white">
+        <div className="border-b-2 pb-4 prose-li:pl-0 prose-ul:pl-0 prose-ul:text-white prose-li:cursor-pointer prose-h3:text-white prose-li:text-3xl prose-li:mx-2 prose-li:my-0 prose-ul:my-2">
           <h3 className="text-xl text-center">Reach me out on</h3>
           <ul className="flex justify-center text-3xl  mt-4">
             <li
-              className="mx-2 cursor-pointer"
+              className="cursor-pointer"
               onClick={() => router.push('https://github.com/handleryouth')}
             >
               <CustomTooltip
@@ -24,22 +24,15 @@ export default function FooterSmall() {
               />
             </li>
 
-            <li className="mx-2 cursor-pointer">
+            <li>
               <CustomTooltip
                 target="mail"
                 text="Email me: rafaeltonydavid@yahoo.com"
                 icon={<GrMail />}
               />
             </li>
-            <li
-              className="mx-2 cursor-pointer"
-              onClick={() => router.push('https://www.linkedin.com/in/tonydg/')}
-            >
-              <CustomTooltip
-                target="linkedin"
-                text="I'm on LinkedIn"
-                icon={<FaLinkedin />}
-              />
+            <li onClick={() => router.push('https://www.linkedin.com/in/tonydg/')}>
+              <CustomTooltip target="linkedin" text="I'm on LinkedIn" icon={<FaLinkedin />} />
             </li>
           </ul>
         </div>
@@ -63,9 +56,7 @@ export default function FooterSmall() {
                   className="hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors"
                   whileHover={{ y: -10 }}
                 >
-                  <span onClick={() => router.push('/project')}>
-                    Web Project
-                  </span>
+                  <span onClick={() => router.push('/project')}>Web Project</span>
                 </motion.li>
                 <motion.li
                   className="hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors"

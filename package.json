@@ -11,6 +11,7 @@
     "@apollo/client": "^3.5.8",
     "@fontsource/inter": "^4.5.4",
     "@reduxjs/toolkit": "^1.7.2",
+    "@tailwindcss/typography": "^0.5.2",
     "@types/micro-cors": "^0.1.2",
     "@types/react-redux": "^7.1.22",
     "apollo-server-micro": "^3.6.3",

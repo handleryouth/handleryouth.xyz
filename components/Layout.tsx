@@ -12,7 +12,7 @@ function Layout({ children }: { children: ReactNode }) {
       </Head>
       <Sidebar />
 
-      <div className="min-w-[320px]">
+      <div className="min-w-[320px] !max-w-none prose prose-ul:list-none">
         <AuthNavbar />
         {children}
         <FooterSmall />

@@ -32,7 +32,7 @@ const About = () => {
           priority
         />
         <motion.h1
-          className="absolute tracking-widest font-bold text-3xl flex items-center justify-center h-full w-full"
+          className="text-white absolute tracking-widest font-bold text-3xl flex items-center justify-center h-full w-full"
           variants={slideLeftEntrance}
           initial="hidden"
           animate="visible"
@@ -45,7 +45,7 @@ const About = () => {
         </motion.h1>
       </div>
 
-      <div className="pt-4 flex text-white flex-col justify-center items-center  p-8 bg-gradient-to-r from-[#000046] to-[#1CB5E0] sm:min-h-[1194px] sm:h-[100vh]  ">
+      <div className="pt-4 flex text-white not-prose  flex-col justify-center items-center  p-8 bg-gradient-to-r from-[#000046] to-[#1CB5E0] sm:min-h-[1194px] sm:h-[100vh]  ">
         <motion.div
           className="max-w-[55rem] flex flex-col md:block"
           variants={slideLeftEntrance}
@@ -64,7 +64,10 @@ const About = () => {
           >
             <Image src="/236782.png" alt="Author Image" layout="fill" />
           </motion.div>
-          <motion.h3 className="text-4xl sm:text-6xl font-bold mb-2 " variants={slideLeftEntrance}>
+          <motion.h3
+            className="text-white text-4xl sm:text-6xl font-bold mb-2 "
+            variants={slideLeftEntrance}
+          >
             The Author
           </motion.h3>
           <motion.p className="text-xl" variants={slideLeftEntrance}>
