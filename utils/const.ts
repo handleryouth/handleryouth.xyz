@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
 
 export const QUERY_GET_ALL_PROJECTS = gql`
   query getData {
@@ -6,8 +6,8 @@ export const QUERY_GET_ALL_PROJECTS = gql`
       _id
       description
       image
-      link_demo
-      link_repo
+      linkDemo
+      linkRepo
       title
     }
   }

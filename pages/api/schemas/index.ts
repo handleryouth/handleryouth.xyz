@@ -5,8 +5,8 @@ export const typeDefs = gql`
     _id: String
     image: String
     description: String
-    link_demo: String
-    link_repo: String
+    linkDemo: String
+    linkRepo: String
     title: String
   }
 
