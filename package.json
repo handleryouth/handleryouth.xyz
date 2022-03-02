@@ -5,7 +5,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint  ./ --ext js,jsx,ts,tsx"
+    "lint": "eslint  ./ --ext js,jsx,ts,tsx",
+    "commit": "cz"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "dependencies": {
     "@apollo/client": "^3.5.8",
@@ -16,6 +22,8 @@
     "@types/react-redux": "^7.1.22",
     "apollo-server-micro": "^3.6.3",
     "autoprefixer": "^10.4.2",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint-config-prettier": "^8.4.0",
     "eslint-plugin-import-helpers": "^1.2.1",
     "eslint-plugin-react": "^7.29.2",
