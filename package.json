@@ -7,7 +7,8 @@
     "start": "next start",
     "lint": "eslint  ./ --ext js,jsx,ts,tsx",
     "commit": "cz",
-    "husky-install": "husky install"
+    "husky-install": "husky install",
+    "prepare": "husky install"
   },
   "config": {
     "commitizen": {
@@ -67,6 +68,7 @@
     "@types/react-pdf": "^5.0.9",
     "eslint": "8.9.0",
     "eslint-config-next": "12.0.10",
-    "typescript": "4.5.5"
+    "typescript": "4.5.5",
+    "husky": "^7.0.0"
   }
 }
