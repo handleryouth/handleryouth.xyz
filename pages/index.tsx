@@ -5,7 +5,6 @@ import { slideLeftEntrance } from 'animation';
 import { ProgressSpinner } from 'primereact/progressspinner';
 import { ActivityDescription, CardThumbnail, Section } from 'components';
 import { ProjectData } from 'types';
-import { Image as PrimeImage } from 'primereact/image';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -142,12 +141,16 @@ const Home: NextPage = () => {
                 </h3>
               </Link>
 
-              <PrimeImage
-                src="/startingpage.png"
-                template={<p className="text-2xl prose text-white">See Image</p>}
-                alt="Interesting Projects"
-                preview
-              />
+              <div className="block mt-4">
+                <Image
+                  src="/startingpage.png"
+                  alt="Starting Page for Browser"
+                  width={1920}
+                  height={1080}
+                  layout="responsive"
+                  priority
+                />
+              </div>
             </div>
           }
         />
