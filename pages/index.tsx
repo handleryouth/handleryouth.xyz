@@ -45,7 +45,7 @@ const Home: NextPage = () => {
             <div className="flex items-center flex-col md:flex-row ">
               <div className=" rounded-full p-2 mr-8 flex items-center justify-center shadow-lg">
                 <Image
-                  src="/homephoto.png"
+                  src="/homephoto.webp"
                   alt="Tony David"
                   layout="fixed"
                   width={250}
@@ -143,7 +143,7 @@ const Home: NextPage = () => {
 
               <div className="block mt-4">
                 <Image
-                  src="/startingpage.png"
+                  src="/startingpage.webp"
                   alt="Starting Page for Browser"
                   width={1920}
                   height={1080}

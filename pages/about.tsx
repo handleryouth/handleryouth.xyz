@@ -43,7 +43,7 @@ const About = () => {
                 className=" sm:mr-4 relative sm:float-left w-[200px] mb-8 sm:mb-0 mx-auto md:w-[230px] h-[20rem] rounded-md overflow-hidden "
                 variants={slideLeftEntrance}
               >
-                <Image src="/236782.png" alt="Author Image" layout="fill" priority />
+                <Image src="/236782.webp" alt="Author Image" layout="fill" priority />
               </motion.div>
               <motion.h3
                 className=" text-4xl sm:text-6xl font-bold mb-2 "
