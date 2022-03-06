@@ -22,6 +22,8 @@ module.exports = withPWA({
         'react-dom/test-utils': 'preact/test-utils',
         'react-dom': 'preact/compat',
       });
+    } else if (isServer) {
+      require('./scripts/sitemap-generator');
     }
 
     return config;

@@ -36,6 +36,7 @@
     "eslint-plugin-react": "^7.29.2",
     "follow-redirects": "^1.14.8",
     "framer-motion": "^6.2.6",
+    "globby": "^11.0.1",
     "graphql": "^16.3.0",
     "hamburger-react": "^2.4.1",
     "husky": "^7.0.4",
@@ -45,6 +46,7 @@
     "mongoose": "^6.2.1",
     "next": "12.1.0",
     "next-pwa": "^5.4.4",
+    "next-sitemap": "^2.5.4",
     "postcss": "^8.4.6",
     "preact": "^10.6.6",
     "prettier": "^2.5.1",
@@ -68,7 +70,7 @@
     "@types/react-pdf": "^5.0.9",
     "eslint": "8.9.0",
     "eslint-config-next": "12.0.10",
-    "typescript": "4.5.5",
-    "husky": "^7.0.0"
+    "husky": "^7.0.0",
+    "typescript": "4.5.5"
   }
 }
