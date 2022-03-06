@@ -3,6 +3,9 @@ const withPWA = require('next-pwa');
 const runtimeCaching = require('next-pwa/cache');
 
 module.exports = withPWA({
+  compiler: {
+    removeConsole: true,
+  },
   pwa: {
     dest: 'public',
     register: true,

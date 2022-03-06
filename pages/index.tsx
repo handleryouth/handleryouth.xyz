@@ -102,26 +102,30 @@ const Home: NextPage = () => {
             <div>
               <div className="flex flex-wrap justify-center">
                 {loading ? (
-                  <ProgressSpinner />
+                  <div className="h-96 flex items-center justify-center">
+                    <ProgressSpinner />
+                  </div>
                 ) : (
-                  (data.getAllProject as ProjectData[]).slice(0, 3).map(project => (
-                    <div key={project._id.toString()}>
-                      <CardThumbnail
-                        image={project.image}
-                        linkDemo={project.linkDemo}
-                        linkRepo={project.linkRepo}
-                        title={project.title}
+                  <>
+                    {(data.getAllProject as ProjectData[]).slice(0, 3).map(project => (
+                      <div key={project._id.toString()}>
+                        <CardThumbnail
+                          image={project.image}
+                          linkDemo={project.linkDemo}
+                          linkRepo={project.linkRepo}
+                          title={project.title}
+                        />
+                      </div>
+                    ))}
+                    <div className="w-full text-center">
+                      <Button
+                        label="More"
+                        onClick={() => router.push('/project')}
+                        className="p-button-outlined p-button-info"
                       />
                     </div>
-                  ))
+                  </>
                 )}
-              </div>
-              <div className="w-full text-center">
-                <Button
-                  label="More"
-                  onClick={() => router.push('/project')}
-                  className="p-button-outlined p-button-info"
-                />
               </div>
             </div>
           }
