@@ -1,12 +1,24 @@
 import { NextPage } from 'next';
-import { motion } from 'framer-motion';
+import { QUERY_GET_ALL_PROJECTS } from 'utils';
+import { ActivityDescription, CardThumbnail, Section } from 'components';
+import { ProjectData } from 'types';
+import { Image as PrimeImage } from 'primereact/image';
 import Head from 'next/head';
 import Image from 'next/image';
-import { FaMapMarkerAlt, FaUniversity } from 'react-icons/fa';
-import { FiBriefcase } from 'react-icons/fi';
-import { slideLeftEntrance } from 'animation';
+import { useRouter } from 'next/router';
+import { AiOutlineCode } from 'react-icons/ai';
+import { GiPublicSpeaker } from 'react-icons/gi';
+import { Button } from 'primereact/button';
+import { useQuery } from '@apollo/client';
+
+import Link from 'next/link';
 
 const Home: NextPage = () => {
+  const { data, loading } = useQuery(QUERY_GET_ALL_PROJECTS, {
+    notifyOnNetworkStatusChange: true,
+  });
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -14,93 +26,113 @@ const Home: NextPage = () => {
         <meta name="description" content="Tony David personal website" />
         <meta name="keywords" content="NextJS, Tailwind, React, Redux, Tony David, handleryouth" />
       </Head>
-      <main>
-        <section
-          className="z-10 absolute top-0 w-full h-[600px] sm:h-[52vh] bg-center bg-cover"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80`)",
-          }}
-        >
-          <div className="relative z-20 w-full h-full opacity-50 bg-black"></div>
-        </section>
-
-        <section className="relative py-24 bg-gradient-to-r from-[#1488CC] to-[#2B32B2] min-h-screen sm:h-auto  ">
-          <div className=" px-4 relative z-20">
-            <motion.div
-              className=" break-words w-full rounded-lg "
-              initial="hidden"
-              animate="visible"
-              transition={{
-                when: 'beforeChildren',
-                delay: 1,
-                staggerChildren: 0.3,
-              }}
-            >
-              <div>
-                <div className="flex justify-center relative ">
-                  <Image
-                    alt="..."
-                    src="/personal-img.png"
-                    layout="fixed"
-                    height="200"
-                    width="200"
-                    className=" max-w-150-px rounded-full"
-                  />
-                </div>
-
-                <div className="bg-white p-4 shadow-2xl rounded mt-4 text-center">
-                  <div>
-                    <motion.h3
-                      className="text-4xl mt-0 font-semibold leading-normal text-blueGray-700 mb-2"
-                      variants={slideLeftEntrance}
-                    >
-                      Tony David
-                    </motion.h3>
-                    <motion.div
-                      className="text-sm text-blueGray-400 font-bold uppercase flex items-center justify-center "
-                      variants={slideLeftEntrance}
-                    >
-                      <FaMapMarkerAlt className="mr-2" />
-                      Indonesia
-                    </motion.div>
-                    <motion.div
-                      className="mb-4 text-blueGray-600 mt-10 flex items-center justify-center"
-                      variants={slideLeftEntrance}
-                    >
-                      <FiBriefcase className=" mr-3 min-w-[20px] min-h-[20px]" />
-                      Frontend Engineer and College Student
-                    </motion.div>
-                    <motion.div
-                      className="text-blueGray-600 flex items-center justify-center"
-                      variants={slideLeftEntrance}
-                    >
-                      <FaUniversity className="  mr-3 min-w-[20px] min-h-[20px]" />
-                      Sepuluh Nopember Institute of Technology
-                    </motion.div>
-                  </div>
-                  <motion.div
-                    className="mt-10 py-10 border-t border-blueGray-200 text-center"
-                    variants={slideLeftEntrance}
-                  >
-                    <div className="flex flex-wrap justify-center">
-                      <div className="w-full px-2 lg:w-9/12 lg:px-0">
-                        <p className="mb-4 text-lg leading-relaxed text-blueGray-700">
-                          Tony is an Electrical Engineering student who still studying at the
-                          Sepuluh Nopember Institute of Technology. He is interested in studying in
-                          the computer field, especially hardware. Being consistent in work and
-                          politeness are his main characteristics. he loves learning programming
-                          languages (Python, Javascript, etc). Right now, he is pursuing his career
-                          as a FrontEnd Engineer
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
+      <main className="pt-16 min-h-screen w-11/12 max-w-[68rem] mx-auto">
+        <Section
+          body={
+            <div className="flex items-center flex-col md:flex-row ">
+              <div className=" rounded-full p-2 mr-8 flex items-center justify-center shadow-lg">
+                <Image
+                  src="/homephoto.png"
+                  alt="Tony David"
+                  layout="fixed"
+                  width={250}
+                  height={250}
+                  className="rounded-full"
+                  priority
+                />
               </div>
-            </motion.div>
-          </div>
-        </section>
+
+              <div className="prose-h1:mb-4 prose-h1:mt-2">
+                <p>Frontend Engineer</p>
+                <h1>Tony David</h1>
+                <p className="xl:w-[40rem]">
+                  Tony is an Electrical Engineering student who still studying at the Sepuluh
+                  Nopember Institute of Technology. He is interested in studying in the computer
+                  field, especially hardware. Being consistent in work and politeness are his main
+                  characteristics. he loves learning programming languages (Python, Javascript,
+                  etc). Right now, he is pursuing his career as a FrontEnd Engineer
+                </p>
+
+                <Button
+                  label="Know me more!"
+                  className="p-button-outlined p-button-info"
+                  onClick={() => router.push('/about')}
+                />
+              </div>
+            </div>
+          }
+        />
+
+        <Section
+          title="What I Do"
+          body={
+            <div className="flex flex-wrap sm:justify-center gap-x-16 gap-y-8">
+              <ActivityDescription
+                title="Frontend Engineer"
+                description="I am a Frontend Engineer, I have experience in building web applications using React, Redux, NextJS, TailwindCSS, TypeScript, NodeJS, ExpressJS, MongoDB, GraphQL, Apollo, and more. I have experience in building web applications using React, Redux, NextJS, TailwindCSS, TypeScript, NodeJS, ExpressJS, MongoDB, GraphQL, Apollo, and more."
+                icon={<AiOutlineCode />}
+              />
+
+              <ActivityDescription
+                title="Public Relation"
+                description="Though i am a frontend engineer, i also have experience in public relations. I usually contributing to my team's social media, and also i am a public relations officer in some of university organizations."
+                icon={<GiPublicSpeaker />}
+              />
+            </div>
+          }
+        />
+
+        <Section
+          title="Web Projects"
+          body={
+            <div>
+              <div className="flex flex-wrap justify-center">
+                {loading ? (
+                  <p>Loading...</p>
+                ) : (
+                  (data.getAllProject as ProjectData[]).slice(0, 3).map(project => (
+                    <div key={project._id.toString()}>
+                      <CardThumbnail
+                        image={project.image}
+                        linkDemo={project.linkDemo}
+                        linkRepo={project.linkRepo}
+                        title={project.title}
+                      />
+                    </div>
+                  ))
+                )}
+              </div>
+              <div className="w-full text-center">
+                <Button
+                  label="More"
+                  onClick={() => router.push('/project')}
+                  className="p-button-outlined p-button-info"
+                />
+              </div>
+            </div>
+          }
+        />
+
+        <Section
+          title="You might interested"
+          customTitleClass="text-center"
+          body={
+            <div className="text-center">
+              <Link passHref href="https://starting-page.vercel.app/">
+                <h3 className="mx-auto inline hover:text-blue-500 cursor-pointer transition-colors">
+                  Starting Page for Browser
+                </h3>
+              </Link>
+
+              <PrimeImage
+                src="/startingpage.png"
+                template={<p className="text-2xl prose text-white">See Image</p>}
+                alt="Interesting Projects"
+                preview
+              />
+            </div>
+          }
+        />
       </main>
     </>
   );

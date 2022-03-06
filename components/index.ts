@@ -4,8 +4,18 @@ export * from './Sidebar';
 export * from './Layout';
 export * from './Tooltip';
 export * from './CustomCard';
+export * from './CardThumbnail';
+export * from './ActivityDescription';
+export * from './Section';
+export * from './TimelineCard';
+export * from './ItemBox';
 
 export { default as Layout } from './Layout';
 export { default as Sidebar } from './Sidebar';
 export { default as CustomTooltip } from './Tooltip';
 export { default as Card } from './CustomCard';
+export { default as ActivityDescription } from './ActivityDescription';
+export { default as Section } from './Section';
+export { default as CardThumbnail } from './CardThumbnail';
+export { default as TimelineCard } from './TimelineCard';
+export { default as ItemBox } from './ItemBox';

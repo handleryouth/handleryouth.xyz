@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { GrMail } from 'react-icons/gr';
 import { useRouter } from 'next/router';
@@ -9,7 +8,7 @@ export default function FooterSmall() {
 
   return (
     <>
-      <footer className=" bg-gradient-to-r from-[#4568DC] to-[#B06AB3]  border-t-2 border-slate-800 px-8 ">
+      <footer className="bg-black border-t-2 border-t-blue-500 px-8 ">
         <div className="border-b-2 pb-4 prose-li:pl-0 prose-ul:pl-0 prose-ul:text-white prose-li:cursor-pointer prose-h3:text-white prose-li:text-3xl prose-li:mx-2 prose-li:my-0 prose-ul:my-2">
           <h3 className="text-xl text-center">Reach me out on</h3>
           <ul className="flex justify-center text-3xl  mt-4">
@@ -45,24 +44,15 @@ export default function FooterSmall() {
 
             <div className="prose-ul:pl-0 mt-2 sm:mt-0">
               <ul className="flex flex-wrap prose-li:pl-0 prose-li:my-0  ">
-                <motion.li
-                  className="hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors"
-                  whileHover={{ y: -10 }}
-                >
+                <li className="hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors">
                   <span onClick={() => router.push('/resume')}>My Resume</span>
-                </motion.li>
-                <motion.li
-                  className="hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors"
-                  whileHover={{ y: -10 }}
-                >
+                </li>
+                <li className="hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors">
                   <span onClick={() => router.push('/project')}>Web Project</span>
-                </motion.li>
-                <motion.li
-                  className="hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors"
-                  whileHover={{ y: -10 }}
-                >
+                </li>
+                <li className="hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors">
                   <span onClick={() => router.push('/about')}>About</span>
-                </motion.li>
+                </li>
               </ul>
             </div>
           </div>

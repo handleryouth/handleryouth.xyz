@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
 import Head from 'next/head';
+import { ReactNode } from 'react';
 import FooterSmall from './Footers/FooterSmall';
 import AuthNavbar from './Navbars/AuthNavbar';
 import Sidebar from './Sidebar';
@@ -12,7 +12,7 @@ function Layout({ children }: { children: ReactNode }) {
       </Head>
       <Sidebar />
 
-      <div className="min-w-[320px] !max-w-none prose prose-ul:list-none">
+      <div className="!min-w-[320px] !max-w-none prose prose-ul:list-none">
         <AuthNavbar />
         {children}
         <FooterSmall />

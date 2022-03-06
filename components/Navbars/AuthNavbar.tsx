@@ -13,7 +13,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 bg-black/60 ">
+      <nav className="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 bg-black border-b-2 border-b-blue-500 ">
         <div className="px-4 w-full flex flex-wrap items-center justify-between">
           <motion.div
             className="w-full relative flex justify-between items-center lg:w-auto lg:static lg:block lg:justify-start "
@@ -43,11 +43,7 @@ export default function Navbar() {
             initial={'hidden'}
           >
             <ul className="flex flex-row list-none mr-auto">
-              <motion.li
-                whileHover={{
-                  y: '-5px',
-                }}
-              >
+              <li>
                 <span
                   className="custom-navbarlink text-blueGray-700"
                   onClick={() => {
@@ -56,13 +52,9 @@ export default function Navbar() {
                 >
                   My Resume
                 </span>
-              </motion.li>
+              </li>
 
-              <motion.li
-                whileHover={{
-                  y: '-5px',
-                }}
-              >
+              <li>
                 <span
                   className="custom-navbarlink text-blueGray-700"
                   onClick={() => {
@@ -71,12 +63,8 @@ export default function Navbar() {
                 >
                   Web Project
                 </span>
-              </motion.li>
-              <motion.li
-                whileHover={{
-                  y: '-5px',
-                }}
-              >
+              </li>
+              <li>
                 <span
                   className="custom-navbarlink text-blueGray-700"
                   onClick={() => {
@@ -85,7 +73,7 @@ export default function Navbar() {
                 >
                   About
                 </span>
-              </motion.li>
+              </li>
             </ul>
           </motion.div>
         </div>

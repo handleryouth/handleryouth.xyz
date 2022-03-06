@@ -1,41 +1,71 @@
-import { useCallback, useState } from 'react';
-import { motion } from 'framer-motion';
-import { Document, Page, pdfjs } from 'react-pdf';
-import Image from 'next/image';
-import { ConfirmDialog } from 'primereact/confirmdialog';
+import { Timeline } from 'primereact/timeline';
+import Head from 'next/head';
+import { ItemBox, Section, TimelineCard } from 'components';
+import { confirmPopup } from 'primereact/confirmpopup';
 import { Button } from 'primereact/button';
 import { useRouter } from 'next/router';
-import Head from 'next/head';
-import { slideLeftEntrance } from 'animation';
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+import { useCallback } from 'react';
+import { ItemBoxProps } from 'types';
 
 const Resume = () => {
-  const [pageNumber, setPageNumber] = useState(1);
-  const [numPages, setNumPages] = useState(null);
-  const [showDialog, setShowDialog] = useState(false);
-  const [loading1, setLoading1] = useState(false);
-
   const router = useRouter();
+  const events = [
+    {
+      title: 'Saint Thomas 1 Medan Senior High School',
+      time: '2016 - 2019',
+      description:
+        'Here I focus on science. When I was in high school, I was active in several organizations such as the choir and the Olympic committee. I also won several Olympic medals in the computer branch',
+    },
+    {
+      title: 'Sepuluh Nopember Institute of Technology',
+      time: '2019 - 2023',
+      description:
+        'Here I majored in electrical engineering with a focus on the topic of telecommunications. here I follow several organizations such as IEEE ITS, KMK ITS, and also Evolution ITS. when I was in college I was also active in the world of frontend engineering and liked to experiment with new projects',
+    },
+  ];
 
-  const handleExternalView = useCallback(() => {
-    router.push(
-      'https://drive.google.com/file/d/1cK6ETW4kmdUYgf1eW8cfMEfSFljuJa82/view?usp=sharing'
-    );
-    setShowDialog(false);
-  }, [router]);
+  const experienceEvents = [
+    {
+      title: 'Frontend Engineer at PT. Super Giga Generasi',
+      time: '2021 - Present',
+      description:
+        'I was assigned to develop a content management system (CMS) using React as the main framework',
+    },
+  ];
 
-  const onButtonLoading = useCallback(() => {
-    setLoading1(true);
-    setShowDialog(true);
+  const certificateEvents: ItemBoxProps[] = [
+    {
+      title: 'GUI Development with Python and Tkinter',
+      company: 'Udemy',
+      time: 'October 2020',
+    },
+    {
+      title: 'The Complete Python Course | Learn Python by doing',
+      company: 'Udemy',
+      time: 'September 2020',
+    },
+    {
+      title: 'Scientific Paper Training',
+      company: 'Science Hunter Indonesia',
+      time: 'May 2020',
+    },
+  ];
 
-    setTimeout(() => {
-      setLoading1(false);
-    }, 3000);
-  }, []);
-
-  const onDocumentLoadSuccess = useCallback(({ numPages }) => {
-    setNumPages(numPages);
-  }, []);
+  const confirmExternalLink = useCallback(
+    event => {
+      confirmPopup({
+        className: 'prose text-black',
+        target: event.currentTarget,
+        message: 'This will redirect to another page. Proceed?',
+        icon: 'pi pi-exclamation-triangle',
+        accept: () =>
+          router.push(
+            'https://drive.google.com/file/d/1cK6ETW4kmdUYgf1eW8cfMEfSFljuJa82/view?usp=sharing'
+          ),
+      });
+    },
+    [router]
+  );
 
   return (
     <>
@@ -47,72 +77,63 @@ const Resume = () => {
           content="NextJS, Tailwind, React, Redux, Tony David, handleryouth, Resume"
         />
       </Head>
-      <div className="bg-gradient-to-r from-[#757F9A] to-[#D7DDE8]">
-        <div className="relative w-full min-h-[384px] sm:h-[50vh] ">
-          <Image
-            src="https://images.unsplash.com/photo-1602407294553-6ac9170b3ed0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80"
-            alt="..."
-            layout="fill"
-            objectFit="cover"
-            priority
+      <main className="pt-32 w-11/12 mx-auto max-w-[68rem]">
+        <h1>Resume</h1>
+
+        <div className="min-h-screen flex flex-col  justify-center">
+          <Section
+            title="Education"
+            body={
+              <div>
+                <div className="hidden md:block">
+                  <Timeline value={events} align="alternate" content={TimelineCard} />
+                </div>
+                <div className="flex flex-wrap gap-4 md:hidden">
+                  {events.map((item, index) => (
+                    <ItemBox key={index} {...item} />
+                  ))}
+                </div>
+              </div>
+            }
           />
-          <motion.h1
-            className="absolute tracking-widest font-bold text-3xl flex items-center justify-center h-full w-full text-white"
-            variants={slideLeftEntrance}
-            initial="hidden"
-            animate="visible"
-            transition={{
-              delay: 0.8,
-              duration: 0.3,
-            }}
-          >
-            Resume
-          </motion.h1>
+
+          <Section
+            title="Experience"
+            body={
+              <div>
+                <div className="hidden md:block">
+                  <Timeline value={experienceEvents} align="alternate" content={TimelineCard} />
+                </div>
+                <div className="flex flex-wrap gap-4 md:hidden">
+                  {experienceEvents.map((item, index) => (
+                    <ItemBox key={index} {...item} />
+                  ))}
+                </div>
+              </div>
+            }
+          />
+
+          <Section
+            title="Certificates"
+            body={
+              <div className="flex flex-wrap gap-4">
+                {certificateEvents.map((certificate, index) => (
+                  <ItemBox key={index} {...certificate} />
+                ))}
+              </div>
+            }
+          />
+
+          <section className="text-center py-52">
+            <h1>Resume</h1>
+            <Button
+              label="Show Resume"
+              className="p-button-raised p-button-info p-button-text"
+              onClick={confirmExternalLink}
+            />
+          </section>
         </div>
-
-        <div className="bg-gradient-to-r flex items-center justify-center from-[#757F9A] to-[#D7DDE8] md:hidden min-h-[384px] h-[50vh] ">
-          <ConfirmDialog
-            visible={showDialog}
-            onHide={() => setShowDialog(false)}
-            message="This will redirect you to external view of the resume. Do you want to continue?"
-            header="Confirmation"
-            icon="pi pi-exclamation-circle"
-            accept={() => handleExternalView()}
-            reject={() => setShowDialog(false)}
-          />
-
-          <Button
-            label="View Resume"
-            className="p-button-info "
-            icon="pi pi-link"
-            iconPos="right"
-            loading={loading1}
-            onClick={onButtonLoading}
-          />
-        </div>
-
-        <div className="md:flex pt-8 pb-2 flex-row justify-around items-center hidden min-h-[890px] h-[50vh] ">
-          <Button
-            icon="pi pi-chevron-left"
-            className="p-button-rounded p-button-text"
-            onClick={() => setPageNumber(prevState => (prevState - 1 === 0 ? 2 : prevState - 1))}
-          />
-          <div className="text-center ">
-            <Document file="/cv.pdf" onLoadSuccess={onDocumentLoadSuccess} className="">
-              <Page pageNumber={pageNumber} />
-            </Document>
-            <p className="my-4">
-              Page {pageNumber} of {numPages}
-            </p>
-          </div>
-
-          <Button
-            icon="pi pi-chevron-right"
-            className="p-button-rounded p-button-text p-button-info"
-            onClick={() => setPageNumber(prevState => (prevState + 1 === 3 ? 1 : prevState + 1))}
-          />
-        </div>
-      </div>
+      </main>
     </>
   );
 };
