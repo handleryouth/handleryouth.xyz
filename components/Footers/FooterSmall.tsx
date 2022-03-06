@@ -38,12 +38,12 @@ export default function FooterSmall() {
 
         <div className="mx-auto py-4 flex lg:w-4/5 max-w-[1100px] justify-between ">
           <div className="flex flex-col sm:flex-row items-center text-white sm:justify-between justify-center w-full">
-            <div className="text-sm font-semibold py-1 md:text-left cursor-default">
+            <div className="text-sm font-semibold py-1 md:text-left">
               Copyright © {new Date().getFullYear()} Tony David
             </div>
 
             <div className="prose-ul:pl-0 mt-2 sm:mt-0">
-              <ul className="flex flex-wrap prose-li:pl-0 prose-li:my-0  ">
+              <ul className="flex flex-wrap flex-col smallDisplay:flex-row text-center gap-y-4 smallDisplay:text-left  prose-li:pl-0 prose-li:my-0  ">
                 <li className="hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors">
                   <span onClick={() => router.push('/resume')}>My Resume</span>
                 </li>

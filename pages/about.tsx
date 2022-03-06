@@ -25,14 +25,14 @@ const About = () => {
       </Head>
       <main className="w-11/12 mx-auto max-w-[68rem]">
         <h1 className="pt-32">About</h1>
-        <div className="pt-4 flex not-prose  flex-col justify-center py-8  min-h-screen">
+        <div className="py-16 sm:py-8 flex not-prose flex-col justify-center min-h-screen">
           <motion.div
             className="flex flex-col md:block"
             variants={slideLeftEntrance}
             initial="hidden"
             animate="visible"
             transition={{
-              delay: 0.8,
+              delay: 0.5,
               when: 'beforeChildren',
               duration: 0.1,
               staggerChildren: 0.2,
@@ -40,7 +40,7 @@ const About = () => {
           >
             <div className="min-h-[20rem]">
               <motion.div
-                className=" min-w-[200px] mr-4 relative float-left  md:w-[230px] h-[20rem] rounded-md overflow-hidden "
+                className=" sm:mr-4 relative sm:float-left w-[200px] mb-8 sm:mb-0 mx-auto md:w-[230px] h-[20rem] rounded-md overflow-hidden "
                 variants={slideLeftEntrance}
               >
                 <Image src="/236782.png" alt="Author Image" layout="fill" priority />
@@ -68,7 +68,7 @@ const About = () => {
               </motion.p>
             </div>
 
-            <motion.div variants={slideLeftEntrance} className="mt-8">
+            <motion.div variants={slideLeftEntrance} className="sm:mt-8">
               <h3 className="font-semibold mt-12 text-3xl mb-2 ">Tech Stacks</h3>
               <div className="text-xl">
                 I use the following technologies to build this website.

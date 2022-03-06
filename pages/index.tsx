@@ -1,5 +1,8 @@
 import { NextPage } from 'next';
+import { motion } from 'framer-motion';
 import { QUERY_GET_ALL_PROJECTS } from 'utils';
+import { slideLeftEntrance } from 'animation';
+import { ProgressSpinner } from 'primereact/progressspinner';
 import { ActivityDescription, CardThumbnail, Section } from 'components';
 import { ProjectData } from 'types';
 import { Image as PrimeImage } from 'primereact/image';
@@ -26,7 +29,18 @@ const Home: NextPage = () => {
         <meta name="description" content="Tony David personal website" />
         <meta name="keywords" content="NextJS, Tailwind, React, Redux, Tony David, handleryouth" />
       </Head>
-      <main className="pt-16 min-h-screen w-11/12 max-w-[68rem] mx-auto">
+      <motion.main
+        className="pt-16 min-h-screen w-11/12 max-w-[68rem] mx-auto"
+        variants={slideLeftEntrance}
+        initial="hidden"
+        animate="visible"
+        transition={{
+          delay: 0.5,
+          duration: 0.3,
+          staggerChildren: 0.2,
+          when: 'beforeChildren',
+        }}
+      >
         <Section
           body={
             <div className="flex items-center flex-col md:flex-row ">
@@ -88,7 +102,7 @@ const Home: NextPage = () => {
             <div>
               <div className="flex flex-wrap justify-center">
                 {loading ? (
-                  <p>Loading...</p>
+                  <ProgressSpinner />
                 ) : (
                   (data.getAllProject as ProjectData[]).slice(0, 3).map(project => (
                     <div key={project._id.toString()}>
@@ -133,7 +147,7 @@ const Home: NextPage = () => {
             </div>
           }
         />
-      </main>
+      </motion.main>
     </>
   );
 };

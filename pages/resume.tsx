@@ -1,11 +1,13 @@
 import { Timeline } from 'primereact/timeline';
 import Head from 'next/head';
+import { motion } from 'framer-motion';
 import { ItemBox, Section, TimelineCard } from 'components';
 import { confirmPopup } from 'primereact/confirmpopup';
 import { Button } from 'primereact/button';
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 import { ItemBoxProps } from 'types';
+import { slideLeftEntrance } from 'animation';
 
 const Resume = () => {
   const router = useRouter();
@@ -80,7 +82,18 @@ const Resume = () => {
       <main className="pt-32 w-11/12 mx-auto max-w-[68rem]">
         <h1>Resume</h1>
 
-        <div className="min-h-screen flex flex-col  justify-center">
+        <motion.div
+          variants={slideLeftEntrance}
+          initial="hidden"
+          animate="visible"
+          transition={{
+            delay: 0.5,
+            duration: 0.3,
+            staggerChildren: 0.2,
+            when: 'beforeChildren',
+          }}
+          className="min-h-screen flex flex-col  justify-center"
+        >
           <Section
             title="Education"
             body={
@@ -132,7 +145,7 @@ const Resume = () => {
               onClick={confirmExternalLink}
             />
           </section>
-        </div>
+        </motion.div>
       </main>
     </>
   );

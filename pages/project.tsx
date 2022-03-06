@@ -35,8 +35,8 @@ const Project = () => {
                     initial="hidden"
                     animate="visible"
                     transition={{
-                      delay: 0.8,
-                      duration: 0.5,
+                      delay: 0.5,
+                      duration: 0.3,
                     }}
                   >
                     <Card

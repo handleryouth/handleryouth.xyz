@@ -7,6 +7,9 @@ module.exports = {
         lightblue: '#79a7d3',
         darkblue: '#6883bc',
       },
+      screens: {
+        smallDisplay: '350px',
+      },
       typography: {
         DEFAULT: {
           css: {
