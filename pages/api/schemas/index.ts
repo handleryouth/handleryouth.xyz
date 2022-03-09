@@ -10,7 +10,24 @@ export const typeDefs = gql`
     title: String
   }
 
+  type CertificateProperties {
+    _id: String
+    title: String
+    company: String
+    time: String
+  }
+
+  type EducationProperties {
+    _id: String
+    title: String
+    time: String
+    description: String
+  }
+
   type Query {
     getAllProject: [ProjectResponseProperties!]
+    getAllCertificate: [CertificateProperties!]
+    getAllEducation: [EducationProperties!]
+    getAllExperiences: [EducationProperties!]
   }
 `;

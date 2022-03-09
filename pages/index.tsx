@@ -29,7 +29,7 @@ const Home: NextPage = () => {
         <meta name="keywords" content="NextJS, Tailwind, React, Redux, Tony David, handleryouth" />
       </Head>
       <motion.main
-        className="pt-16 min-h-screen w-11/12 max-w-[68rem] mx-auto"
+        className="pt-16 flex flex-col items-cetner justify-center min-h-screen w-11/12 max-w-[68rem] mx-auto"
         variants={slideLeftEntrance}
         initial="hidden"
         animate="visible"
@@ -43,7 +43,7 @@ const Home: NextPage = () => {
         <Section
           body={
             <div className="flex items-center flex-col md:flex-row ">
-              <div className=" rounded-full p-2 mr-8 flex items-center justify-center shadow-lg">
+              <div className="rounded-full p-2 mr-8 flex items-center justify-center shadow-lg">
                 <Image
                   src="/homephoto.webp"
                   alt="Tony David"

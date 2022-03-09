@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import ReactLoading from 'react-loading';
+import { ProgressSpinner } from 'primereact/progressspinner';
 import { ProjectData } from 'types';
 import { slideLeftEntrance } from 'animation';
 import { QUERY_GET_ALL_PROJECTS } from 'utils';
@@ -24,9 +24,9 @@ const Project = () => {
       </Head>
       <main className="w-11/12 mx-auto max-w-[68rem]">
         <h1 className="pt-32">Web Projects</h1>
-        <div className="flex flex-wrap justify-center md:justify-between gap-x-4 gap-y-5 min-h-screen pb-16">
+        <div className="flex flex-wrap justify-center md:justify-between gap-x-4 gap-y-5  pb-16  min-h-screen">
           {!loading ? (
-            data ? (
+            data.getAllProject.length ? (
               (data.getAllProject as ProjectData[]).map(item => {
                 return (
                   <motion.div
@@ -50,13 +50,13 @@ const Project = () => {
                 );
               })
             ) : (
-              <div className="h-screen min-h-[568px] flex items-center justify-center">
-                <h1>No Project for now</h1>
+              <div className="min-h-screen flex items-center justify-center">
+                <p>No Project for now</p>
               </div>
             )
           ) : (
-            <div className="h-screen min-h-[568px] flex items-center justify-center">
-              <ReactLoading type="cylon" height={100} width={100} />
+            <div className="min-h-screen flex w-full items-center justify-center">
+              <ProgressSpinner />
             </div>
           )}
         </div>
