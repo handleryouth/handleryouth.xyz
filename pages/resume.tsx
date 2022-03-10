@@ -2,9 +2,8 @@ import { useCallback } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { slideLeftEntrance } from 'animation';
-import { ItemBox, Section, TimelineCard } from 'components';
+import { Button, ItemBox, Section, TimelineCard } from 'components';
 import { motion } from 'framer-motion';
-import { Button } from 'primereact/button';
 import { confirmPopup } from 'primereact/confirmpopup';
 import { ProgressSpinner } from 'primereact/progressspinner';
 import { Timeline } from 'primereact/timeline';
@@ -37,7 +36,8 @@ const Resume = () => {
     <>
       <Head>
         <title>Tony David Personal Website</title>
-        <meta name="description" content="Tony David Resume" />
+        <meta property="twitter:title" content="handleryouth.xyz - Resume" />
+        <meta property="twitter:description" content="Tony David Resume" />
         <meta
           name="keywords"
           content="NextJS, Tailwind, React, Redux, Tony David, handleryouth, Resume"
@@ -120,7 +120,7 @@ const Resume = () => {
               <h1>Resume</h1>
               <Button
                 label="Show Resume"
-                className="p-button-raised p-button-info p-button-text"
+                className="p-button-outlined p-button-info"
                 onClick={confirmExternalLink}
               />
             </section>

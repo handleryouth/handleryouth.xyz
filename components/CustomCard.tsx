@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
 import { ScrollPanel } from 'primereact/scrollpanel';
 import { ProjectData } from 'types';
+
+import Button from './Button';
 
 const CustomCard = ({
   description,
@@ -23,20 +24,20 @@ const CustomCard = ({
         </h1>
       }
       footer={
-        <div className="flex flex-col sm:flex-row !prose ">
+        <div className="flex flex-col sm:flex-row gap-x-3 ">
           <Button
             icon="pi pi-arrow-right"
             label="Demo"
             iconPos="right"
-            className="p-button-info"
+            className="p-button-info p-button-outlined"
             onClick={() => router.push(linkDemo)}
           />
 
           <Button
             icon="pi pi-github"
-            label="Repo/Code"
+            label="Repo"
             iconPos="right"
-            className="p-button-primary sm:ml-2 mt-4 sm:mt-0"
+            className="p-button-outlined"
             onClick={() => router.push(linkRepo)}
           />
         </div>

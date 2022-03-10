@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { listContainer } from 'animation';
 import { RootState } from 'features';
@@ -44,35 +45,20 @@ export default function Navbar() {
           >
             <ul className="flex flex-row list-none mr-auto">
               <li>
-                <span
-                  className="custom-navbarlink text-blueGray-700"
-                  onClick={() => {
-                    router.push('/resume');
-                  }}
-                >
-                  My Resume
-                </span>
+                <Link href="/resume">
+                  <a className="custom-link">My Resume</a>
+                </Link>
               </li>
 
               <li>
-                <span
-                  className="custom-navbarlink text-blueGray-700"
-                  onClick={() => {
-                    router.push('/project');
-                  }}
-                >
-                  Web Project
-                </span>
+                <Link href="/project">
+                  <a className="custom-link">Web Project</a>
+                </Link>
               </li>
               <li>
-                <span
-                  className="custom-navbarlink text-blueGray-700"
-                  onClick={() => {
-                    router.push('/about');
-                  }}
-                >
-                  About
-                </span>
+                <Link href="/about">
+                  <a className="custom-link">About</a>
+                </Link>
               </li>
             </ul>
           </motion.div>

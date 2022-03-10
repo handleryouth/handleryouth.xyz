@@ -4,9 +4,6 @@ const runtimeCaching = require('next-pwa/cache');
 
 module.exports = withPWA({
   swcMinify: true,
-  compiler: {
-    removeConsole: true,
-  },
   pwa: {
     dest: 'public',
     register: true,

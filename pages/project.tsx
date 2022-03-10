@@ -17,7 +17,11 @@ const Project = () => {
     <>
       <Head>
         <title>Tony David Personal Project</title>
-        <meta name="description" content="Tony David Personal Project" />
+        <meta property="twitter:title" content="handleryouth.xyz - Description" />
+        <meta
+          property="twitter:description"
+          content="Personal projects that you can use as ideas for web developer"
+        />
         <meta
           name="keywords"
           content="NextJS, Tailwind, React, Redux, Tony David, handleryouth, Project"

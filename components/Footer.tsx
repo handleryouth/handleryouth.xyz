@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { CustomTooltip } from 'components';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
@@ -44,14 +45,20 @@ export default function FooterSmall() {
 
             <div className="prose-ul:pl-0 mt-2 sm:mt-0">
               <ul className="flex flex-wrap flex-col smallDisplay:flex-row text-center gap-y-4 smallDisplay:text-left  prose-li:pl-0 prose-li:my-0  ">
-                <li className="hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors">
-                  <span onClick={() => router.push('/resume')}>My Resume</span>
+                <li>
+                  <Link href="/resume">
+                    <a className="custom-link">My Resume</a>
+                  </Link>
                 </li>
-                <li className="hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors">
-                  <span onClick={() => router.push('/project')}>Web Project</span>
+                <li>
+                  <Link href="/project">
+                    <a className="custom-link">Web Project</a>
+                  </Link>
                 </li>
-                <li className="hover:text-blue-700 text-sm font-semibold block my-1 mx-3 cursor-pointer transition-colors">
-                  <span onClick={() => router.push('/about')}>About</span>
+                <li>
+                  <Link href="/about">
+                    <a className="custom-link">About</a>
+                  </Link>
                 </li>
               </ul>
             </div>

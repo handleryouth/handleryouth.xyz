@@ -4,9 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { slideLeftEntrance } from 'animation';
-import { ActivityDescription, CardThumbnail, Section } from 'components';
+import { ActivityDescription, Button, CardThumbnail, Section } from 'components';
 import { motion } from 'framer-motion';
-import { Button } from 'primereact/button';
 import { ProgressSpinner } from 'primereact/progressspinner';
 import { AiOutlineCode } from 'react-icons/ai';
 import { GiPublicSpeaker } from 'react-icons/gi';
@@ -25,7 +24,11 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Tony David Personal Website</title>
-        <meta name="description" content="Tony David personal website" />
+        <meta property="twitter:title" content="handleryouth.xyz - Tony David Personal Website" />
+        <meta
+          property="twitter:description"
+          content="Tony David Gultom personal website. A frontend Engineer and a student"
+        />
         <meta name="keywords" content="NextJS, Tailwind, React, Redux, Tony David, handleryouth" />
       </Head>
       <motion.main
@@ -116,7 +119,7 @@ const Home: NextPage = () => {
                         />
                       </div>
                     ))}
-                    <div className="w-full text-center">
+                    <div className="w-full text-center mt-8">
                       <Button
                         label="More"
                         onClick={() => router.push('/project')}
@@ -131,7 +134,7 @@ const Home: NextPage = () => {
         />
 
         <Section
-          title="You might interested"
+          title="You might be interested"
           customTitleClass="text-center"
           body={
             <div className="text-center">

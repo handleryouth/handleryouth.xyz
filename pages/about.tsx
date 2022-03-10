@@ -17,7 +17,8 @@ const About = () => {
     <>
       <Head>
         <title>About Tony David</title>
-        <meta name="description" content="About Tony David" />
+        <meta property="twitter:title" content="handleryouth.xyz - About" />
+        <meta property="twitter:description" content="Profile about Tony David" />
         <meta
           name="keywords"
           content="NextJS, Tailwind, React, Redux, Tony David, handleryouth, About"
@@ -25,7 +26,7 @@ const About = () => {
       </Head>
       <main className="w-11/12 mx-auto max-w-[68rem]">
         <h1 className="pt-32">About</h1>
-        <div className="py-16 sm:py-8 flex not-prose flex-col justify-center min-h-screen">
+        <div className="py-16 sm:py-8  min-h-screen">
           <motion.div
             className="flex flex-col md:block"
             variants={slideLeftEntrance}
@@ -38,9 +39,9 @@ const About = () => {
               staggerChildren: 0.2,
             }}
           >
-            <div className="min-h-[20rem]">
+            <div className="min-h-[20rem] prose-h3:mt-0">
               <motion.div
-                className=" sm:mr-4 relative sm:float-left w-[200px] mb-8 sm:mb-0 mx-auto md:w-[230px] h-[20rem] rounded-md overflow-hidden "
+                className=" sm:mr-8 relative  sm:float-left w-[200px] mb-8 sm:mb-0 mx-auto md:w-[230px] h-[20rem] rounded-md overflow-hidden "
                 variants={slideLeftEntrance}
               >
                 <Image src="/236782.webp" alt="Author Image" layout="fill" priority />
@@ -70,9 +71,9 @@ const About = () => {
 
             <motion.div variants={slideLeftEntrance} className="sm:mt-8">
               <h3 className="font-semibold mt-12 text-3xl mb-2 ">Tech Stacks</h3>
-              <div className="text-xl">
+              <div className="text-xl not-prose">
                 I use the following technologies to build this website.
-                <ul className="flex text-5xl mt-4 flex-wrap">
+                <ul className="flex text-5xl mt-4 flex-wrap ">
                   <li className="mt-2 mr-2">
                     <SiReact />
                   </li>
@@ -99,7 +100,7 @@ const About = () => {
             </motion.div>
 
             <motion.div variants={slideLeftEntrance}>
-              <h3 className="font-semibold mt-12 text-3xl mb-2 ">Hobbies</h3>
+              <h3 className="font-semibold mt-12 text-3xl mb-2">Hobbies</h3>
               <p className="text-xl">
                 Programming is not the only thing i enjoy doing. i do like listening to classical
                 music or orchestra. I even play some of musical instruments like piano and guitar.
