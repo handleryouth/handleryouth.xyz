@@ -30,3 +30,8 @@ export interface ItemBoxProps {
   time: string;
   customClassName?: string;
 }
+
+export interface SeoProps {
+  title?: string;
+  description?: string;
+}

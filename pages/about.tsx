@@ -1,6 +1,6 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import { slideLeftEntrance } from 'animation';
+import { Seo } from 'components';
 import { motion } from 'framer-motion';
 import {
   SiFramer,
@@ -15,15 +15,8 @@ import {
 const About = () => {
   return (
     <>
-      <Head>
-        <title>About Tony David</title>
-        <meta property="twitter:title" content="handleryouth.xyz - About" />
-        <meta property="twitter:description" content="Profile about Tony David" />
-        <meta
-          name="keywords"
-          content="NextJS, Tailwind, React, Redux, Tony David, handleryouth, About"
-        />
-      </Head>
+      <Seo title="handleryouth.xyz - About" description="Profile about Tony David" />
+
       <main className="w-11/12 mx-auto max-w-[68rem]">
         <h1 className="pt-32">About</h1>
         <div className="py-16 sm:py-8  min-h-screen">

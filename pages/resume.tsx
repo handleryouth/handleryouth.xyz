@@ -1,8 +1,7 @@
 import { useCallback } from 'react';
-import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { slideLeftEntrance } from 'animation';
-import { Button, ItemBox, Section, TimelineCard } from 'components';
+import { Button, ItemBox, Section, Seo, TimelineCard } from 'components';
 import { motion } from 'framer-motion';
 import { confirmPopup } from 'primereact/confirmpopup';
 import { ProgressSpinner } from 'primereact/progressspinner';
@@ -34,15 +33,7 @@ const Resume = () => {
 
   return (
     <>
-      <Head>
-        <title>Tony David Personal Website</title>
-        <meta property="twitter:title" content="handleryouth.xyz - Resume" />
-        <meta property="twitter:description" content="Tony David Resume" />
-        <meta
-          name="keywords"
-          content="NextJS, Tailwind, React, Redux, Tony David, handleryouth, Resume"
-        />
-      </Head>
+      <Seo title="handleryouth.xyz - Resume" description="Tony David Resume" />
       <main className="pt-32 w-11/12 mx-auto max-w-[68rem]">
         <h1>Resume</h1>
 

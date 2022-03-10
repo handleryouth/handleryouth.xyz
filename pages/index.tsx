@@ -1,10 +1,9 @@
 import { NextPage } from 'next';
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { slideLeftEntrance } from 'animation';
-import { ActivityDescription, Button, CardThumbnail, Section } from 'components';
+import { ActivityDescription, Button, CardThumbnail, Section, Seo } from 'components';
 import { motion } from 'framer-motion';
 import { ProgressSpinner } from 'primereact/progressspinner';
 import { AiOutlineCode } from 'react-icons/ai';
@@ -22,18 +21,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Tony David Personal Website</title>
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://www.handleryouth.xyz/" />
-        <meta property="twitter:image" content="/thumbnail.webp" />
-        <meta property="twitter:title" content="handleryouth.xyz - Tony David Personal Website" />
-        <meta
-          property="twitter:description"
-          content="Tony David Gultom personal website. A frontend Engineer and a student"
-        />
-        <meta name="keywords" content="NextJS, Tailwind, React, Redux, Tony David, handleryouth" />
-      </Head>
+      <Seo />
       <motion.main
         className="pt-16 flex flex-col items-cetner justify-center min-h-screen w-11/12 max-w-[68rem] mx-auto"
         variants={slideLeftEntrance}

@@ -10,6 +10,7 @@ export * from './Section';
 export * from './TimelineCard';
 export * from './ItemBox';
 export * from './Button';
+export * from './Seo';
 
 export { default as Layout } from './Layout';
 export { default as Sidebar } from './Sidebar';
@@ -23,3 +24,4 @@ export { default as ItemBox } from './ItemBox';
 export { default as Button } from './Button';
 export { default as Footer } from './Footer';
 export { default as Navbar } from './Navbar';
+export { default as Seo } from './Seo';

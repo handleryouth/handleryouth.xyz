@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { slideLeftEntrance } from 'animation';
-import { Card } from 'components';
+import { Card, Seo } from 'components';
 import { motion } from 'framer-motion';
 import { ProgressSpinner } from 'primereact/progressspinner';
 import { ProjectData } from 'types';
@@ -15,17 +15,14 @@ const Project = () => {
 
   return (
     <>
+      <Seo
+        title="handleryouth.xyz - Description"
+        description="Personal projects that you can use as ideas for web developer"
+      />
       <Head>
         <title>Tony David Personal Project</title>
-        <meta property="twitter:title" content="handleryouth.xyz - Description" />
-        <meta
-          property="twitter:description"
-          content="Personal projects that you can use as ideas for web developer"
-        />
-        <meta
-          name="keywords"
-          content="NextJS, Tailwind, React, Redux, Tony David, handleryouth, Project"
-        />
+        <meta property="twitter:title" content="" />
+        <meta property="twitter:description" content="" />
       </Head>
       <main className="w-11/12 mx-auto max-w-[68rem]">
         <h1 className="pt-32">Web Projects</h1>
