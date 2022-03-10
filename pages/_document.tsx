@@ -4,13 +4,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link rel="stylesheet" href="https://unpkg.com/primeicons/primeicons.css" />
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/primereact/resources/themes/lara-light-indigo/theme.css"
-        />
-        <link rel="stylesheet" href="https://unpkg.com/primereact/resources/primereact.min.css" />
-        <link rel="stylesheet" href="https://unpkg.com/primeflex@2.0.0/primeflex.min.css" />
         <link rel="preload" href="/api/project" as="fetch" crossOrigin="anonymous" />
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
