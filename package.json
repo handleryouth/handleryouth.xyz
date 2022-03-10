@@ -2,7 +2,8 @@
   "name": "profile2-0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"next dev\" \"yarn lint --fix\"  \"pretty-quick --staged'\"",
+    "fix": "concurrently \"pretty-quick --staged\" \"yarn lint --fix\"",
+    "dev": "concurrently \"next dev\" \"yarn fix\"",
     "build": "next build",
     "start": "next start",
     "lint": "eslint  ./ --ext js,jsx,ts,tsx",
@@ -17,7 +18,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "concurrently \"pretty-quick --staged\" \"yarn lint --fix\""
+      "pre-commit": "yarn fix"
     }
   },
   "dependencies": {
