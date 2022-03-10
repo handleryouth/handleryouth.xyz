@@ -24,6 +24,9 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Tony David Personal Website</title>
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://www.handleryouth.xyz/" />
+        <meta property="twitter:image" content="/thumbnail.webp" />
         <meta property="twitter:title" content="handleryouth.xyz - Tony David Personal Website" />
         <meta
           property="twitter:description"
