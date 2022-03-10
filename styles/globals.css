@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: 'Inter';
+}
+
 @layer components {
   .custom-scrollpanel .p-scrollpanel-bar {
     @apply bg-slate-500 transition-colors  opacity-100 hover:bg-[#243c5a];

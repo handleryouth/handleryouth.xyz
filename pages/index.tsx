@@ -82,7 +82,7 @@ const Home: NextPage = () => {
             <div className="flex flex-wrap sm:justify-center gap-x-16 gap-y-8">
               <ActivityDescription
                 title="Frontend Engineer"
-                description="I am a Frontend Engineer, I have experience in building web applications using React, Redux, NextJS, TailwindCSS, TypeScript, NodeJS, ExpressJS, MongoDB, GraphQL, Apollo, and more. I have experience in building web applications using React, Redux, NextJS, TailwindCSS, TypeScript, NodeJS, ExpressJS, MongoDB, GraphQL, Apollo, and more."
+                description="I am a Frontend Engineer, I have experience in building web applications using React, Redux, NextJS, TailwindCSS, TypeScript, NodeJS, ExpressJS, MongoDB, GraphQL, Apollo, and more."
                 icon={<AiOutlineCode />}
               />
 
