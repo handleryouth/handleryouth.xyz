@@ -27,7 +27,7 @@ const Seo = ({ title, description }: SeoProps) => {
           "Tony David's personal website with a lot of frontend projects. The page is also filled with his profile and resume as frontend engineer"
         }`}
       />
-      <meta property="og:image" content="/thumbnail.webp" />
+      <meta property="og:image" content="https://ibb.co/fSZn9dm" />
 
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content="https://www.handleryouth.xyz/" />
@@ -42,7 +42,7 @@ const Seo = ({ title, description }: SeoProps) => {
           "Tony David's personal website with a lot of frontend projects. The page is also filled with his profile and resume as frontend engineer"
         }`}
       />
-      <meta property="twitter:image" content="/thumbnail.webp" />
+      <meta property="twitter:image" content="https://ibb.co/fSZn9dm" />
     </Head>
   );
 };
