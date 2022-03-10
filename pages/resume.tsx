@@ -1,16 +1,17 @@
 import { useCallback } from 'react';
-import { Timeline } from 'primereact/timeline';
 import Head from 'next/head';
-import { motion } from 'framer-motion';
-import { ProgressSpinner } from 'primereact/progressspinner';
-import { ItemBox, Section, TimelineCard } from 'components';
-import { confirmPopup } from 'primereact/confirmpopup';
-import { Button } from 'primereact/button';
 import { useRouter } from 'next/router';
 import { slideLeftEntrance } from 'animation';
+import { ItemBox, Section, TimelineCard } from 'components';
+import { motion } from 'framer-motion';
+import { Button } from 'primereact/button';
+import { confirmPopup } from 'primereact/confirmpopup';
+import { ProgressSpinner } from 'primereact/progressspinner';
+import { Timeline } from 'primereact/timeline';
 import { CertificatesProps, EducationProps } from 'types';
-import { useQuery } from '@apollo/client';
 import { QUERY_GET_ALL_RESUME_DATA } from 'utils';
+
+import { useQuery } from '@apollo/client';
 
 const Resume = () => {
   const router = useRouter();

@@ -1,19 +1,19 @@
 import { NextPage } from 'next';
-import { motion } from 'framer-motion';
-import { QUERY_GET_ALL_PROJECTS } from 'utils';
-import { slideLeftEntrance } from 'animation';
-import { ProgressSpinner } from 'primereact/progressspinner';
-import { ActivityDescription, CardThumbnail, Section } from 'components';
-import { ProjectData } from 'types';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { slideLeftEntrance } from 'animation';
+import { ActivityDescription, CardThumbnail, Section } from 'components';
+import { motion } from 'framer-motion';
+import { Button } from 'primereact/button';
+import { ProgressSpinner } from 'primereact/progressspinner';
 import { AiOutlineCode } from 'react-icons/ai';
 import { GiPublicSpeaker } from 'react-icons/gi';
-import { Button } from 'primereact/button';
-import { useQuery } from '@apollo/client';
+import { ProjectData } from 'types';
+import { QUERY_GET_ALL_PROJECTS } from 'utils';
 
-import Link from 'next/link';
+import { useQuery } from '@apollo/client';
 
 const Home: NextPage = () => {
   const { data, loading } = useQuery(QUERY_GET_ALL_PROJECTS, {
@@ -148,7 +148,6 @@ const Home: NextPage = () => {
                   width={1920}
                   height={1080}
                   layout="responsive"
-                  priority
                 />
               </div>
             </div>

@@ -1,9 +1,9 @@
-import { ProjectData } from 'types';
-import { Card } from 'primereact/card';
-import { ScrollPanel } from 'primereact/scrollpanel';
-import { Button } from 'primereact/button';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { Button } from 'primereact/button';
+import { Card } from 'primereact/card';
+import { ScrollPanel } from 'primereact/scrollpanel';
+import { ProjectData } from 'types';
 
 const CustomCard = ({
   description,

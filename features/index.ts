@@ -1,4 +1,5 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+
 import { sidebarSlice } from './sidebar';
 
 export const rootReducer = combineReducers({

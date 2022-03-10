@@ -1,8 +1,8 @@
-import { ProjectData } from 'types';
-import { Card } from 'primereact/card';
-import { Button } from 'primereact/button';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { Button } from 'primereact/button';
+import { Card } from 'primereact/card';
+import { ProjectData } from 'types';
 
 const CardThumbnail = ({
   image,

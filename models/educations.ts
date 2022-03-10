@@ -1,4 +1,4 @@
-import { Schema, models, model, Types } from 'mongoose';
+import { model, models, Schema, Types } from 'mongoose';
 import { EducationProps } from 'types';
 
 const educationSchema = new Schema<EducationProps>({

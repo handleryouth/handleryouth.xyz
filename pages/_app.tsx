@@ -1,8 +1,10 @@
-import { Provider } from 'react-redux';
-import { store } from 'features';
 import type { AppProps } from 'next/app';
 import { Layout } from 'components';
+import { store } from 'features';
+import { Provider } from 'react-redux';
+
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+
 import '@fontsource/inter/variable.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.min.css';

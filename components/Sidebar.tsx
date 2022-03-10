@@ -1,12 +1,12 @@
 import { useCallback, useMemo } from 'react';
-import { motion } from 'framer-motion';
-import { useDispatch, useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
-import { Sidebar } from 'primereact/sidebar';
+import { listContainerVariant, listVariant } from 'animation';
 import { RootState } from 'features';
 import { deactivateSidebar } from 'features/sidebar';
+import { motion } from 'framer-motion';
+import { Sidebar } from 'primereact/sidebar';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
-import { listContainerVariant, listVariant } from 'animation';
+import { useDispatch, useSelector } from 'react-redux';
 
 const SidebarComponent = () => {
   const { isOpen } = useSelector((state: RootState) => state.sidebar);

@@ -1,11 +1,12 @@
+import Head from 'next/head';
+import { slideLeftEntrance } from 'animation';
+import { Card } from 'components';
 import { motion } from 'framer-motion';
 import { ProgressSpinner } from 'primereact/progressspinner';
 import { ProjectData } from 'types';
-import { slideLeftEntrance } from 'animation';
 import { QUERY_GET_ALL_PROJECTS } from 'utils';
-import { Card } from 'components';
+
 import { useQuery } from '@apollo/client';
-import Head from 'next/head';
 
 const Project = () => {
   const { data, loading } = useQuery(QUERY_GET_ALL_PROJECTS, {

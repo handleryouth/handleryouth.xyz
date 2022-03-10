@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
-import { motion } from 'framer-motion';
 import { slideLeftEntrance } from 'animation';
+import { motion } from 'framer-motion';
 
 interface HomeSectionProps {
   title?: string;

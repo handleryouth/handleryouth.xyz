@@ -1,5 +1,6 @@
-import Head from 'next/head';
 import { ReactNode } from 'react';
+import Head from 'next/head';
+
 import FooterSmall from './Footers/FooterSmall';
 import AuthNavbar from './Navbars/AuthNavbar';
 import Sidebar from './Sidebar';

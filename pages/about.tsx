@@ -1,15 +1,15 @@
-import { motion } from 'framer-motion';
-import { slideLeftEntrance } from 'animation';
-import Image from 'next/image';
 import Head from 'next/head';
+import Image from 'next/image';
+import { slideLeftEntrance } from 'animation';
+import { motion } from 'framer-motion';
 import {
-  SiReact,
-  SiRedux,
-  SiMongodb,
-  SiNextdotjs,
-  SiTailwindcss,
   SiFramer,
   SiGraphql,
+  SiMongodb,
+  SiNextdotjs,
+  SiReact,
+  SiRedux,
+  SiTailwindcss,
 } from 'react-icons/si';
 
 const About = () => {

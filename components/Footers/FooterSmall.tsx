@@ -1,7 +1,7 @@
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { GrMail } from 'react-icons/gr';
 import { useRouter } from 'next/router';
 import { CustomTooltip } from 'components';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { GrMail } from 'react-icons/gr';
 
 export default function FooterSmall() {
   const router = useRouter();
