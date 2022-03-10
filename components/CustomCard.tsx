@@ -24,7 +24,7 @@ const CustomCard = ({
         </h1>
       }
       footer={
-        <div className="flex flex-col sm:flex-row gap-x-3 ">
+        <div className="flex flex-col sm:flex-row gap-3 ">
           <Button
             icon="pi pi-arrow-right"
             label="Demo"
