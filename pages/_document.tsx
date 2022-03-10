@@ -26,6 +26,7 @@ export default function Document() {
         <meta name="msapplication-TileColor" content="#4285f4" />
         <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png" />
         <meta name="theme-color" content="#4285f4" />
+        <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://www.handleryouth.xyz/" />
         <meta property="twitter:image" content="/thumbnail.webp" />
       </Head>
