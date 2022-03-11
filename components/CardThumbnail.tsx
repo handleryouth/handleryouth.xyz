@@ -33,7 +33,7 @@ const CardThumbnail = ({
 
           <Button
             icon="pi pi-github"
-            label="Repo/Code"
+            label="Repo"
             iconPos="right"
             className="p-button-outlined prose"
             onClick={() => router.push(linkRepo)}
