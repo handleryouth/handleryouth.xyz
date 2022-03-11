@@ -27,7 +27,7 @@ const CardThumbnail = ({
             icon="pi pi-arrow-right"
             label="Demo"
             iconPos="right"
-            className="p-button-outlined p-button-info prose"
+            className="p-button-outlined p-button-info"
             onClick={() => router.push(linkDemo)}
           />
 
@@ -35,7 +35,7 @@ const CardThumbnail = ({
             icon="pi pi-github"
             label="Repo"
             iconPos="right"
-            className="p-button-outlined prose"
+            className="p-button-outlined"
             onClick={() => router.push(linkRepo)}
           />
         </div>
