@@ -16,7 +16,7 @@ import { QueryResult } from '@apollo/client';
 export const getStaticProps: GetStaticProps = async () => {
   const responseData: QueryResult = await axios({
     method: 'POST',
-    url: 'https://handleryouth.xyz/api/graphql',
+    url: process.env.WEBSITE_URL + 'api/graphql',
     data: {
       operationName: 'getData',
       query: QUERY_GET_ALL_PROJECTS.loc!.source.body,

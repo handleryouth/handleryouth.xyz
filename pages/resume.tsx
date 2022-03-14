@@ -1,6 +1,8 @@
 import { useCallback } from 'react';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router';
 import { slideLeftEntrance } from 'animation';
+import axios from 'axios';
 import { Button, ItemBox, Section, Seo, TimelineCard } from 'components';
 import { motion } from 'framer-motion';
 import { confirmPopup } from 'primereact/confirmpopup';
@@ -9,11 +11,27 @@ import { Timeline } from 'primereact/timeline';
 import { CertificatesProps, EducationProps } from 'types';
 import { QUERY_GET_ALL_RESUME_DATA } from 'utils';
 
-import { useQuery } from '@apollo/client';
+import { QueryResult } from '@apollo/client';
 
-const Resume = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  const responseData: QueryResult = await axios({
+    method: 'POST',
+    url: process.env.WEBSITE_URL + 'api/graphql',
+    data: {
+      operationName: 'getResumePageProps',
+      query: QUERY_GET_ALL_RESUME_DATA.loc!.source.body,
+      variables: {},
+    },
+  }).then(res => res.data);
+  return {
+    props: {
+      resumeData: responseData.data,
+    },
+  };
+};
+
+const Resume = ({ resumeData }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter();
-  const { data: resumeData } = useQuery(QUERY_GET_ALL_RESUME_DATA);
 
   const confirmExternalLink = useCallback(
     event => {
