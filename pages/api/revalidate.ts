@@ -7,8 +7,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    await res.unstable_revalidate('about');
-    await res.unstable_revalidate('project');
+    await res.unstable_revalidate('/');
+    await res.unstable_revalidate('/resume');
+    await res.unstable_revalidate('/project');
     return res.json({ revalidated: true });
   } catch (err) {
     // If there was an error, Next.js will continue
