@@ -30,6 +30,7 @@
     "@types/react-redux": "^7.1.22",
     "apollo-server-micro": "^3.6.3",
     "autoprefixer": "^10.4.2",
+    "axios": "^0.26.1",
     "commitizen": "^4.2.4",
     "concurrently": "^7.0.0",
     "cz-conventional-changelog": "^3.3.0",

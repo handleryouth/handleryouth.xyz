@@ -1,22 +1,36 @@
-import { NextPage } from 'next';
+import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { slideLeftEntrance } from 'animation';
+import axios from 'axios';
 import { ActivityDescription, Button, CardThumbnail, Section, Seo } from 'components';
 import { motion } from 'framer-motion';
-import { ProgressSpinner } from 'primereact/progressspinner';
 import { AiOutlineCode } from 'react-icons/ai';
 import { GiPublicSpeaker } from 'react-icons/gi';
 import { ProjectData } from 'types';
 import { QUERY_GET_ALL_PROJECTS } from 'utils';
 
-import { useQuery } from '@apollo/client';
+import { QueryResult } from '@apollo/client';
 
-const Home: NextPage = () => {
-  const { data, loading } = useQuery(QUERY_GET_ALL_PROJECTS, {
-    notifyOnNetworkStatusChange: true,
-  });
+export const getStaticProps: GetStaticProps = async () => {
+  const responseData: QueryResult = await axios({
+    method: 'POST',
+    url: process.env.WEBSITE_URL + 'api/graphql',
+    data: {
+      operationName: 'getData',
+      query: QUERY_GET_ALL_PROJECTS.loc!.source.body,
+      variables: {},
+    },
+  }).then(res => res.data);
+  return {
+    props: {
+      staticProject: responseData.data,
+    },
+  };
+};
+
+const Home: NextPage = ({ staticProject }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter();
 
   return (
@@ -94,31 +108,23 @@ const Home: NextPage = () => {
           body={
             <div>
               <div className="flex flex-wrap justify-center">
-                {loading ? (
-                  <div className="h-96 flex items-center justify-center">
-                    <ProgressSpinner />
+                {(staticProject.getAllProject as ProjectData[]).slice(0, 3).map(project => (
+                  <div key={project._id.toString()}>
+                    <CardThumbnail
+                      image={project.image}
+                      linkDemo={project.linkDemo}
+                      linkRepo={project.linkRepo}
+                      title={project.title}
+                    />
                   </div>
-                ) : (
-                  <>
-                    {(data.getAllProject as ProjectData[]).slice(0, 3).map(project => (
-                      <div key={project._id.toString()}>
-                        <CardThumbnail
-                          image={project.image}
-                          linkDemo={project.linkDemo}
-                          linkRepo={project.linkRepo}
-                          title={project.title}
-                        />
-                      </div>
-                    ))}
-                    <div className="w-full text-center mt-8">
-                      <Button
-                        label="More"
-                        onClick={() => router.push('/project')}
-                        className="p-button-outlined p-button-info"
-                      />
-                    </div>
-                  </>
-                )}
+                ))}
+                <div className="w-full text-center mt-8">
+                  <Button
+                    label="More"
+                    onClick={() => router.push('/project')}
+                    className="p-button-outlined p-button-info"
+                  />
+                </div>
               </div>
             </div>
           }
