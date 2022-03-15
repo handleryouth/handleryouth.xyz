@@ -52,8 +52,8 @@ const About = () => {
                 </span>
                 . I am a self-taught Frontend Web Developer. I like to learn something new and
                 project is my way to learn something new in website. I&apos;ve done a lot of
-                challenge and i am always trying to learn something new. Another way for me to learn
-                is by sharing code with other. It&apos;s fun !
+                challenges and i am always trying to learn something new. Another way for me to
+                learn is by sharing code with others. It&apos;s fun !
               </motion.p>
               <motion.p className="text-xl mt-4" variants={slideLeftEntrance}>
                 I created this website to share projects which of course can be an idea for other
