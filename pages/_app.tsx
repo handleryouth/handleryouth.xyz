@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app';
+import { ThemeProvider } from 'next-themes';
 import { Layout } from 'components';
 import { store } from 'features';
 import { Provider } from 'react-redux';
@@ -23,9 +24,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <ApolloProvider client={client}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <ThemeProvider attribute="class" defaultTheme="dark">
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ThemeProvider>
       </ApolloProvider>
     </Provider>
   );

@@ -17,7 +17,7 @@ const CustomCard = ({
 
   return (
     <Card
-      className="overflow-hidden md:w-[21rem] min-w-[300px]"
+      className="overflow-hidden md:w-[21rem] min-w-[300px] dark:bg-black/10 "
       title={
         <h1 className="!text-2xl prose font-bold !custom-gradient-text !from-cyan-500 !to-blue-500 !m-0">
           {title}
@@ -48,7 +48,7 @@ const CustomCard = ({
         </div>
       }
     >
-      <ScrollPanel className="prose text-justify h-[9rem] min-w-[270px]  max-w-[270px] md:max-w-none custom-scrollpanel pr-4 ">
+      <ScrollPanel className="prose dark:prose-invert text-justify h-[9rem] min-w-[270px]  max-w-[270px] md:max-w-none custom-scrollpanel pr-4 ">
         {description}
       </ScrollPanel>
     </Card>

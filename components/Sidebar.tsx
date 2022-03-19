@@ -61,13 +61,18 @@ const SidebarComponent = () => {
 
   return (
     <>
-      <Sidebar visible={isOpen} onHide={() => dispatch(deactivateSidebar())} icons={customIcons}>
+      <Sidebar
+        visible={isOpen}
+        onHide={() => dispatch(deactivateSidebar())}
+        icons={customIcons}
+        className="dark:bg-black"
+      >
         <h3 className="prose text-4xl h-12 font-bold text-transparent cursor-default bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 ">
           Where to go ?
         </h3>
 
         <motion.ul
-          className="text-2xl my-4 flex flex-col items-start prose prose-li:pl-0 prose-li:font-semibold prose-li:inline"
+          className="text-2xl my-4 flex flex-col items-start prose prose-li:pl-0 prose-li:font-semibold prose-li:inline dark:text-white"
           variants={listContainerVariant}
           initial="hidden"
           animate="visible"

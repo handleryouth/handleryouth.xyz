@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router';
+import { useTheme } from 'next-themes';
 import { slideLeftEntrance } from 'animation';
 import axios from 'axios';
 import { Button, ItemBox, Section, Seo, TimelineCard } from 'components';
@@ -31,6 +32,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Resume = ({ resumeData }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter();
+  const { theme } = useTheme();
 
   const confirmExternalLink = useCallback(
     event => {
@@ -121,7 +123,7 @@ const Resume = ({ resumeData }: InferGetStaticPropsType<typeof getStaticProps>) 
             <h1>Resume</h1>
             <Button
               label="Show Resume"
-              className="p-button-outlined p-button-info"
+              className={`p-button-outlined  ${theme === 'light' && 'p-button-info'}`}
               onClick={confirmExternalLink}
             />
           </section>
