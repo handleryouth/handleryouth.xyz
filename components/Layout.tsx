@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import Head from 'next/head';
 
 import FooterSmall from './Footer';
@@ -6,6 +6,15 @@ import AuthNavbar from './Navbar';
 import Sidebar from './Sidebar';
 
 function Layout({ children }: { children: ReactNode }) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <>
       <Head>
