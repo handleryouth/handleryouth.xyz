@@ -9,7 +9,7 @@ export default function FooterSmall() {
 
   return (
     <>
-      <footer className="bg-black border-t-2 border-t-blue-500 px-8 ">
+      <footer className="bg-black border-t-2 border-t-blue-500 dark:border-t-[#ff00cc] px-8 ">
         <div className="border-b-2 pb-4 prose-li:pl-0 prose-ul:pl-0 prose-ul:text-white prose-li:cursor-pointer prose-h3:text-white prose-li:text-3xl prose-li:mx-2 prose-li:my-0 prose-ul:my-2">
           <h3 className="text-xl text-center">Reach me out on</h3>
           <ul className="flex justify-center text-3xl  mt-4">

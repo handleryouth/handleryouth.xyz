@@ -13,7 +13,7 @@ function Layout({ children }: { children: ReactNode }) {
       </Head>
       <Sidebar />
 
-      <div className="!min-w-[320px] !max-w-none prose prose-ul:list-none">
+      <div className="!min-w-[320px] !max-w-none prose dark:prose-invert prose-ul:list-none  dark:prose-h1:dark-custom-header">
         <AuthNavbar />
         {children}
         <FooterSmall />
