@@ -1,4 +1,3 @@
-import { lazy, Suspense } from 'react';
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -13,6 +12,7 @@ import { ProjectData } from 'types';
 import { QUERY_GET_ALL_PROJECTS } from 'utils';
 
 import { QueryResult } from '@apollo/client';
+import dynamic from 'next/dynamic';
 
 export const getStaticProps: GetStaticProps = async () => {
   const responseData: QueryResult = await axios({
@@ -31,7 +31,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const LazyCard = lazy(() => import('components/CardThumbnail'));
+const DynamicCard = dynamic(() => import('components/CardThumbnail'));
 
 const Home: NextPage = ({ staticProject }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter();
@@ -110,27 +110,25 @@ const Home: NextPage = ({ staticProject }: InferGetStaticPropsType<typeof getSta
           title="Web Projects"
           body={
             <div>
-              <Suspense fallback={null}>
-                <div className="flex flex-wrap justify-center">
-                  {(staticProject.getAllProject as ProjectData[]).slice(0, 3).map(project => (
-                    <div key={project._id.toString()}>
-                      <LazyCard
-                        image={project.image}
-                        linkDemo={project.linkDemo}
-                        linkRepo={project.linkRepo}
-                        title={project.title}
-                      />
-                    </div>
-                  ))}
-                  <div className="w-full text-center mt-8">
-                    <Button
-                      label="More"
-                      onClick={() => router.push('/project')}
-                      className="p-button-outlined p-button-info"
+              <div className="flex flex-wrap justify-center">
+                {(staticProject.getAllProject as ProjectData[]).slice(0, 3).map(project => (
+                  <div key={project._id.toString()}>
+                    <DynamicCard
+                      image={project.image}
+                      linkDemo={project.linkDemo}
+                      linkRepo={project.linkRepo}
+                      title={project.title}
                     />
                   </div>
+                ))}
+                <div className="w-full text-center mt-8">
+                  <Button
+                    label="More"
+                    onClick={() => router.push('/project')}
+                    className="p-button-outlined p-button-info"
+                  />
                 </div>
-              </Suspense>
+              </div>
             </div>
           }
         />

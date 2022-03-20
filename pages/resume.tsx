@@ -12,8 +12,9 @@ import { CertificatesProps, EducationProps } from 'types';
 import { QUERY_GET_ALL_RESUME_DATA } from 'utils';
 
 import { QueryResult } from '@apollo/client';
+import dynamic from 'next/dynamic';
 
-const LazyItemBox = lazy(() => import('components/ItemBox'));
+const DynamicItemBox = dynamic(() => import('components/ItemBox'));
 
 export const getStaticProps: GetStaticProps = async () => {
   const responseData: QueryResult = await axios({
@@ -117,7 +118,7 @@ const Resume = ({ resumeData }: InferGetStaticPropsType<typeof getStaticProps>) 
                 <div className="flex flex-wrap gap-4">
                   {(resumeData.getAllCertificate as CertificatesProps[]).map(
                     (certificate, index) => (
-                      <LazyItemBox key={index} {...certificate} />
+                      <DynamicItemBox key={index} {...certificate} />
                     )
                   )}
                 </div>
