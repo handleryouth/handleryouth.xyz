@@ -110,7 +110,7 @@ const Home: NextPage = ({ staticProject }: InferGetStaticPropsType<typeof getSta
           title="Web Projects"
           body={
             <div>
-              <Suspense fallback={<div>loading...</div>}>
+              <Suspense fallback={null}>
                 <div className="flex flex-wrap justify-center">
                   {(staticProject.getAllProject as ProjectData[]).slice(0, 3).map(project => (
                     <div key={project._id.toString()}>
