@@ -1,4 +1,5 @@
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -12,7 +13,6 @@ import { ProjectData } from 'types';
 import { QUERY_GET_ALL_PROJECTS } from 'utils';
 
 import { QueryResult } from '@apollo/client';
-import dynamic from 'next/dynamic';
 
 export const getStaticProps: GetStaticProps = async () => {
   const responseData: QueryResult = await axios({

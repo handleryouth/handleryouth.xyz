@@ -1,5 +1,6 @@
-import { lazy, Suspense, useCallback } from 'react';
+import { Suspense, useCallback } from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
 import { slideLeftEntrance } from 'animation';
@@ -12,7 +13,6 @@ import { CertificatesProps, EducationProps } from 'types';
 import { QUERY_GET_ALL_RESUME_DATA } from 'utils';
 
 import { QueryResult } from '@apollo/client';
-import dynamic from 'next/dynamic';
 
 const DynamicItemBox = dynamic(() => import('components/ItemBox'));
 
