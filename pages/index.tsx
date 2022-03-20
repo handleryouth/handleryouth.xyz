@@ -1,10 +1,11 @@
+import { lazy, Suspense } from 'react';
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { slideLeftEntrance } from 'animation';
 import axios from 'axios';
-import { ActivityDescription, Button, CardThumbnail, Section, Seo } from 'components';
+import { ActivityDescription, Button, Section, Seo } from 'components';
 import { motion } from 'framer-motion';
 import { AiOutlineCode } from 'react-icons/ai';
 import { GiPublicSpeaker } from 'react-icons/gi';
@@ -29,6 +30,8 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   };
 };
+
+const LazyCard = lazy(() => import('components/CardThumbnail'));
 
 const Home: NextPage = ({ staticProject }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter();
@@ -107,25 +110,27 @@ const Home: NextPage = ({ staticProject }: InferGetStaticPropsType<typeof getSta
           title="Web Projects"
           body={
             <div>
-              <div className="flex flex-wrap justify-center">
-                {(staticProject.getAllProject as ProjectData[]).slice(0, 3).map(project => (
-                  <div key={project._id.toString()}>
-                    <CardThumbnail
-                      image={project.image}
-                      linkDemo={project.linkDemo}
-                      linkRepo={project.linkRepo}
-                      title={project.title}
+              <Suspense fallback={<div>loading...</div>}>
+                <div className="flex flex-wrap justify-center">
+                  {(staticProject.getAllProject as ProjectData[]).slice(0, 3).map(project => (
+                    <div key={project._id.toString()}>
+                      <LazyCard
+                        image={project.image}
+                        linkDemo={project.linkDemo}
+                        linkRepo={project.linkRepo}
+                        title={project.title}
+                      />
+                    </div>
+                  ))}
+                  <div className="w-full text-center mt-8">
+                    <Button
+                      label="More"
+                      onClick={() => router.push('/project')}
+                      className="p-button-outlined p-button-info"
                     />
                   </div>
-                ))}
-                <div className="w-full text-center mt-8">
-                  <Button
-                    label="More"
-                    onClick={() => router.push('/project')}
-                    className="p-button-outlined p-button-info"
-                  />
                 </div>
-              </div>
+              </Suspense>
             </div>
           }
         />
