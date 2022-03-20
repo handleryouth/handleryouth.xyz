@@ -7,7 +7,7 @@ import AuthNavbar from './Navbar';
 
 function Layout({ children }: { children: ReactNode }) {
   const [mounted, setMounted] = useState(false);
-  const DynamicSidebar = dynamic(() => import('./Sidebar'), { ssr: false });
+  const DynamicSidebar = dynamic(() => import('./Sidebar'));
   useEffect(() => {
     setMounted(true);
   }, []);
