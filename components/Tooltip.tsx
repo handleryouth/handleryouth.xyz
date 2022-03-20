@@ -1,11 +1,5 @@
-import { ReactNode } from 'react';
 import { Tooltip } from 'primereact/tooltip';
-
-interface TooltipProps {
-  target: string;
-  text: string;
-  icon: ReactNode | string;
-}
+import { TooltipProps } from 'types';
 
 const CustomTooltip = ({ target, text, icon }: TooltipProps) => {
   return (

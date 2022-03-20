@@ -1,9 +1,5 @@
-import { ReactNode } from 'react';
-import { Button, ButtonProps } from 'primereact/button';
-
-interface CustomButtonProps extends ButtonProps {
-  components?: ReactNode;
-}
+import { Button } from 'primereact/button';
+import { CustomButtonProps } from 'types';
 
 const CustomButton = ({ components, className, ...rest }: CustomButtonProps) => {
   return (

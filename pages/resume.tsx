@@ -1,5 +1,6 @@
-import { useCallback } from 'react';
+import { Suspense, useCallback } from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
 import { slideLeftEntrance } from 'animation';
@@ -12,6 +13,8 @@ import { CertificatesProps, EducationProps } from 'types';
 import { QUERY_GET_ALL_RESUME_DATA } from 'utils';
 
 import { QueryResult } from '@apollo/client';
+
+const DynamicItemBox = dynamic(() => import('components/ItemBox'));
 
 export const getStaticProps: GetStaticProps = async () => {
   const responseData: QueryResult = await axios({
@@ -111,11 +114,15 @@ const Resume = ({ resumeData }: InferGetStaticPropsType<typeof getStaticProps>) 
           <Section
             title="Certificates"
             body={
-              <div className="flex flex-wrap gap-4">
-                {(resumeData.getAllCertificate as CertificatesProps[]).map((certificate, index) => (
-                  <ItemBox key={index} {...certificate} />
-                ))}
-              </div>
+              <Suspense fallback={null}>
+                <div className="flex flex-wrap gap-4">
+                  {(resumeData.getAllCertificate as CertificatesProps[]).map(
+                    (certificate, index) => (
+                      <DynamicItemBox key={index} {...certificate} />
+                    )
+                  )}
+                </div>
+              </Suspense>
             }
           />
 

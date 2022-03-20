@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://localhost:3000//about</loc>
-    <lastmod>2022-03-19T16:14:40.567Z</lastmod>
+    <loc>http://localhost:3000/about</loc>
+    <lastmod>2022-03-20T07:42:00.915Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/</loc>
-    <lastmod>2022-03-19T16:14:40.567Z</lastmod>
+    <lastmod>2022-03-20T07:42:00.915Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://localhost:3000//project</loc>
-    <lastmod>2022-03-19T16:14:40.567Z</lastmod>
+    <loc>http://localhost:3000/project</loc>
+    <lastmod>2022-03-20T07:42:00.915Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://localhost:3000//resume</loc>
-    <lastmod>2022-03-19T16:14:40.567Z</lastmod>
+    <loc>http://localhost:3000/resume</loc>
+    <lastmod>2022-03-20T07:42:00.915Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>

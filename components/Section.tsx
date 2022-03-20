@@ -1,12 +1,6 @@
-import { ReactNode } from 'react';
 import { slideLeftEntrance } from 'animation';
 import { motion } from 'framer-motion';
-
-interface HomeSectionProps {
-  title?: string;
-  body: ReactNode;
-  customTitleClass?: string;
-}
+import { HomeSectionProps } from 'types';
 
 const Section = ({ title, body, customTitleClass }: HomeSectionProps) => {
   return (

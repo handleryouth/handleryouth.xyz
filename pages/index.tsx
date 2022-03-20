@@ -1,10 +1,11 @@
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { slideLeftEntrance } from 'animation';
 import axios from 'axios';
-import { ActivityDescription, Button, CardThumbnail, Section, Seo } from 'components';
+import { ActivityDescription, Button, Section, Seo } from 'components';
 import { motion } from 'framer-motion';
 import { AiOutlineCode } from 'react-icons/ai';
 import { GiPublicSpeaker } from 'react-icons/gi';
@@ -29,6 +30,8 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   };
 };
+
+const DynamicCard = dynamic(() => import('components/CardThumbnail'));
 
 const Home: NextPage = ({ staticProject }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter();
@@ -110,7 +113,7 @@ const Home: NextPage = ({ staticProject }: InferGetStaticPropsType<typeof getSta
               <div className="flex flex-wrap justify-center">
                 {(staticProject.getAllProject as ProjectData[]).slice(0, 3).map(project => (
                   <div key={project._id.toString()}>
-                    <CardThumbnail
+                    <DynamicCard
                       image={project.image}
                       linkDemo={project.linkDemo}
                       linkRepo={project.linkRepo}
