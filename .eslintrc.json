@@ -6,40 +6,30 @@
     "eslint:recommended",
     "plugin:react/recommended"
   ],
-  "plugins": ["react", "simple-import-sort"],
+  "plugins": ["react", "simple-import-sort", "import"],
   "rules": {
     "no-console": "warn",
     "react/react-in-jsx-scope": "off",
     "camelcase": "warn",
-    "eqeqeq": "warn"
-  },
-  "overrides": [
-    {
-      "files": ["**/*.js", "**/*.ts", "**/*.tsx"],
-      "rules": {
-        "simple-import-sort/imports": [
-          "warn",
+    "import/order": [
+      "warn",
+      {
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "newlines-between": "always",
+        "groups": ["builtin", "external", "parent", "sibling", "index"],
+        "pathGroups": [
           {
-            "groups": [
-              // `react` first, `next` second, then packages starting with a character
-              ["^react$", "^next", "^[a-z]"],
-              // Packages starting with `@`
-              ["^@"],
-              // Packages starting with `~`
-              ["^~"],
-              // Imports starting with `../`
-              ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
-              // Imports starting with `./`
-              ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
-              // Style imports
-              ["^.+\\.s?css$"],
-              // Side effect imports
-              ["^\\u0000"]
-            ]
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
           }
-        ]
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"]
       }
-    }
-  ],
+    ]
+  },
   "ignorePatterns": ["next.config.js", "node_modules/", "public/", "build/", "static/"]
 }

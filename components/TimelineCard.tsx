@@ -1,4 +1,5 @@
 import { Card } from 'primereact/card';
+
 import { TimelineCardProps } from 'types';
 
 const TimelineCard = ({ title, description, time }: TimelineCardProps) => {

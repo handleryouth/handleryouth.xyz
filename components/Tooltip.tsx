@@ -1,4 +1,5 @@
 import { Tooltip } from 'primereact/tooltip';
+
 import { TooltipProps } from 'types';
 
 const CustomTooltip = ({ target, text, icon }: TooltipProps) => {

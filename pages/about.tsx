@@ -1,7 +1,5 @@
-import Image from 'next/image';
-import { slideLeftEntrance } from 'animation';
-import { Seo } from 'components';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import {
   SiFramer,
   SiGraphql,
@@ -11,6 +9,9 @@ import {
   SiRedux,
   SiTailwindcss,
 } from 'react-icons/si';
+
+import { slideLeftEntrance } from 'animation';
+import { Seo } from 'components';
 
 const About = () => {
   return (

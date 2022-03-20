@@ -1,25 +1,23 @@
 import { Suspense, useCallback } from 'react';
-import { GetStaticProps, InferGetStaticPropsType } from 'next';
-import dynamic from 'next/dynamic';
-import { useRouter } from 'next/router';
-import { useTheme } from 'next-themes';
-import { slideLeftEntrance } from 'animation';
-import axios from 'axios';
-import { Button, ItemBox, Section, Seo, TimelineCard } from 'components';
-import { motion } from 'framer-motion';
-import { confirmPopup } from 'primereact/confirmpopup';
-import { Timeline } from 'primereact/timeline';
-import { CertificatesProps, EducationProps } from 'types';
-import { QUERY_GET_ALL_RESUME_DATA } from 'utils';
 
 import { QueryResult } from '@apollo/client';
+import { motion } from 'framer-motion';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import { useTheme } from 'next-themes';
+import dynamic from 'next/dynamic';
+import { useRouter } from 'next/router';
+import { confirmPopup } from 'primereact/confirmpopup';
+import { Timeline } from 'primereact/timeline';
+
+import { slideLeftEntrance } from 'animation';
+import { Button, ItemBox, Section, Seo, TimelineCard } from 'components';
+import { CertificatesProps, EducationProps } from 'types';
+import { QUERY_GET_ALL_RESUME_DATA, requestHelper } from 'utils';
 
 const DynamicItemBox = dynamic(() => import('components/ItemBox'));
 
 export const getStaticProps: GetStaticProps = async () => {
-  const responseData: QueryResult = await axios({
-    method: 'POST',
-    url: process.env.WEBSITE_URL + 'api/graphql',
+  const responseData: QueryResult = await requestHelper({
     data: {
       operationName: 'getResumePageProps',
       query: QUERY_GET_ALL_RESUME_DATA.loc!.source.body,

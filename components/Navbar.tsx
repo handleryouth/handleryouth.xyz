@@ -1,13 +1,14 @@
+import { motion } from 'framer-motion';
+import { Twirl as Hamburger } from 'hamburger-react';
+import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useTheme } from 'next-themes';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { listContainer } from 'animation';
 import { Button } from 'components';
 import { RootState } from 'features';
 import { activateSidebar } from 'features/sidebar';
-import { motion } from 'framer-motion';
-import { Twirl as Hamburger } from 'hamburger-react';
-import { useDispatch, useSelector } from 'react-redux';
 
 export default function Navbar() {
   const router = useRouter();

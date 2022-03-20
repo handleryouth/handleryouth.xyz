@@ -1,18 +1,15 @@
+import { QueryResult } from '@apollo/client';
+import { motion } from 'framer-motion';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
-import { slideLeftEntrance } from 'animation';
-import axios from 'axios';
-import { Card, Seo } from 'components';
-import { motion } from 'framer-motion';
-import { ProjectData } from 'types';
-import { QUERY_GET_ALL_PROJECTS } from 'utils';
 
-import { QueryResult } from '@apollo/client';
+import { slideLeftEntrance } from 'animation';
+import { Card, Seo } from 'components';
+import { ProjectData } from 'types';
+import { QUERY_GET_ALL_PROJECTS, requestHelper } from 'utils';
 
 export const getStaticProps: GetStaticProps = async () => {
-  const responseData: QueryResult = await axios({
-    method: 'POST',
-    url: process.env.WEBSITE_URL + 'api/graphql',
+  const responseData: QueryResult = await requestHelper({
     data: {
       operationName: 'getData',
       query: QUERY_GET_ALL_PROJECTS.loc!.source.body,

@@ -1,4 +1,5 @@
 import { model, models, Schema, Types } from 'mongoose';
+
 import { EducationProps } from 'types';
 
 const experienceSchema = new Schema<EducationProps>({

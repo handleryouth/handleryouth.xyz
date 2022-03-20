@@ -1,19 +1,19 @@
-import type { AppProps } from 'next/app';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { ThemeProvider } from 'next-themes';
-import { Layout } from 'components';
-import { store } from 'features';
+import type { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
 
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import { Layout } from 'components';
+import { store } from 'features';
 
-import 'primereact/resources/themes/lara-light-indigo/theme.css';
-import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
-import '../styles/globals.css';
+import 'primereact/resources/primereact.min.css';
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import '@fontsource/inter/400.css';
-import '@fontsource/inter/800.css';
-import '@fontsource/inter/700.css';
 import '@fontsource/inter/600.css';
+import '@fontsource/inter/700.css';
+import '@fontsource/inter/800.css';
+import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const client = new ApolloClient({

@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { Card } from 'primereact/card';
-import { ProjectData } from 'types';
 
 import Button from './Button';
+
+import { ProjectData } from 'types';
 
 const CardThumbnail = ({
   image,

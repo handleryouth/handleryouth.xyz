@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 const fs = require('fs');
+
 const globby = require('globby');
 
 function addPage(page) {

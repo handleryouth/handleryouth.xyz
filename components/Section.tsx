@@ -1,5 +1,6 @@
-import { slideLeftEntrance } from 'animation';
 import { motion } from 'framer-motion';
+
+import { slideLeftEntrance } from 'animation';
 import { HomeSectionProps } from 'types';
 
 const Section = ({ title, body, customTitleClass }: HomeSectionProps) => {

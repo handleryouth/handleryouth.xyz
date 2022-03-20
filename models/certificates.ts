@@ -1,4 +1,5 @@
 import { model, models, Schema, Types } from 'mongoose';
+
 import { CertificatesProps } from 'types';
 
 const certificateSchema = new Schema<CertificatesProps>({

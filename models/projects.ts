@@ -1,4 +1,5 @@
 import { model, models, Schema, Types } from 'mongoose';
+
 import { ProjectData } from 'types';
 
 const projectSchema = new Schema<ProjectData>({
