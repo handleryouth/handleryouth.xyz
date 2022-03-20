@@ -6,7 +6,7 @@ function addPage(page) {
   const path = page.replace('pages', '').replace('.tsx', '').replace('.ts', '').replace('.mdx', '');
   const route = path === '/index' ? '' : path;
   return `  <url>
-    <loc>${`${process.env.WEBSITE_URL}${route}`}</loc>
+    <loc>${`${process.env.WEBSITE_URL}${route.replace('/', '')}`}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
