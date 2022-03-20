@@ -1,10 +1,5 @@
 import { Card } from 'primereact/card';
-
-interface TimelineCardProps {
-  title: string;
-  description: string;
-  time: string;
-}
+import { TimelineCardProps } from 'types';
 
 const TimelineCard = ({ title, description, time }: TimelineCardProps) => {
   return (

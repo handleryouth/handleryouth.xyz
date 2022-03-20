@@ -1,4 +1,6 @@
+import { ReactNode } from 'react';
 import { ObjectId } from 'mongodb';
+import { ButtonProps } from 'primereact/button';
 
 export interface ProjectData {
   _id: ObjectId;
@@ -34,4 +36,26 @@ export interface ItemBoxProps {
 export interface SeoProps {
   title?: string;
   description?: string;
+}
+
+export interface TooltipProps {
+  target: string;
+  text: string;
+  icon: ReactNode | string;
+}
+
+export interface HomeSectionProps {
+  title?: string;
+  body: ReactNode;
+  customTitleClass?: string;
+}
+
+export interface CustomButtonProps extends ButtonProps {
+  components?: ReactNode;
+}
+
+export interface TimelineCardProps {
+  title: string;
+  description: string;
+  time: string;
 }
