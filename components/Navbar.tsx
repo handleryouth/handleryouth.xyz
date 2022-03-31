@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { Twirl as Hamburger } from 'hamburger-react';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { listContainer } from 'animation';
@@ -11,24 +10,24 @@ import { RootState } from 'features';
 import { activateSidebar } from 'features/sidebar';
 
 export default function Navbar() {
-  const router = useRouter();
   const { theme, setTheme } = useTheme();
   const dispatch = useDispatch();
   const { isOpen } = useSelector((state: RootState) => state.sidebar);
 
   return (
     <>
-      <nav className="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 bg-black border-b-2 border-b-blue-500 dark:border-b-[#ff00cc]">
+      <nav className="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 bg-black border-b-2 border-b-blue-500 dark:border-b-[#ff00cc] py-3">
         <div className="px-4 w-full flex flex-wrap items-center justify-between">
-          <motion.p
-            className=" font-bold text-xl text-white transition-colors ease-out cursor-pointer  hover:custom-gradient-text hover:from-pink-500 hover:to-violet-500"
-            onClick={() => router.push('/')}
-            variants={listContainer}
-            animate={'visible'}
-            initial={'hidden'}
-          >
-            Tony David
-          </motion.p>
+          <Link href={'/'} passHref>
+            <motion.a
+              className="font-bold text-xl bg-transparent animate-hue-rotate  custom-gradient-text from-[#667db6] to-[#0082c8] no-underline"
+              variants={listContainer}
+              animate={'visible'}
+              initial={'hidden'}
+            >
+              Tony David
+            </motion.a>
+          </Link>
 
           <motion.div
             className={'flex items-center gap-x-2 lg:bg-opacity-0 lg:shadow-none'}
