@@ -1,7 +1,6 @@
 import { QueryResult } from '@apollo/client';
 import { motion } from 'framer-motion';
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -9,7 +8,7 @@ import { AiOutlineCode } from 'react-icons/ai';
 import { GiPublicSpeaker } from 'react-icons/gi';
 
 import { slideLeftEntrance } from 'animation';
-import { ActivityDescription, Button, Section, Seo } from 'components';
+import { ActivityDescription, Button, CardThumbnail, Section, Seo } from 'components';
 import { ProjectData } from 'types';
 import { QUERY_GET_ALL_PROJECTS, requestHelper } from 'utils';
 
@@ -27,8 +26,6 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   };
 };
-
-const DynamicCard = dynamic(() => import('components/CardThumbnail'));
 
 const Home: NextPage = ({ staticProject }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter();
@@ -110,7 +107,7 @@ const Home: NextPage = ({ staticProject }: InferGetStaticPropsType<typeof getSta
               <div className="flex flex-wrap justify-center">
                 {(staticProject.getAllProject as ProjectData[]).slice(0, 3).map(project => (
                   <div key={project._id.toString()}>
-                    <DynamicCard
+                    <CardThumbnail
                       image={project.image}
                       linkDemo={project.linkDemo}
                       linkRepo={project.linkRepo}

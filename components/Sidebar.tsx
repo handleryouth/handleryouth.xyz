@@ -25,7 +25,7 @@ const SidebarComponent = () => {
 
   const customIcons = useMemo(() => {
     return (
-      <ul className="text-4xl flex items-center justify-center mr-4 h-12">
+      <ul className="text-4xl flex items-center justify-center mr-4 gap-x-4 h-12">
         <motion.li
           whileHover={{
             y: [0, -10, 0],
@@ -37,7 +37,7 @@ const SidebarComponent = () => {
           }}
         >
           <SiGithub
-            className="mr-4 cursor-pointer"
+            className="cursor-pointer dark:text-white"
             onClick={() => router.push('https://github.com/handleryouth')}
           />
         </motion.li>
@@ -53,7 +53,7 @@ const SidebarComponent = () => {
           }}
         >
           <SiLinkedin
-            className="cursor-pointer"
+            className="cursor-pointer dark:text-white"
             onClick={() => router.push('https://www.linkedin.com/in/tonydg/')}
           />
         </motion.li>
