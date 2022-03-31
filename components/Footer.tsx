@@ -5,7 +5,7 @@ import { GrMail } from 'react-icons/gr';
 
 import { CustomTooltip } from 'components';
 
-export default function FooterSmall() {
+export default function Footer() {
   const router = useRouter();
 
   return (

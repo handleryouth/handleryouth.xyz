@@ -1,10 +1,9 @@
-import { Suspense, useCallback } from 'react';
+import React, { Suspense, useCallback } from 'react';
 
 import { QueryResult } from '@apollo/client';
 import { motion } from 'framer-motion';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { useTheme } from 'next-themes';
-import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { confirmPopup } from 'primereact/confirmpopup';
 import { Timeline } from 'primereact/timeline';
@@ -14,7 +13,7 @@ import { Button, ItemBox, Section, Seo, TimelineCard } from 'components';
 import { CertificatesProps, EducationProps } from 'types';
 import { QUERY_GET_ALL_RESUME_DATA, requestHelper } from 'utils';
 
-const DynamicItemBox = dynamic(() => import('components/ItemBox'));
+const LazySection = React.lazy(() => import('../components/Section'));
 
 export const getStaticProps: GetStaticProps = async () => {
   const responseData: QueryResult = await requestHelper({
@@ -109,20 +108,20 @@ const Resume = ({ resumeData }: InferGetStaticPropsType<typeof getStaticProps>) 
             }
           />
 
-          <Section
-            title="Certificates"
-            body={
-              <Suspense fallback={null}>
+          <Suspense fallback={null}>
+            <LazySection
+              title="Certificates"
+              body={
                 <div className="flex flex-wrap gap-4">
                   {(resumeData.getAllCertificate as CertificatesProps[]).map(
                     (certificate, index) => (
-                      <DynamicItemBox key={index} {...certificate} />
+                      <ItemBox key={index} {...certificate} />
                     )
                   )}
                 </div>
-              </Suspense>
-            }
-          />
+              }
+            />
+          </Suspense>
 
           <section className="text-center py-52">
             <h1>Resume</h1>
