@@ -1,7 +1,6 @@
 import { QueryResult } from '@apollo/client';
 import { motion } from 'framer-motion';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
-import Head from 'next/head';
 
 import { slideLeftEntrance } from 'animation';
 import { Card, Seo } from 'components';
@@ -27,14 +26,9 @@ const Project = ({ staticProject }: InferGetStaticPropsType<typeof getStaticProp
   return (
     <>
       <Seo
-        title="handleryouth.xyz - Description"
+        title="handleryouth.xyz - Web Projects"
         description="Personal projects that you can use as ideas for web developer"
       />
-      <Head>
-        <title>Tony David Personal Project</title>
-        <meta property="twitter:title" content="" />
-        <meta property="twitter:description" content="" />
-      </Head>
       <main className="w-11/12 mx-auto max-w-[68rem]">
         <h1 className="pt-32">Web Projects</h1>
         <div className="flex flex-wrap justify-center md:justify-between gap-x-4 gap-y-5  pb-16  min-h-screen">

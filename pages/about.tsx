@@ -65,28 +65,28 @@ const About = () => {
 
             <motion.div variants={slideLeftEntrance} className="sm:mt-8">
               <h3 className="font-semibold mt-12 text-3xl mb-2 ">Tech Stacks</h3>
-              <div className="text-xl not-prose">
-                I use the following technologies to build this website.
-                <ul className="flex text-5xl mt-4 flex-wrap ">
-                  <li className="mt-2 mr-2">
+              <div className="text-xl prose-ul:pl-0 prose-li:pl-0">
+                <p className="my-0">I use the following technologies to build this website.</p>
+                <ul className="flex text-5xl  flex-wrap gap-4 dark:text-white">
+                  <li>
                     <SiReact />
                   </li>
-                  <li className="mt-2 mr-2">
+                  <li>
                     <SiRedux />
                   </li>
-                  <li className="mt-2 mr-2">
+                  <li>
                     <SiMongodb />
                   </li>
-                  <li className="mt-2 mr-2">
+                  <li>
                     <SiNextdotjs />
                   </li>
-                  <li className="mt-2 mr-2">
+                  <li>
                     <SiTailwindcss />
                   </li>
-                  <li className="mt-2 mr-2">
+                  <li>
                     <SiFramer />
                   </li>
-                  <li className="mt-2 mr-2">
+                  <li>
                     <SiGraphql />
                   </li>
                 </ul>

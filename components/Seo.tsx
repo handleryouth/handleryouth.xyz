@@ -5,8 +5,8 @@ import { SeoProps } from 'types';
 const Seo = ({ title, description }: SeoProps) => {
   return (
     <Head>
-      <title>handleryouth.xyz - Tony David Personal Website</title>
-      <meta name="title" content={`handleryouth.xyz - ${title ?? 'Tony David Personal Website'}`} />
+      <title>{title ?? 'handleryouth.xyz - Tony David Personal Website'}</title>
+      <meta name="title" content={title ?? 'handleryouth.xyz - Tony David Personal Website'} />
       <meta
         name="description"
         content={`${
@@ -19,7 +19,7 @@ const Seo = ({ title, description }: SeoProps) => {
       <meta property="og:url" content="https://www.handleryouth.xyz/" />
       <meta
         property="og:title"
-        content={`handleryouth.xyz - ${title ?? 'Tony David Personal Website'}`}
+        content={title ?? 'handleryouth.xyz - Tony David Personal Website'}
       />
       <meta
         property="og:description"
@@ -34,7 +34,7 @@ const Seo = ({ title, description }: SeoProps) => {
       <meta property="twitter:url" content="https://www.handleryouth.xyz/" />
       <meta
         property="twitter:title"
-        content={`handleryouth.xyz - ${title ?? 'Tony David Personal Website'}`}
+        content={title ?? 'handleryouth.xyz - Tony David Personal Website'}
       />
       <meta
         property="twitter:description"

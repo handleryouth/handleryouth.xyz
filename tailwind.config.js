@@ -14,7 +14,7 @@ module.exports = {
       keyframes: {
         'hue-rotate': {
           '0%': {
-            filter: 'hue-rotate(0deg)',
+            filter: 'hue-rotate(360deg)',
           },
           '50%': {
             filter: 'hue-rotate(180deg)',
@@ -25,7 +25,7 @@ module.exports = {
         },
       },
       animation: {
-        'hue-rotate': 'hue-rotate 15s ease infinite',
+        'hue-rotate': 'hue-rotate 8s ease infinite',
       },
       typography: {
         DEFAULT: {
