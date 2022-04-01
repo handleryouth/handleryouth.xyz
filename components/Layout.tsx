@@ -26,7 +26,7 @@ function Layout({ children }: { children: ReactNode }) {
         <LazySidebar />
       </Suspense>
 
-      <div className="!min-w-[320px] !max-w-none prose dark:prose-invert prose-ul:list-none  dark:prose-h1:dark-custom-header">
+      <div className="!min-w-[320px] !max-w-none prose dark:prose-invert prose-ul:list-none  dark:prose-h1:dark-custom-header dark:prose-p:text-white">
         <Navbar />
         {children}
         <Suspense fallback={null}>

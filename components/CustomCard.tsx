@@ -20,7 +20,7 @@ const CustomCard = ({
     <Card
       className="overflow-hidden md:w-[21rem] min-w-[300px] dark:bg-black/10 "
       title={
-        <h1 className="!text-2xl prose font-bold !custom-gradient-text !from-cyan-500 !to-blue-500 !m-0">
+        <h1 className="!text-2xl prose font-bold custom-gradient-text !from-cyan-500 !to-blue-500 !m-0 dark:!text-white">
           {title}
         </h1>
       }
