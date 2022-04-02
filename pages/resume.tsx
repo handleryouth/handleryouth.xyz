@@ -1,4 +1,4 @@
-import React, { Suspense, useCallback } from 'react';
+import React, { useCallback } from 'react';
 
 import { QueryResult } from '@apollo/client';
 import { motion } from 'framer-motion';
@@ -12,8 +12,6 @@ import { slideLeftEntrance } from 'animation';
 import { Button, ItemBox, Section, Seo, TimelineCard } from 'components';
 import { CertificatesProps, EducationProps } from 'types';
 import { QUERY_GET_ALL_RESUME_DATA, requestHelper } from 'utils';
-
-const LazySection = React.lazy(() => import('../components/Section'));
 
 export const getStaticProps: GetStaticProps = async () => {
   const responseData: QueryResult = await requestHelper({
@@ -108,20 +106,16 @@ const Resume = ({ resumeData }: InferGetStaticPropsType<typeof getStaticProps>) 
             }
           />
 
-          <Suspense fallback={null}>
-            <LazySection
-              title="Certificates"
-              body={
-                <div className="flex flex-wrap gap-4">
-                  {(resumeData.getAllCertificate as CertificatesProps[]).map(
-                    (certificate, index) => (
-                      <ItemBox key={index} {...certificate} />
-                    )
-                  )}
-                </div>
-              }
-            />
-          </Suspense>
+          <Section
+            title="Certificates"
+            body={
+              <div className="flex flex-wrap gap-4">
+                {(resumeData.getAllCertificate as CertificatesProps[]).map((certificate, index) => (
+                  <ItemBox key={index} {...certificate} />
+                ))}
+              </div>
+            }
+          />
 
           <section className="text-center py-52">
             <h1>Resume</h1>

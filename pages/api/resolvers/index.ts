@@ -1,5 +1,5 @@
+import { projects, certificates, educations, experiences } from 'lib';
 import dbConnect from 'lib/dbConnect';
-import { certificates, educations, experiences, projects } from 'models';
 
 export const resolvers = {
   Query: {

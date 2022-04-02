@@ -1,5 +1,4 @@
-export * from './query';
-export * from './fragment';
 export * from './requestHelper';
+export * from './graphql';
 
 export { default as requestHelper } from './requestHelper';

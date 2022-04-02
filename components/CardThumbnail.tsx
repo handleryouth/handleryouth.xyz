@@ -18,7 +18,7 @@ const CardThumbnail = ({
     <Card
       className="overflow-hidden prose sm:w-96 m-4 min-w-[300px] shadow-2xl dark:bg-black/10 dark:border-2 dark:border-slate-700"
       title={
-        <h3 className=" text-2xl font-bold custom-gradient-text from-cyan-500 to-blue-500 m-0">
+        <h3 className=" text-2xl font-bold custom-gradient-text from-cyan-500 to-blue-500 dark:text-white m-0">
           {title}
         </h3>
       }
