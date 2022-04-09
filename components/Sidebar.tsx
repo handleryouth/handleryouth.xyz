@@ -7,8 +7,7 @@ import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { listContainerVariant, listVariant } from 'animation';
-import { RootState } from 'features';
-import { deactivateSidebar } from 'features/sidebar';
+import { deactivateSidebar, RootState } from 'lib/redux';
 
 const SidebarComponent = () => {
   const { isOpen } = useSelector((state: RootState) => state.sidebar);

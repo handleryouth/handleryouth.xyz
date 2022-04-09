@@ -18,7 +18,6 @@
           "order": "asc",
           "caseInsensitive": true
         },
-        "newlines-between": "always",
         "groups": ["builtin", "external", "parent", "sibling", "index"],
         "pathGroups": [
           {

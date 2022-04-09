@@ -1,17 +1,9 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import {
-  SiFramer,
-  SiGraphql,
-  SiMongodb,
-  SiNextdotjs,
-  SiReact,
-  SiRedux,
-  SiTailwindcss,
-} from 'react-icons/si';
 
 import { slideLeftEntrance } from 'animation';
 import { Seo } from 'components';
+import { TECH_STACKS } from 'utils';
 
 const About = () => {
   return (
@@ -68,27 +60,11 @@ const About = () => {
               <div className="text-xl prose-ul:pl-0 prose-li:pl-0">
                 <p className="my-0">I use the following technologies to build this website.</p>
                 <ul className="flex text-5xl  flex-wrap gap-4 dark:text-white">
-                  <li>
-                    <SiReact />
-                  </li>
-                  <li>
-                    <SiRedux />
-                  </li>
-                  <li>
-                    <SiMongodb />
-                  </li>
-                  <li>
-                    <SiNextdotjs />
-                  </li>
-                  <li>
-                    <SiTailwindcss />
-                  </li>
-                  <li>
-                    <SiFramer />
-                  </li>
-                  <li>
-                    <SiGraphql />
-                  </li>
+                  {TECH_STACKS.map((item, index) => (
+                    <li key={index}>
+                      <item.icon />
+                    </li>
+                  ))}
                 </ul>
               </div>
             </motion.div>

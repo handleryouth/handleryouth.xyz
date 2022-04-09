@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { listContainer } from 'animation';
 import { Button } from 'components';
-import { RootState } from 'features';
-import { activateSidebar } from 'features/sidebar';
+import { activateSidebar, RootState } from 'lib/redux';
+import { PAGE_LINKS } from 'utils';
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
@@ -36,22 +36,13 @@ export default function Navbar() {
             initial={'hidden'}
           >
             <ul className="hidden lg:flex flex-row list-none">
-              <li>
-                <Link href="/resume">
-                  <a className="custom-link">My Resume</a>
-                </Link>
-              </li>
-
-              <li>
-                <Link href="/project">
-                  <a className="custom-link">Web Project</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/about">
-                  <a className="custom-link">About</a>
-                </Link>
-              </li>
+              {PAGE_LINKS.map((link, index) => (
+                <li key={index}>
+                  <Link href={link.url} passHref>
+                    <a className="custom-link">{link.label}</a>
+                  </Link>
+                </li>
+              ))}
             </ul>
             <Button
               icon={`pi ${theme === 'light' ? 'pi-moon' : 'pi-sun'}`}

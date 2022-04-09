@@ -6,10 +6,10 @@ export const sidebarSlice = createSlice({
     isOpen: false,
   },
   reducers: {
-    activateSidebar: (state) => {
+    activateSidebar: state => {
       state.isOpen = true;
     },
-    deactivateSidebar: (state) => {
+    deactivateSidebar: state => {
       state.isOpen = false;
     },
   },

@@ -39,10 +39,7 @@ const Resume = ({ resumeData }: InferGetStaticPropsType<typeof getStaticProps>) 
         target: event.currentTarget,
         message: 'This will redirect to another page. Proceed?',
         icon: 'pi pi-exclamation-triangle',
-        accept: () =>
-          router.push(
-            'https://drive.google.com/file/d/1cK6ETW4kmdUYgf1eW8cfMEfSFljuJa82/view?usp=sharing'
-          ),
+        accept: () => router.push(process.env.NEXT_PUBLIC_CV_EXTERNAL!),
       });
     },
     [router]

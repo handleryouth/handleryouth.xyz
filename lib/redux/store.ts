@@ -9,7 +9,5 @@ export const rootReducer = combineReducers({
 export type RootState = ReturnType<typeof rootReducer>;
 
 export const store = configureStore({
-  reducer: {
-    sidebar: sidebarSlice.reducer,
-  },
+  reducer: rootReducer,
 });

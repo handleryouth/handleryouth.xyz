@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 
 import { ObjectId } from 'mongodb';
 import { ButtonProps } from 'primereact/button';
+import { IconType } from 'react-icons';
 
 export interface ProjectData {
   _id: ObjectId;
@@ -59,4 +60,16 @@ export interface TimelineCardProps {
   title: string;
   description: string;
   time: string;
+}
+
+export interface FooterLink {
+  name: string;
+  url: string;
+  textDescription: string;
+  icon: IconType;
+}
+
+export interface PageLinkProps {
+  url: string;
+  label: string;
 }
