@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-
 import { slideLeftEntrance } from 'animation';
 import { Seo } from 'components';
 import { TECH_STACKS } from 'utils';

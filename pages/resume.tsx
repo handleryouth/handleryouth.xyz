@@ -1,5 +1,4 @@
 import React, { useCallback } from 'react';
-
 import { QueryResult } from '@apollo/client';
 import { motion } from 'framer-motion';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
@@ -7,7 +6,6 @@ import { useTheme } from 'next-themes';
 import { useRouter } from 'next/router';
 import { confirmPopup } from 'primereact/confirmpopup';
 import { Timeline } from 'primereact/timeline';
-
 import { slideLeftEntrance } from 'animation';
 import { Button, ItemBox, Section, Seo, TimelineCard } from 'components';
 import { CertificatesProps, EducationProps } from 'types';

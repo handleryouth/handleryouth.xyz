@@ -1,9 +1,8 @@
 import Link from 'next/link';
-
 import { CustomTooltip } from 'components';
 import { FOOTER_LINK, PAGE_LINKS } from 'utils';
 
-export default function Footer() {
+const Footer = () => {
   return (
     <>
       <footer className="bg-black border-t-2 border-t-blue-500 dark:border-t-[#ff00cc] px-8 ">
@@ -48,4 +47,6 @@ export default function Footer() {
       </footer>
     </>
   );
-}
+};
+
+export default Footer;

@@ -1,11 +1,9 @@
 import { useCallback, useMemo } from 'react';
-
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import { Sidebar } from 'primereact/sidebar';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { listContainerVariant, listVariant } from 'animation';
 import { deactivateSidebar, RootState } from 'lib/redux';
 

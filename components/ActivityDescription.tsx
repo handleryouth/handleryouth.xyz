@@ -1,10 +1,4 @@
-import { ReactNode } from 'react';
-
-interface ActivityDescriptionProps {
-  title: string;
-  description: string;
-  icon: ReactNode;
-}
+import { ActivityDescriptionProps } from 'types';
 
 const ActivityDescription = ({ title, description, icon }: ActivityDescriptionProps) => {
   return (

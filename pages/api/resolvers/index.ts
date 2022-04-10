@@ -1,28 +1,19 @@
 import { projects, certificates, educations, experiences } from 'lib';
-import dbConnect from 'lib/dbConnect';
+import { queryHelper } from 'utils';
 
 export const resolvers = {
   Query: {
-    getAllProject: async () => {
-      await dbConnect();
-      const projectData = await projects.find();
-      return projectData;
+    getAllProject: () => {
+      return queryHelper(projects.find());
     },
-
-    getAllCertificate: async () => {
-      await dbConnect();
-      const certificateData = await certificates.find();
-      return certificateData;
+    getAllCertificate: () => {
+      return queryHelper(certificates.find());
     },
-    getAllEducation: async () => {
-      await dbConnect();
-      const educationData = await educations.find();
-      return educationData;
+    getAllEducation: () => {
+      return queryHelper(educations.find());
     },
-    getAllExperiences: async () => {
-      await dbConnect();
-      const experienceData = await experiences.find();
-      return experienceData;
+    getAllExperiences: () => {
+      return queryHelper(experiences.find());
     },
   },
 };

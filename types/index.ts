@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-
 import { ObjectId } from 'mongodb';
 import { ButtonProps } from 'primereact/button';
 import { IconType } from 'react-icons';
@@ -72,4 +71,10 @@ export interface FooterLink {
 export interface PageLinkProps {
   url: string;
   label: string;
+}
+
+export interface ActivityDescriptionProps {
+  title: string;
+  description: string;
+  icon: ReactNode;
 }

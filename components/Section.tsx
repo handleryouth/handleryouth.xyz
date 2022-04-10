@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-
 import { slideLeftEntrance } from 'animation';
 import { HomeSectionProps } from 'types';
 

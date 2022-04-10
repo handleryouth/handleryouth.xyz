@@ -2,7 +2,6 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { ThemeProvider } from 'next-themes';
 import type { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
-
 import { Layout } from 'components';
 import 'primeicons/primeicons.css';
 import 'primereact/resources/primereact.min.css';

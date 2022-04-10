@@ -1,5 +1,4 @@
 import { Button } from 'primereact/button';
-
 import { CustomButtonProps } from 'types';
 
 const CustomButton = ({ components, className, ...rest }: CustomButtonProps) => {

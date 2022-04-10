@@ -3,13 +3,12 @@ import { Twirl as Hamburger } from 'hamburger-react';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { listContainer } from 'animation';
 import { Button } from 'components';
 import { activateSidebar, RootState } from 'lib/redux';
 import { PAGE_LINKS } from 'utils';
 
-export default function Navbar() {
+const Navbar = () => {
   const { theme, setTheme } = useTheme();
   const dispatch = useDispatch();
   const { isOpen } = useSelector((state: RootState) => state.sidebar);
@@ -59,4 +58,6 @@ export default function Navbar() {
       </nav>
     </>
   );
-}
+};
+
+export default Navbar;

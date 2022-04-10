@@ -1,12 +1,10 @@
 import React, { ReactNode, useEffect, useState } from 'react';
-
 import Head from 'next/head';
-
 import Footer from './Footer';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 
-function Layout({ children }: { children: ReactNode }) {
+const Layout = ({ children }: { children: ReactNode }) => {
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     setMounted(true);
@@ -31,6 +29,6 @@ function Layout({ children }: { children: ReactNode }) {
       </div>
     </>
   );
-}
+};
 
 export default Layout;

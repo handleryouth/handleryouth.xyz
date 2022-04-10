@@ -1,5 +1,4 @@
 import { gql } from '@apollo/client';
-
 import { MAIN_RESPONSE_QUERY } from './fragment';
 
 export const QUERY_GET_ALL_PROJECTS = gql`

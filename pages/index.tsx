@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { AiOutlineCode } from 'react-icons/ai';
 import { GiPublicSpeaker } from 'react-icons/gi';
-
 import { slideLeftEntrance } from 'animation';
 import { ActivityDescription, Button, CardThumbnail, Section, Seo } from 'components';
 import { ProjectData } from 'types';

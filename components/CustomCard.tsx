@@ -2,9 +2,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { Card } from 'primereact/card';
 import { ScrollPanel } from 'primereact/scrollpanel';
-
 import Button from './Button';
-
 import { ProjectData } from 'types';
 
 const CustomCard = ({

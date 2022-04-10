@@ -1,5 +1,4 @@
 import Head from 'next/head';
-
 import { SeoProps } from 'types';
 
 const Seo = ({ title, description }: SeoProps) => {

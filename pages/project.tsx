@@ -1,7 +1,6 @@
 import { QueryResult } from '@apollo/client';
 import { motion } from 'framer-motion';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
-
 import { slideLeftEntrance } from 'animation';
 import { Card, Seo } from 'components';
 import { ProjectData } from 'types';
