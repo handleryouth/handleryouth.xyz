@@ -48,6 +48,25 @@ export const PAGE_LINKS: PageLinkProps[] = [
   },
 ];
 
+export const SIDEBAR_LINKS: PageLinkProps[] = [
+  {
+    label: 'Home',
+    url: '/',
+  },
+  {
+    label: 'My Resume',
+    url: '/resume',
+  },
+  {
+    label: 'Projects',
+    url: '/project',
+  },
+  {
+    label: 'About',
+    url: '/about',
+  },
+];
+
 export const TECH_STACKS = [
   {
     icon: SiReact,

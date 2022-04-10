@@ -1,59 +1,39 @@
-import { useCallback, useMemo } from 'react';
+import { useMemo } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Sidebar } from 'primereact/sidebar';
-import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { useDispatch, useSelector } from 'react-redux';
 import { listContainerVariant, listVariant } from 'animation';
 import { deactivateSidebar, RootState } from 'lib/redux';
+import { FOOTER_LINK, SIDEBAR_LINKS } from 'utils';
 
 const SidebarComponent = () => {
   const { isOpen } = useSelector((state: RootState) => state.sidebar);
   const router = useRouter();
   const dispatch = useDispatch();
 
-  const handleChangePage = useCallback(
-    (value: string) => {
-      router.push(value);
-      dispatch(deactivateSidebar());
-    },
-    [dispatch, router]
-  );
-
   const customIcons = useMemo(() => {
     return (
       <ul className="text-4xl flex items-center justify-center mr-4 gap-x-4 h-12">
-        <motion.li
-          whileHover={{
-            y: [0, -10, 0],
-          }}
-          transition={{
-            type: 'spring',
-            stiffness: 100,
-            duration: 0.5,
-          }}
-        >
-          <SiGithub
-            className="cursor-pointer dark:text-white"
-            onClick={() => router.push('https://github.com/handleryouth')}
-          />
-        </motion.li>
-
-        <motion.li
-          whileHover={{
-            y: [0, -10, 0],
-          }}
-          transition={{
-            type: 'spring',
-            stiffness: 100,
-            duration: 0.5,
-          }}
-        >
-          <SiLinkedin
-            className="cursor-pointer dark:text-white"
-            onClick={() => router.push('https://www.linkedin.com/in/tonydg/')}
-          />
-        </motion.li>
+        {FOOTER_LINK.filter(item => item.name !== 'Email').map((item, index) => (
+          <motion.li
+            key={index}
+            whileHover={{
+              y: [0, -10, 0],
+            }}
+            transition={{
+              type: 'spring',
+              stiffness: 100,
+              duration: 0.5,
+            }}
+          >
+            <item.icon
+              className="cursor-pointer dark:text-white"
+              onClick={() => router.push(item.url)}
+            />
+          </motion.li>
+        ))}
       </ul>
     );
   }, [router]);
@@ -76,69 +56,21 @@ const SidebarComponent = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.li
-            variants={listVariant}
-            whileHover={{
-              x: [0, 20, 0],
-            }}
-          >
-            <span
-              className="text-2xl hover:text-blue-500 cursor-pointer transition-colors"
-              onClick={() => {
-                handleChangePage('/');
+          {SIDEBAR_LINKS.map((link, index) => (
+            <motion.li
+              key={index}
+              variants={listVariant}
+              whileHover={{
+                x: [0, 20, 0],
               }}
             >
-              Home
-            </span>
-          </motion.li>
-
-          <motion.li
-            variants={listVariant}
-            whileHover={{
-              x: [0, 20, 0],
-            }}
-          >
-            <span
-              className="text-2xl my-4 hover:text-blue-500 cursor-pointer transition-colors"
-              onClick={() => {
-                handleChangePage('/resume');
-              }}
-            >
-              Resume
-            </span>
-          </motion.li>
-
-          <motion.li
-            variants={listVariant}
-            whileHover={{
-              x: [0, 20, 0],
-            }}
-          >
-            <span
-              className="text-2xl  hover:text-blue-500 cursor-pointer transition-colors"
-              onClick={() => {
-                handleChangePage('/project');
-              }}
-            >
-              Web Project
-            </span>
-          </motion.li>
-
-          <motion.li
-            variants={listVariant}
-            whileHover={{
-              x: [0, 20, 0],
-            }}
-          >
-            <span
-              className="text-2xl  hover:text-blue-500 cursor-pointer transition-colors"
-              onClick={() => {
-                handleChangePage('/about');
-              }}
-            >
-              About
-            </span>
-          </motion.li>
+              <Link passHref href={link.url}>
+                <a className="text-2xl hover:text-blue-500 cursor-pointer transition-colors text-white font-bold no-underline">
+                  {link.label}
+                </a>
+              </Link>
+            </motion.li>
+          ))}
         </motion.ul>
       </Sidebar>
     </>
