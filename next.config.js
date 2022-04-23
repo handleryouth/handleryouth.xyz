@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
-import withPWA from 'next-pwa'
-import runtimeCaching from 'next-pwa/cache'
+const withPWA = require('next-pwa')
+const runtimeCaching = require('next-pwa/cache')
 
-export default withPWA({
+module.exports = withPWA({
   swcMinify: true,
   pwa: {
     dest: 'public',
@@ -25,7 +25,7 @@ export default withPWA({
         'react-dom': 'preact/compat',
       })
     } else if (isServer) {
-      require('./scripts/sitemap-generator')
+      require('./scripts/sitemap-generator.js')
     }
 
     return config

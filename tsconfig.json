@@ -16,6 +16,6 @@
     "incremental": true,
     "baseUrl": "src/"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "scripts/sitemap-generator.cjs"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "scripts/sitemap-generator.js"],
   "exclude": ["node_modules"]
 }
