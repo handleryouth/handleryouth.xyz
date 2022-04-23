@@ -1,5 +1,5 @@
 import { model, models, Schema, Types } from 'mongoose'
-import { ProjectData } from 'src/types'
+import { ProjectData } from 'types'
 
 const projectSchema = new Schema<ProjectData>({
   _id: Types.ObjectId,

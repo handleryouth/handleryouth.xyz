@@ -1,5 +1,5 @@
 import { model, models, Schema, Types } from 'mongoose'
-import { EducationProps } from 'src/types'
+import { EducationProps } from 'types'
 
 const educationSchema = new Schema<EducationProps>({
   _id: Types.ObjectId,

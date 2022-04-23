@@ -9,7 +9,7 @@ import {
   SiRedux,
   SiTailwindcss,
 } from 'react-icons/si'
-import { FooterLink, PageLinkProps } from 'src/types'
+import { FooterLink, PageLinkProps } from 'types'
 
 export const FOOTER_LINK: FooterLink[] = [
   {

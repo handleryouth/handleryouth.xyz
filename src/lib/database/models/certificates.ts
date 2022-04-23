@@ -1,5 +1,5 @@
 import { model, models, Schema, Types } from 'mongoose'
-import { CertificatesProps } from 'src/types'
+import { CertificatesProps } from 'types'
 
 const certificateSchema = new Schema<CertificatesProps>({
   _id: Types.ObjectId,
