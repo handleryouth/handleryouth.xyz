@@ -1,0 +1,8 @@
+export * from './certificates'
+export { default as certificates } from './certificates'
+export * from './educations'
+export { default as educations } from './educations'
+export * from './experiences'
+export { default as experiences } from './experiences'
+export * from './projects'
+export { default as projects } from './projects'

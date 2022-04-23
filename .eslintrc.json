@@ -1,4 +1,7 @@
 {
+  "parserOptions": {
+    "sourceType": "module"
+  },
   "extends": [
     "next/core-web-vitals",
     "next",
@@ -6,29 +9,16 @@
     "eslint:recommended",
     "plugin:react/recommended"
   ],
-  "plugins": ["react", "simple-import-sort", "import"],
+  "plugins": ["react", "simple-import-sort"],
   "rules": {
     "no-console": "warn",
     "react/react-in-jsx-scope": "off",
     "camelcase": "warn",
-    "import/order": [
-      "warn",
-      {
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true
-        },
-        "groups": ["builtin", "external", "parent", "sibling", "index"],
-        "pathGroups": [
-          {
-            "pattern": "react",
-            "group": "external",
-            "position": "before"
-          }
-        ],
-        "pathGroupsExcludedImportTypes": ["builtin"]
-      }
-    ]
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "import/first": "warn",
+    "import/newline-after-import": "warn",
+    "import/no-duplicates": "warn"
   },
   "ignorePatterns": ["next.config.js", "node_modules/", "public/", "build/", "static/"]
 }

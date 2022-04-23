@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
-const withPWA = require('next-pwa');
-const runtimeCaching = require('next-pwa/cache');
+const withPWA = require('next-pwa')
+const runtimeCaching = require('next-pwa/cache')
 
 module.exports = withPWA({
   swcMinify: true,
@@ -23,11 +23,11 @@ module.exports = withPWA({
         react: 'preact/compat',
         'react-dom/test-utils': 'preact/test-utils',
         'react-dom': 'preact/compat',
-      });
+      })
     } else if (isServer) {
-      require('./scripts/sitemap-generator');
+      require('./scripts/sitemap-generator')
     }
 
-    return config;
+    return config
   },
-});
+})

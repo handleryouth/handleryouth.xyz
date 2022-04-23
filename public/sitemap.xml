@@ -1,26 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://localhost:3000/about</loc>
-    <lastmod>2022-04-10T17:25:48.841Z</lastmod>
+    <loc>http://localhost:3000/src/about</loc>
+    <lastmod>2022-04-23T08:20:38.131Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/</loc>
-    <lastmod>2022-04-10T17:25:48.841Z</lastmod>
+    <loc>http://localhost:3000/src/index</loc>
+    <lastmod>2022-04-23T08:20:38.131Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/project</loc>
-    <lastmod>2022-04-10T17:25:48.841Z</lastmod>
+    <loc>http://localhost:3000/src/project</loc>
+    <lastmod>2022-04-23T08:20:38.131Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/resume</loc>
-    <lastmod>2022-04-10T17:25:48.841Z</lastmod>
+    <loc>http://localhost:3000/src/resume</loc>
+    <lastmod>2022-04-23T08:20:38.131Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://localhost:3000/src/_app</loc>
+    <lastmod>2022-04-23T08:20:38.131Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://localhost:3000/src/_document</loc>
+    <lastmod>2022-04-23T08:20:38.131Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://localhost:3000/src/api/graphql</loc>
+    <lastmod>2022-04-23T08:20:38.131Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://localhost:3000/src/api/revalidate</loc>
+    <lastmod>2022-04-23T08:20:38.131Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://localhost:3000/src/api/resolvers/index</loc>
+    <lastmod>2022-04-23T08:20:38.131Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://localhost:3000/src/api/schemas/index</loc>
+    <lastmod>2022-04-23T08:20:38.132Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
