@@ -17,11 +17,6 @@
       "path": "cz-conventional-changelog"
     }
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn fix"
-    }
-  },
   "dependencies": {
     "@apollo/client": "^3.5.8",
     "@fontsource/inter": "^4.5.4",
