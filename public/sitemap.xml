@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://localhost:3000/src/about</loc>
-    <lastmod>2022-04-23T08:20:38.131Z</lastmod>
+    <loc>undefinedsrc/about</loc>
+    <lastmod>2022-04-23T12:37:11.794Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/src/index</loc>
-    <lastmod>2022-04-23T08:20:38.131Z</lastmod>
+    <loc>undefinedsrc/index</loc>
+    <lastmod>2022-04-23T12:37:11.794Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/src/project</loc>
-    <lastmod>2022-04-23T08:20:38.131Z</lastmod>
+    <loc>undefinedsrc/project</loc>
+    <lastmod>2022-04-23T12:37:11.794Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/src/resume</loc>
-    <lastmod>2022-04-23T08:20:38.131Z</lastmod>
+    <loc>undefinedsrc/resume</loc>
+    <lastmod>2022-04-23T12:37:11.794Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/src/_app</loc>
-    <lastmod>2022-04-23T08:20:38.131Z</lastmod>
+    <loc>undefinedsrc/_app</loc>
+    <lastmod>2022-04-23T12:37:11.794Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/src/_document</loc>
-    <lastmod>2022-04-23T08:20:38.131Z</lastmod>
+    <loc>undefinedsrc/_document</loc>
+    <lastmod>2022-04-23T12:37:11.794Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/src/api/graphql</loc>
-    <lastmod>2022-04-23T08:20:38.131Z</lastmod>
+    <loc>undefinedsrc/api/graphql</loc>
+    <lastmod>2022-04-23T12:37:11.794Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/src/api/revalidate</loc>
-    <lastmod>2022-04-23T08:20:38.131Z</lastmod>
+    <loc>undefinedsrc/api/revalidate</loc>
+    <lastmod>2022-04-23T12:37:11.794Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/src/api/resolvers/index</loc>
-    <lastmod>2022-04-23T08:20:38.131Z</lastmod>
+    <loc>undefinedsrc/api/resolvers/index</loc>
+    <lastmod>2022-04-23T12:37:11.794Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/src/api/schemas/index</loc>
-    <lastmod>2022-04-23T08:20:38.132Z</lastmod>
+    <loc>undefinedsrc/api/schemas/index</loc>
+    <lastmod>2022-04-23T12:37:11.794Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>

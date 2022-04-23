@@ -1,6 +1,7 @@
 {
   "name": "profile2-0",
   "private": true,
+  "type": "module",
   "scripts": {
     "fix": "yarn format && yarn lint --fix",
     "dev": " yarn fix && next dev ",
@@ -10,7 +11,8 @@
     "commit": "cz",
     "husky-install": "husky install",
     "prepare": "husky install",
-    "format": "prettier --write ./src"
+    "format": "prettier --write ./src",
+    "generate": "node scripts/sitemap-generator.cjs generateSitemap"
   },
   "config": {
     "commitizen": {
