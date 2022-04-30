@@ -20,6 +20,7 @@
   "dependencies": {
     "@apollo/client": "^3.5.8",
     "@fontsource/inter": "^4.5.4",
+    "@prisma/client": "^3.13.0",
     "@reduxjs/toolkit": "^1.7.2",
     "@tailwindcss/typography": "^0.5.2",
     "apollo-server-micro": "^3.6.3",
@@ -41,6 +42,7 @@
     "preact": "^10.6.6",
     "primeicons": "^5.0.0",
     "primereact": "^7.2.0",
+    "prisma": "^3.13.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",

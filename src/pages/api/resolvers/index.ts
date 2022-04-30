@@ -1,27 +1,24 @@
-import { certificates, educations, experiences, projects } from 'lib'
-import dbConnect from 'lib/dbConnect'
+import { PrismaClient } from '@prisma/client'
+
+const prisma = new PrismaClient()
 
 export const resolvers = {
   Query: {
     getAllProject: async () => {
-      await dbConnect()
-      const projectData = await projects.find()
+      const projectData = await prisma.projects.findMany({})
       return projectData
     },
 
     getAllCertificate: async () => {
-      await dbConnect()
-      const certificateData = await certificates.find()
+      const certificateData = await prisma.certificates.findMany({})
       return certificateData
     },
     getAllEducation: async () => {
-      await dbConnect()
-      const educationData = await educations.find()
+      const educationData = await prisma.educations.findMany({})
       return educationData
     },
     getAllExperiences: async () => {
-      await dbConnect()
-      const experienceData = await experiences.find()
+      const experienceData = await prisma.experiences.findMany({})
       return experienceData
     },
   },
