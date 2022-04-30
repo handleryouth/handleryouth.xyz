@@ -9,7 +9,7 @@ import '../styles/globals.css'
 
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 import { Layout } from 'components'
-import { store } from 'lib/redux'
+import { store } from 'lib'
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'next-themes'
 import { Provider } from 'react-redux'

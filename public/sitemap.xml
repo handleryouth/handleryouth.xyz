@@ -2,61 +2,61 @@
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://handleryouth.xyz/src/about</loc>
-    <lastmod>2022-04-23T12:47:55.410Z</lastmod>
+    <lastmod>2022-04-30T05:47:53.420Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://handleryouth.xyz/src/index</loc>
-    <lastmod>2022-04-23T12:47:55.410Z</lastmod>
+    <lastmod>2022-04-30T05:47:53.420Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://handleryouth.xyz/src/project</loc>
-    <lastmod>2022-04-23T12:47:55.410Z</lastmod>
+    <lastmod>2022-04-30T05:47:53.420Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://handleryouth.xyz/src/resume</loc>
-    <lastmod>2022-04-23T12:47:55.410Z</lastmod>
+    <lastmod>2022-04-30T05:47:53.420Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://handleryouth.xyz/src/_app</loc>
-    <lastmod>2022-04-23T12:47:55.410Z</lastmod>
+    <lastmod>2022-04-30T05:47:53.420Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://handleryouth.xyz/src/_document</loc>
-    <lastmod>2022-04-23T12:47:55.410Z</lastmod>
+    <lastmod>2022-04-30T05:47:53.420Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://handleryouth.xyz/src/api/graphql</loc>
-    <lastmod>2022-04-23T12:47:55.410Z</lastmod>
+    <lastmod>2022-04-30T05:47:53.420Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://handleryouth.xyz/src/api/revalidate</loc>
-    <lastmod>2022-04-23T12:47:55.410Z</lastmod>
+    <lastmod>2022-04-30T05:47:53.420Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://handleryouth.xyz/src/api/resolvers/index</loc>
-    <lastmod>2022-04-23T12:47:55.410Z</lastmod>
+    <lastmod>2022-04-30T05:47:53.420Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://handleryouth.xyz/src/api/schemas/index</loc>
-    <lastmod>2022-04-23T12:47:55.410Z</lastmod>
+    <lastmod>2022-04-30T05:47:53.420Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>

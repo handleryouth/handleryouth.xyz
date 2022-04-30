@@ -1,6 +1,6 @@
 import { listContainerVariant, listVariant } from 'animation'
 import { motion } from 'framer-motion'
-import { deactivateSidebar, RootState } from 'lib/redux'
+import { deactivateSidebar, RootState } from 'lib'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Sidebar } from 'primereact/sidebar'
