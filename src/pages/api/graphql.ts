@@ -1,4 +1,6 @@
+import { makeExecutableSchema } from '@graphql-tools/schema'
 import { ApolloServer } from 'apollo-server-micro'
+import { resolvers as scalarResolvers, typeDefs as scalarTypeDefs } from 'graphql-scalars'
 import Cors from 'micro-cors'
 
 import { resolvers } from './resolvers'
@@ -12,7 +14,16 @@ export const config = {
 
 const cors = Cors()
 
-const apolloServer = new ApolloServer({ typeDefs, resolvers })
+const customTypeDefs = [...scalarTypeDefs, typeDefs]
+
+const customTypeResolver = [scalarResolvers, resolvers]
+
+const apolloServer = new ApolloServer({
+  schema: makeExecutableSchema({
+    typeDefs: customTypeDefs,
+    resolvers: customTypeResolver,
+  }),
+})
 
 const startServer = apolloServer.start()
 

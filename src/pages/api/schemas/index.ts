@@ -1,8 +1,9 @@
 import { gql } from 'apollo-server-micro'
 
 export const typeDefs = gql`
+  scalar ObjectID
   type ProjectResponseProperties {
-    _id: String
+    id: ObjectID
     image: String
     description: String
     linkDemo: String
@@ -11,14 +12,14 @@ export const typeDefs = gql`
   }
 
   type CertificateProperties {
-    _id: String
+    id: ObjectID
     title: String
     company: String
     time: String
   }
 
   type EducationProperties {
-    _id: String
+    id: ObjectID
     title: String
     time: String
     description: String
