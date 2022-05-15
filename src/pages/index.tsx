@@ -1,4 +1,3 @@
-import { QueryResult } from '@apollo/client'
 import { slideLeftEntrance } from 'animation'
 import { ActivityDescription, Button, CardThumbnail, Section, Seo } from 'components'
 import { motion } from 'framer-motion'
@@ -9,19 +8,16 @@ import { useRouter } from 'next/router'
 import { AiOutlineCode } from 'react-icons/ai'
 import { GiPublicSpeaker } from 'react-icons/gi'
 import { ProjectData } from 'types'
-import { QUERY_GET_ALL_PROJECTS, requestHelper } from 'utils'
+import { client, QUERY_GET_ALL_PROJECTS } from 'utils'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const responseData: QueryResult = await requestHelper({
-    data: {
-      operationName: 'getData',
-      query: QUERY_GET_ALL_PROJECTS.loc!.source.body,
-      variables: {},
-    },
-  }).then(res => res.data)
+  const { data } = await client.query({
+    query: QUERY_GET_ALL_PROJECTS,
+  })
+
   return {
     props: {
-      staticProject: responseData.data,
+      staticProject: data,
     },
   }
 }
@@ -105,7 +101,7 @@ const Home: NextPage = ({ staticProject }: InferGetStaticPropsType<typeof getSta
             <div>
               <div className="flex flex-wrap justify-center">
                 {(staticProject.getAllProject as ProjectData[]).slice(0, 3).map(project => (
-                  <div key={project._id.toString()}>
+                  <div key={project.id}>
                     <CardThumbnail
                       image={project.image}
                       linkDemo={project.linkDemo}

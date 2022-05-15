@@ -1,11 +1,9 @@
 import { gql } from '@apollo/client'
 
-import { MAIN_RESPONSE_QUERY } from './fragment'
-
 export const QUERY_GET_ALL_PROJECTS = gql`
   query getData {
     getAllProject {
-      _id
+      id
       description
       image
       linkDemo
@@ -18,17 +16,22 @@ export const QUERY_GET_ALL_PROJECTS = gql`
 export const QUERY_GET_ALL_RESUME_DATA = gql`
   query getResumePageProps {
     getAllCertificate {
-      _id
+      id
       company
       time
       title
     }
     getAllEducation {
-      ...EducationFragment
+      id
+      title
+      time
+      description
     }
     getAllExperiences {
-      ...EducationFragment
+      id
+      title
+      time
+      description
     }
   }
-  ${MAIN_RESPONSE_QUERY}
 `

@@ -10,7 +10,7 @@ const CardThumbnail = ({
   linkDemo,
   linkRepo,
   title,
-}: Omit<ProjectData, '_id' | 'description'>) => {
+}: Omit<ProjectData, 'id' | 'description'>) => {
   const router = useRouter()
 
   return (

@@ -1,22 +1,18 @@
-import { QueryResult } from '@apollo/client'
 import { slideLeftEntrance } from 'animation'
 import { Card, Seo } from 'components'
 import { motion } from 'framer-motion'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { ProjectData } from 'types'
-import { QUERY_GET_ALL_PROJECTS, requestHelper } from 'utils'
+import { client, QUERY_GET_ALL_PROJECTS } from 'utils'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const responseData: QueryResult = await requestHelper({
-    data: {
-      operationName: 'getData',
-      query: QUERY_GET_ALL_PROJECTS.loc!.source.body,
-      variables: {},
-    },
-  }).then(res => res.data)
+  const { data } = await client.query({
+    query: QUERY_GET_ALL_PROJECTS,
+  })
+
   return {
     props: {
-      staticProject: responseData.data,
+      staticProject: data,
     },
   }
 }
@@ -35,7 +31,7 @@ const Project = ({ staticProject }: InferGetStaticPropsType<typeof getStaticProp
             (staticProject.getAllProject as ProjectData[]).map(item => {
               return (
                 <motion.div
-                  key={item._id.toString()}
+                  key={item.id}
                   variants={slideLeftEntrance}
                   initial="hidden"
                   animate="visible"

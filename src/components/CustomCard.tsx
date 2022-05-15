@@ -6,13 +6,7 @@ import { ProjectData } from 'types'
 
 import Button from './Button'
 
-const CustomCard = ({
-  description,
-  image,
-  linkDemo,
-  linkRepo,
-  title,
-}: Omit<ProjectData, '_id'>) => {
+const CustomCard = ({ description, image, linkDemo, linkRepo, title }: Omit<ProjectData, 'id'>) => {
   const router = useRouter()
 
   return (

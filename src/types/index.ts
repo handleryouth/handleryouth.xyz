@@ -1,10 +1,9 @@
-import { ObjectId } from 'mongodb'
 import { ButtonProps } from 'primereact/button'
 import { ReactNode } from 'react'
 import { IconType } from 'react-icons'
 
 export interface ProjectData {
-  _id: ObjectId
+  id: string
   image: string
   title: string
   description: string
@@ -13,14 +12,14 @@ export interface ProjectData {
 }
 
 export interface EducationProps {
-  _id: ObjectId
+  id: string
   title: string
   time: string
   description: string
 }
 
 export interface CertificatesProps {
-  _id: ObjectId
+  id: string
   title: string
   company: string
   time: string

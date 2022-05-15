@@ -1,4 +1,3 @@
-import { QueryResult } from '@apollo/client'
 import { slideLeftEntrance } from 'animation'
 import { Button, ItemBox, Section, Seo, TimelineCard } from 'components'
 import { motion } from 'framer-motion'
@@ -9,25 +8,23 @@ import { confirmPopup } from 'primereact/confirmpopup'
 import { Timeline } from 'primereact/timeline'
 import React, { useCallback } from 'react'
 import { CertificatesProps, EducationProps } from 'types'
-import { QUERY_GET_ALL_RESUME_DATA, requestHelper } from 'utils'
+import { client, QUERY_GET_ALL_RESUME_DATA } from 'utils'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const responseData: QueryResult = await requestHelper({
-    data: {
-      operationName: 'getResumePageProps',
-      query: QUERY_GET_ALL_RESUME_DATA.loc!.source.body,
-      variables: {},
-    },
-  }).then(res => res.data)
+  const { data } = await client.query({
+    query: QUERY_GET_ALL_RESUME_DATA,
+  })
+
   return {
     props: {
-      resumeData: responseData.data,
+      resumeData: data,
     },
   }
 }
 
 const Resume = ({ resumeData }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter()
+
   const { theme } = useTheme()
 
   const confirmExternalLink = useCallback(
@@ -48,7 +45,6 @@ const Resume = ({ resumeData }: InferGetStaticPropsType<typeof getStaticProps>) 
       <Seo title="handleryouth.xyz - Resume" description="Tony David Resume" />
       <main className="pt-32 w-11/12 mx-auto max-w-[68rem]">
         <h1>Resume</h1>
-
         <motion.div
           variants={slideLeftEntrance}
           initial="hidden"
@@ -73,8 +69,8 @@ const Resume = ({ resumeData }: InferGetStaticPropsType<typeof getStaticProps>) 
                   />
                 </div>
                 <div className="flex flex-wrap gap-4 md:hidden">
-                  {(resumeData.getAllEducation as EducationProps[]).map((item, index) => (
-                    <ItemBox key={index} {...item} />
+                  {(resumeData.getAllEducation as EducationProps[]).map(item => (
+                    <ItemBox key={item.id} {...item} />
                   ))}
                 </div>
               </div>
@@ -93,8 +89,8 @@ const Resume = ({ resumeData }: InferGetStaticPropsType<typeof getStaticProps>) 
                   />
                 </div>
                 <div className="flex flex-wrap gap-4 md:hidden">
-                  {(resumeData.getAllExperiences as EducationProps[]).map((item, index) => (
-                    <ItemBox key={index} {...item} />
+                  {(resumeData.getAllExperiences as EducationProps[]).map(item => (
+                    <ItemBox key={item.id} {...item} />
                   ))}
                 </div>
               </div>
@@ -105,8 +101,8 @@ const Resume = ({ resumeData }: InferGetStaticPropsType<typeof getStaticProps>) 
             title="Certificates"
             body={
               <div className="flex flex-wrap gap-4">
-                {(resumeData.getAllCertificate as CertificatesProps[]).map((certificate, index) => (
-                  <ItemBox key={index} {...certificate} />
+                {(resumeData.getAllCertificate as CertificatesProps[]).map(certificate => (
+                  <ItemBox key={certificate.id} {...certificate} />
                 ))}
               </div>
             }

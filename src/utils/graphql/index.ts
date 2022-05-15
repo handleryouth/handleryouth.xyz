@@ -1,2 +1,2 @@
-export * from './fragment'
+export * from './client'
 export * from './query'

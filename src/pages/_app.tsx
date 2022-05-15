@@ -7,19 +7,15 @@ import '@fontsource/inter/700.css'
 import '@fontsource/inter/800.css'
 import '../styles/globals.css'
 
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
+import { ApolloProvider } from '@apollo/client'
 import { Layout } from 'components'
 import { store } from 'lib'
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'next-themes'
 import { Provider } from 'react-redux'
+import { client } from 'utils'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const client = new ApolloClient({
-    cache: new InMemoryCache(),
-    uri: '/api/graphql',
-  })
-
   return (
     <Provider store={store}>
       <ApolloProvider client={client}>
